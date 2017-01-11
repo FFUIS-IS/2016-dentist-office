@@ -32,8 +32,6 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.usernameWarningLabel = new System.Windows.Forms.Label();
-            this.passwordWarningLabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -71,28 +69,6 @@
             this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
-            // usernameWarningLabel
-            // 
-            this.usernameWarningLabel.AutoSize = true;
-            this.usernameWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.usernameWarningLabel.Location = new System.Drawing.Point(151, 89);
-            this.usernameWarningLabel.Name = "usernameWarningLabel";
-            this.usernameWarningLabel.Size = new System.Drawing.Size(155, 15);
-            this.usernameWarningLabel.TabIndex = 3;
-            this.usernameWarningLabel.Text = "this field must not be empty";
-            // 
-            // passwordWarningLabel
-            // 
-            this.passwordWarningLabel.AutoSize = true;
-            this.passwordWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.passwordWarningLabel.Location = new System.Drawing.Point(151, 188);
-            this.passwordWarningLabel.Name = "passwordWarningLabel";
-            this.passwordWarningLabel.Size = new System.Drawing.Size(155, 15);
-            this.passwordWarningLabel.TabIndex = 4;
-            this.passwordWarningLabel.Text = "this field must not be empty";
-            // 
             // loginButton
             // 
             this.loginButton.Location = new System.Drawing.Point(154, 245);
@@ -120,8 +96,6 @@
             this.ClientSize = new System.Drawing.Size(349, 280);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.passwordWarningLabel);
-            this.Controls.Add(this.usernameWarningLabel);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.passwordLabel);
@@ -143,8 +117,6 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.Label usernameWarningLabel;
-        private System.Windows.Forms.Label passwordWarningLabel;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button cancelButton;
     }

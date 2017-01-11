@@ -10,22 +10,22 @@ namespace ZubarskaOrd
         public LoginForm()
         {
             InitializeComponent();
-            if (usernameTextBox.ToString() != "")
-                usernameWarningLabel.Visible = false;
-            if (passwordTextBox.ToString() != "")
-                passwordWarningLabel.Visible = false;
-
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 User user = new User(usernameTextBox.Text, passwordTextBox.Text);
 
                 if (UserRepository.Login(user))
                     DialogResult = DialogResult.OK;
-                Close();
+                if (usernameTextBox.Text.Length == 0)
+                    MessageBox.Show("Username must be filled!");
+                if (passwordTextBox.Text.Length == 0)
+                    MessageBox.Show("Password must be filled!");
+                    Close();
             }
                 
             catch (Exception)
