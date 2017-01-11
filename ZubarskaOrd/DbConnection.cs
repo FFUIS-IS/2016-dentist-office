@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.IO;
 
-namespace CoffeeShop
+namespace ZubarskaOrd
 {
     class DbConnection
     {
@@ -11,8 +11,8 @@ namespace CoffeeShop
 
         private DbConnection()
         {
-            string dbPassword = File.ReadAllText(@"..\..\config.txt");
-            string connectionString = @"Data Source=..\..\..\CoffeeShopDatabase.sdf;Password=" + dbPassword;
+            //string dbPassword = File.ReadAllText(@"..\..\config.txt");
+            string connectionString = @"Data Source=..\..\..\Database.sdf;Password=database32";
 
             connection = new SqlConnection(connectionString);
             connection.Open();
