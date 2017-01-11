@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace ZubarskaOrd
 {
-    public partial class Form1 : Form
+    public partial class DentalOfficeForm : Form
     {
-        public Form1()
+        public DentalOfficeForm()
         {
             InitializeComponent();
             
         }
+
+        
     }
 }
