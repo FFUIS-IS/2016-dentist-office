@@ -21,17 +21,17 @@ namespace ZubarskaOrd
 
                 if (UserRepository.Login(user))
                     DialogResult = DialogResult.OK;
-                if (usernameTextBox.Text.Length == 0)
-                    MessageBox.Show("Username must be filled!");
-                if (passwordTextBox.Text.Length == 0)
-                    MessageBox.Show("Password must be filled!");
                     Close();
             }
                 
             catch (Exception)
             {
-
-                MessageBox.Show("Pogrešno unijeto korisničko ime ili lozinka");
+                if (usernameTextBox.Text.Length == 0)
+                    MessageBox.Show("Username must be filled!");
+                if (passwordTextBox.Text.Length == 0)
+                    MessageBox.Show("Password must be filled!");
+                else
+                    MessageBox.Show("Please insert correct username and password!");
             }
         }
 

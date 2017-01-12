@@ -34,11 +34,11 @@
             // 
             // LoginMainButton
             // 
-            this.LoginMainButton.Location = new System.Drawing.Point(247, 13);
+            this.LoginMainButton.Image = ((System.Drawing.Image)(resources.GetObject("LoginMainButton.Image")));
+            this.LoginMainButton.Location = new System.Drawing.Point(12, 12);
             this.LoginMainButton.Name = "LoginMainButton";
-            this.LoginMainButton.Size = new System.Drawing.Size(75, 23);
+            this.LoginMainButton.Size = new System.Drawing.Size(99, 76);
             this.LoginMainButton.TabIndex = 0;
-            this.LoginMainButton.Text = "Login!";
             this.LoginMainButton.UseVisualStyleBackColor = true;
             this.LoginMainButton.Click += new System.EventHandler(this.LoginMainButton_Click);
             // 
@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 296);
+            this.ClientSize = new System.Drawing.Size(689, 379);
             this.Controls.Add(this.LoginMainButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
