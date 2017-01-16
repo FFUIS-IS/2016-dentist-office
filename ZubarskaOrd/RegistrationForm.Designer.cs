@@ -67,6 +67,7 @@
             this.passwordRegTextBox.Name = "passwordRegTextBox";
             this.passwordRegTextBox.Size = new System.Drawing.Size(134, 20);
             this.passwordRegTextBox.TabIndex = 3;
+            this.passwordRegTextBox.UseSystemPasswordChar = true;
             // 
             // registerButton
             // 

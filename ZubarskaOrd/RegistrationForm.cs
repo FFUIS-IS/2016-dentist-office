@@ -32,8 +32,8 @@ namespace ZubarskaOrd
             {
                 User user = new User(usernameRegTextBox.Text, passwordRegTextBox.Text);
 
-                if (UserRepository.Login(user))
-                    DialogResult = DialogResult.OK;
+                UserRepository.Register(user);
+                DialogResult = DialogResult.OK;
                 Close();
             }
 
