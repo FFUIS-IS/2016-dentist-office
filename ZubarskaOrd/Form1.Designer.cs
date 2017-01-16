@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DentalOfficeForm));
             this.LoginMainButton = new System.Windows.Forms.Button();
+            this.registrationButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LoginMainButton
@@ -42,11 +43,22 @@
             this.LoginMainButton.UseVisualStyleBackColor = true;
             this.LoginMainButton.Click += new System.EventHandler(this.LoginMainButton_Click);
             // 
+            // registrationButton
+            // 
+            this.registrationButton.Image = ((System.Drawing.Image)(resources.GetObject("registrationButton.Image")));
+            this.registrationButton.Location = new System.Drawing.Point(118, 13);
+            this.registrationButton.Name = "registrationButton";
+            this.registrationButton.Size = new System.Drawing.Size(99, 75);
+            this.registrationButton.TabIndex = 1;
+            this.registrationButton.UseVisualStyleBackColor = true;
+            this.registrationButton.Click += new System.EventHandler(this.registrationButton_Click);
+            // 
             // DentalOfficeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 379);
+            this.Controls.Add(this.registrationButton);
             this.Controls.Add(this.LoginMainButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -62,6 +74,7 @@
         #endregion
 
         private System.Windows.Forms.Button LoginMainButton;
+        private System.Windows.Forms.Button registrationButton;
     }
 }
 

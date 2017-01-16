@@ -23,5 +23,11 @@ namespace ZubarskaOrd
             LoginForm loginForm = new LoginForm();
             DialogResult result = loginForm.ShowDialog();
         }
+
+        private void registrationButton_Click(object sender, EventArgs e)
+        {
+            RegistrationForm registrationForm = new RegistrationForm();
+            DialogResult result = registrationForm.ShowDialog();
+        }
     }
 }
