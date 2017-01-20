@@ -1,5 +1,6 @@
 ﻿using System.Data.SqlServerCe;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ZubarskaOrd
 {
@@ -17,6 +18,7 @@ namespace ZubarskaOrd
 
             connection = new SqlCeConnection(connectionString);
             connection.Open();
+            MessageBox.Show("Connection created");
         }
 
         public static DbConnection Instance
