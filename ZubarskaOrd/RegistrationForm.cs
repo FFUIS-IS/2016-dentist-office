@@ -28,24 +28,13 @@ namespace ZubarskaOrd
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 User user = new User(usernameRegTextBox.Text, passwordRegTextBox.Text);
 
                 UserRepository.Register(user);
                 DialogResult = DialogResult.OK;
                 Close();
-            }
-
-            catch (Exception)
-            {
-                if (usernameRegTextBox.Text.Length == 0)
-                    MessageBox.Show("Username cannot be empty!");
-                if (passwordRegTextBox.Text.Length == 0)
-                    MessageBox.Show("Password cannot be empty!");
-                else
-                    MessageBox.Show("Insert correct username and password!");
-            }
+               
         }
     }
 }

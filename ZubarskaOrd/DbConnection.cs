@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data.SqlServerCe;
 using System.IO;
 
 namespace ZubarskaOrd
@@ -7,14 +7,15 @@ namespace ZubarskaOrd
     {
         private static DbConnection instance;
 
-        private SqlConnection connection;
+        private SqlCeConnection connection;
 
         private DbConnection()
         {
             //string dbPassword = File.ReadAllText(@"..\..\config.txt");
-            string connectionString = @"Data Source=..\..\..\Database.sdf;Password=database32";
+            string connectionString = "Data Source=" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + "\\Database.sdf; Password=database32";
+            
 
-            connection = new SqlConnection(connectionString);
+            connection = new SqlCeConnection(connectionString);
             connection.Open();
         }
 
@@ -29,7 +30,7 @@ namespace ZubarskaOrd
             }
         }
 
-        public SqlConnection Connection
+        public SqlCeConnection Connection
         {
             get
             {

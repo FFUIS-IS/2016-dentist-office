@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.Common;
-using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 using System.Security.Cryptography;
 using System.Text;
 using ZubarskaOrd.Models;
@@ -9,18 +9,17 @@ namespace ZubarskaOrd.Repos
 {
     class UserRepository
     {
-        private static SqlConnection connection = DbConnection.Instance.Connection;
+        private static SqlCeConnection connection = DbConnection.Instance.Connection;
 
         public static bool Login(User user)
         {
             string sql = "SELECT * FROM LoginFormTable WHERE username = @username AND password = @password";
-            SqlCommand command = new SqlCommand(sql, connection);
-            command.Parameters.Add(new SqlParameter("@username", user.Username));
-            command.Parameters.Add(new SqlParameter("@password", hashPassword(user.Password)));
+            SqlCeCommand command = new SqlCeCommand(sql, connection);
+            command.Parameters.Add(new SqlCeParameter("@username", user.Username));
+            command.Parameters.Add(new SqlCeParameter("@password", hashPassword(user.Password)));
 
             command.Prepare();
-
-            SqlDataReader reader = command.ExecuteReader();
+            SqlCeDataReader reader = command.ExecuteReader();
 
             return reader.Read();
         }
@@ -28,8 +27,7 @@ namespace ZubarskaOrd.Repos
         public static void Register(User user)
         {
             string sql = "INSERT INTO LoginFormTable(username, password) VALUES ('" + user.Username + "', '" + hashPassword(user.Password) + "')";
-
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlCeCommand command = new SqlCeCommand(sql, connection);
             command.ExecuteReader();
         }
 
