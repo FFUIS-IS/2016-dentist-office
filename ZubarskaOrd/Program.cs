@@ -8,6 +8,7 @@ namespace ZubarskaOrd
 {
     static class Program
     {
+        public static string path;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,6 +17,7 @@ namespace ZubarskaOrd
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            path = Application.ExecutablePath.Substring(0, Application.ExecutablePath.LastIndexOf('\\')+1);
             Application.Run(new DentalOfficeForm());
         }
     }

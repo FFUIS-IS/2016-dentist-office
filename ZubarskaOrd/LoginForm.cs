@@ -16,25 +16,22 @@ namespace ZubarskaOrd
         private void loginButton_Click(object sender, EventArgs e)
         {
             
-            try
-            {
                 User user = new User(usernameTextBox.Text, passwordTextBox.Text);
 
-                if (UserRepository.Login(user))
-                    MessageBox.Show("Uspijesno logovanje!");
-                    DialogResult = DialogResult.OK;
-                    Close();
-            }
-                
-            catch (Exception)
+            if (UserRepository.Login(user))
             {
-                if (usernameTextBox.Text.Length == 0)
-                    MessageBox.Show("Username must be filled!");
-                if (passwordTextBox.Text.Length == 0)
-                    MessageBox.Show("Password must be filled!");
-                else
-                    MessageBox.Show("Please insert correct username and password!");
+                MessageBox.Show("Uspijesno logovanje!");
+                DialogResult = DialogResult.OK;
+                Close();
             }
+
+            else if (usernameTextBox.Text.Length == 0)
+                    MessageBox.Show("Username must be filled!");
+            else if (passwordTextBox.Text.Length == 0)
+                    MessageBox.Show("Password must be filled!");
+            else
+                    MessageBox.Show("Please insert correct username and password!");
+            
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

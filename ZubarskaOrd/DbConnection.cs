@@ -1,4 +1,5 @@
-﻿using System.Data.SqlServerCe;
+﻿using System;
+using System.Data.SqlServerCe;
 using System.IO;
 using System.Windows.Forms;
 
@@ -12,11 +13,15 @@ namespace ZubarskaOrd
 
         private DbConnection()
         {
-            string connectionString = "Data Source=" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + "\\Database.sdf; Password=database32";
-            
+            MessageBox.Show(Program.path);
+            string connectionString = "Data Source=" + Program.path + "Database.sdf; Password=database32";
 
             connection = new SqlCeConnection(connectionString);
-            connection.Open();
+            try { connection.Open();  }
+            catch (Exception e)
+            { MessageBox.Show(e.ToString()); };
+            
+            
         }
 
         public static DbConnection Instance
