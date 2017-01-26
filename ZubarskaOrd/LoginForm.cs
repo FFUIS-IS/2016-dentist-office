@@ -21,6 +21,7 @@ namespace ZubarskaOrd
                 User user = new User(usernameTextBox.Text, passwordTextBox.Text);
 
                 if (UserRepository.Login(user))
+                    MessageBox.Show("Uspijesno logovanje!");
                     DialogResult = DialogResult.OK;
                     Close();
             }

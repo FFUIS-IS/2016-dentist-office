@@ -12,13 +12,11 @@ namespace ZubarskaOrd
 
         private DbConnection()
         {
-            //string dbPassword = File.ReadAllText(@"..\..\config.txt");
             string connectionString = "Data Source=" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + "\\Database.sdf; Password=database32";
             
 
             connection = new SqlCeConnection(connectionString);
             connection.Open();
-            MessageBox.Show("Connection created");
         }
 
         public static DbConnection Instance

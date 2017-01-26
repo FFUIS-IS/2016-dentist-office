@@ -13,10 +13,10 @@ namespace ZubarskaOrd.Repos
 
         public static bool Login(User user)
         {
-            string sql = "SELECT * FROM LoginFormTable WHERE username = @username AND password = @password";
+            string sql = "SELECT * FROM [LoginFormTable] WHERE [username] = @username AND [password] = @password";
             SqlCeCommand command = new SqlCeCommand(sql, connection);
-            command.Parameters.Add(new SqlCeParameter("@username", user.Username));
-            command.Parameters.Add(new SqlCeParameter("@password", hashPassword(user.Password)));
+            command.Parameters.AddWithValue("@username", user.Username);
+            command.Parameters.AddWithValue("@password", user.Password);
 
             command.Prepare();
             SqlCeDataReader reader = command.ExecuteReader();

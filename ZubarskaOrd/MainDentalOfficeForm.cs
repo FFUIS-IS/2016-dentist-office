@@ -15,7 +15,7 @@ namespace ZubarskaOrd
         public DentalOfficeForm()
         {
             InitializeComponent();
-            
+
         }
 
         private void LoginMainButton_Click(object sender, EventArgs e)
@@ -24,10 +24,6 @@ namespace ZubarskaOrd
             DialogResult result = loginForm.ShowDialog();
         }
 
-        private void registrationButton_Click(object sender, EventArgs e)
-        {
-            RegistrationForm registrationForm = new RegistrationForm();
-            DialogResult result = registrationForm.ShowDialog();
-        }
+
     }
 }
