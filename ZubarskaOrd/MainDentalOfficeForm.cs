@@ -15,15 +15,11 @@ namespace ZubarskaOrd
         public DentalOfficeForm()
         {
             InitializeComponent();
+            
 
         }
-
-        private void LoginMainButton_Click(object sender, EventArgs e)
-        {
-            LoginForm loginForm = new LoginForm();
-            DialogResult result = loginForm.ShowDialog();
-        }
-
-
+        
+        
+        
     }
 }

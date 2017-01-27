@@ -13,25 +13,36 @@ namespace ZubarskaOrd
             InitializeComponent();
         }
 
+        public bool loginSucces = false;
+
         private void loginButton_Click(object sender, EventArgs e)
         {
             
-                User user = new User(usernameTextBox.Text, passwordTextBox.Text);
+            
+            User user = new User(usernameTextBox.Text, passwordTextBox.Text);
 
-            if (UserRepository.Login(user))
+            try
             {
-                MessageBox.Show("Uspijesno logovanje!");
+                UserRepository.Login(user);
                 DialogResult = DialogResult.OK;
+                loginSucces = true;
+                DentalOfficeForm dentalOfficeForm = new DentalOfficeForm();
+                dentalOfficeForm.ShowDialog();
                 Close();
+                
             }
 
-            else if (usernameTextBox.Text.Length == 0)
-                    MessageBox.Show("Username must be filled!");
-            else if (passwordTextBox.Text.Length == 0)
-                    MessageBox.Show("Password must be filled!");
-            else
-                    MessageBox.Show("Please insert correct username and password!");
+            catch (Exception)
+            { 
+
+                if (usernameTextBox.Text.Length == 0)
+                        MessageBox.Show("Username must be filled!");
+                else if (passwordTextBox.Text.Length == 0)
+                        MessageBox.Show("Password must be filled!");
+                else
+                        MessageBox.Show("Please insert correct username and password!");
             
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
