@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DentalOfficeForm));
             this.Patient = new System.Windows.Forms.Button();
-            this.PatientPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // Patient
@@ -43,20 +42,11 @@
             this.Patient.UseVisualStyleBackColor = true;
             this.Patient.Click += new System.EventHandler(this.Patient_Click);
             // 
-            // PatientPanel
-            // 
-            this.PatientPanel.Enabled = false;
-            this.PatientPanel.Location = new System.Drawing.Point(12, 69);
-            this.PatientPanel.Name = "PatientPanel";
-            this.PatientPanel.Size = new System.Drawing.Size(656, 394);
-            this.PatientPanel.TabIndex = 1;
-            // 
             // DentalOfficeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 475);
-            this.Controls.Add(this.PatientPanel);
             this.Controls.Add(this.Patient);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -72,7 +62,6 @@
         #endregion
 
         private System.Windows.Forms.Button Patient;
-        private System.Windows.Forms.Panel PatientPanel;
     }
 }
 

@@ -21,7 +21,8 @@ namespace ZubarskaOrd
 
         private void Patient_Click(object sender, EventArgs e)
         {
-            PatientPanel.Show();
+            PatientWindowsForm patientForm = new PatientWindowsForm();
+            DialogResult presult = patientForm.ShowDialog();
         }
 
         private void DentalOfficeForm_Load(object sender, EventArgs e)
