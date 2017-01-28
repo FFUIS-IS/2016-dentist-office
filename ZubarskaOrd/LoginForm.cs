@@ -7,6 +7,8 @@ namespace ZubarskaOrd
 {
     public partial class LoginForm : Form
     {
+        private string username;
+        private string password;
 
         public LoginForm()
         {
@@ -18,31 +20,40 @@ namespace ZubarskaOrd
         private void loginButton_Click(object sender, EventArgs e)
         {
             
-            
             User user = new User(usernameTextBox.Text, passwordTextBox.Text);
 
             try
             {
                 UserRepository.Login(user);
                 DialogResult = DialogResult.OK;
-                loginSucces = true;
-                DentalOfficeForm dentalOfficeForm = new DentalOfficeForm();
-                dentalOfficeForm.ShowDialog();
                 Close();
                 
             }
 
-            catch (Exception)
-            { 
+            catch (Exception exception)
+            {
 
                 if (usernameTextBox.Text.Length == 0)
-                        MessageBox.Show("Username must be filled!");
+                {
+                    MessageBox.Show(exception.Message);
+                    usernameTextBox.Text = "";
+                    usernameTextBox.Focus();
+                }
                 else if (passwordTextBox.Text.Length == 0)
-                        MessageBox.Show("Password must be filled!");
+                {
+                    MessageBox.Show(exception.Message);
+                    passwordTextBox.Text = "";
+                    passwordTextBox.Focus();
+                }
                 else
-                        MessageBox.Show("Please insert correct username and password!");
-            
-            }
+                {
+                    MessageBox.Show(exception.Message);
+                    usernameTextBox.Text = "";
+                    passwordTextBox.Text = "";
+                    usernameTextBox.Focus();
+                }
+
+                }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

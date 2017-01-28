@@ -15,8 +15,15 @@ namespace ZubarskaOrd.Repos
         {
             string sql = "SELECT * FROM [LoginFormTable] WHERE [username] = @username AND [password] = @password";
             SqlCeCommand command = new SqlCeCommand(sql, connection);
+
             command.Parameters.AddWithValue("@username", user.Username);
+            if (user.Username.Length == 0)
+                throw new Exception("Username must be filled!");
+
             command.Parameters.AddWithValue("@password", user.Password);
+            if (user.Password.Length == 0)
+                throw new Exception("Password must be filled!");
+
 
             command.Prepare();
             SqlCeDataReader reader = command.ExecuteReader();

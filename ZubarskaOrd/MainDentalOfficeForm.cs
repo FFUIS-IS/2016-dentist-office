@@ -18,8 +18,20 @@ namespace ZubarskaOrd
             
 
         }
-        
-        
-        
+
+        private void Patient_Click(object sender, EventArgs e)
+        {
+            PatientPanel.Show();
+        }
+
+        private void DentalOfficeForm_Load(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            DialogResult result = loginForm.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+                this.Close();
+            
+        }
     }
 }
