@@ -21,6 +21,7 @@ namespace ZubarskaOrd
 
         private void Patient_Click(object sender, EventArgs e)
         {
+            
             PatientWindowsForm patientForm = new PatientWindowsForm();
             DialogResult presult = patientForm.ShowDialog();
         }
