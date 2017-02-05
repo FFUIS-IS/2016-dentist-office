@@ -19,15 +19,18 @@ namespace ZubarskaOrd
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            username = usernameTextBox.Text;
+            password = passwordTextBox.Text;
             
-            User user = new User(usernameTextBox.Text, passwordTextBox.Text);
+            User user = new User(username, password);
 
             try
             {
                 UserRepository.Login(user);
+                loginSucces = true;
                 DialogResult = DialogResult.OK;
                 Close();
-                
+
             }
 
             catch (Exception exception)
@@ -45,7 +48,7 @@ namespace ZubarskaOrd
                     passwordTextBox.Text = "";
                     passwordTextBox.Focus();
                 }
-                else
+                else if (loginSucces != true)
                 {
                     MessageBox.Show(exception.Message);
                     usernameTextBox.Text = "";

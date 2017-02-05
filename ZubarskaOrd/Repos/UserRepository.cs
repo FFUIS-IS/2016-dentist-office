@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlServerCe;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 using ZubarskaOrd.Models;
 
 namespace ZubarskaOrd.Repos
@@ -13,22 +15,25 @@ namespace ZubarskaOrd.Repos
 
         public static bool Login(User user)
         {
-            string sql = "SELECT * FROM [LoginFormTable] WHERE [username] = @username AND [password] = @password";
+            string sql = "SELECT [username],[password] FROM [LoginFormTable] WHERE [username] ='" + user.Username + "' AND [password] ='" + user.Password + "'";
             SqlCeCommand command = new SqlCeCommand(sql, connection);
+            SqlCeDataAdapter da = new SqlCeDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
-            command.Parameters.AddWithValue("@username", user.Username);
             if (user.Username.Length == 0)
-                throw new Exception("Username must be filled!");
-
-            command.Parameters.AddWithValue("@password", user.Password);
+                throw new Exception("Username must be entered!");
             if (user.Password.Length == 0)
-                throw new Exception("Password must be filled!");
-
+                throw new Exception("Password must be entered!");
+            if (dt.Rows.Count == 0)
+                throw new Exception("Invalid Login please check username and password");
+            
 
             command.Prepare();
             SqlCeDataReader reader = command.ExecuteReader();
 
             return reader.Read();
+           
         }
 
         public static void Register(User user)

@@ -285,7 +285,6 @@
             this.Name = "PatientWindowsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patient";
-            this.Shown += new System.EventHandler(this.PatientWindowsForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
