@@ -21,10 +21,7 @@ namespace ZubarskaOrd
             InitializeComponent();
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
 
         private void AddPatientForm_Shown(object sender, EventArgs e)
         {
@@ -65,6 +62,15 @@ namespace ZubarskaOrd
             }
         }
 
-        
+        /*private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+            connection.Open();
+            SqlCeCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Insert into Patients values ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "'," + comboBox1.SelectedItem;
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }*/
     }
 }

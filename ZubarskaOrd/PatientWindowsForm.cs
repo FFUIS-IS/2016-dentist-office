@@ -15,51 +15,111 @@ namespace ZubarskaOrd
     public partial class PatientWindowsForm : Form
     {
 
-        private static SqlCeConnection connection = DbConnection.Instance.Connection;
-
         public PatientWindowsForm()
         {
             InitializeComponent();
+            loadpatients();
+        }
+
+        private void loadpatients()
+        {
+            fillingcombobox1();
         }
         
-
-        private void button3_Click(object sender, EventArgs e)
+        private void fillingcombobox1()
         {
 
-            PatientList.Items.Clear();
-
-            SqlCeCommand cm = new SqlCeCommand("SELECT * FROM Patients ORDER BY FirstName", connection);
-            try
+            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+            comboBox1.Items.Clear();
+            connection.Open();
+            SqlCeCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Patients";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlCeDataAdapter da = new SqlCeDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
             {
-                SqlCeDataReader dr = cm.ExecuteReader();
-
-                while(dr.Read())
-                {
-                    ListViewItem item = new ListViewItem(dr["FirstName"].ToString());
-                    item.SubItems.Add(dr["LastName"].ToString());
-                    item.SubItems.Add(dr["DateOfBirth"].ToString());
-                    item.SubItems.Add(dr["JMBG"].ToString());
-                    item.SubItems.Add(dr["Contact"].ToString());
-                    item.SubItems.Add(dr["Address"].ToString());
-                    item.SubItems.Add(dr["CitiesID"].ToString());
-
-                    PatientList.Items.Add(item);
-
-
-                }
-                 
+                comboBox1.Items.Add(dr["FirstName"].ToString() + " " + dr["LastName"].ToString());
+                
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
+            connection.Close();
+            
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
+        private void clearTextBox()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+        }
+       
+         
+
+        private void AddButton_Click_1(object sender, EventArgs e)
         {
             AddPatientForm AddPatientForm = new AddPatientForm();
             DialogResult addresult = AddPatientForm.ShowDialog();
         }
+
+        
+
+        private void DeleteButton_Click_1(object sender, EventArgs e)
+        {
+            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+            connection.Open();
+            SqlCeCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete from Patients where FirstName + ' ' + LastName='" + comboBox1.SelectedItem.ToString() + "'";
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+            fillingcombobox1();
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+            connection.Open();
+            SqlCeCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Patients where FirstName + ' ' + LastName='" + comboBox1.SelectedItem.ToString() + "'";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlCeDataAdapter da = new SqlCeDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                textBox1.Text = dr["FirstName"].ToString();
+                textBox2.Text = dr["LastName"].ToString();
+                textBox3.Text = dr["DateOfBirth"].ToString();
+                textBox4.Text = dr["JMBG"].ToString();
+                textBox5.Text = dr["Contact"].ToString();
+                textBox6.Text = dr["Address"].ToString();
+                textBox7.Text = dr["CitiesID"].ToString();
+            }
+            connection.Close();
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+            connection.Open();
+            SqlCeCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "update Patients set FirstName = '" + textBox1.Text + "',LastName='" + textBox2.Text + "',DateOfBirth= '" + textBox3.Text + "', JMBG = '" + textBox4.Text + "', Contact = '" + textBox5.Text + "', Address = '" + textBox6.Text + "', CitiesID = '" + textBox7.Text + "' where FirstName='" + textBox1.Text + "'";
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+            fillingcombobox1();
+            MessageBox.Show("Record is updated successfully!");
+            clearTextBox();
+        }
     }
-    }
+}
+    
