@@ -21,9 +21,16 @@ namespace ZubarskaOrd
 
         private void Patient_Click(object sender, EventArgs e)
         {
-            
+            /*this.IsMdiContainer = true;
+            Form Form2 = new Form();
+            Form2.MdiParent = this;
+            Form2.Show();*/
+
+            this.IsMdiContainer = true;
             PatientWindowsForm patientForm = new PatientWindowsForm();
-            DialogResult presult = patientForm.ShowDialog();
+            patientForm.MdiParent = this;
+            patientForm.Show();
+            //DialogResult presult = patientForm.ShowDialog();
         }
 
         private void DentalOfficeForm_Load(object sender, EventArgs e)

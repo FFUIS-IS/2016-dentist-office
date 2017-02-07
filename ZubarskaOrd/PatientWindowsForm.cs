@@ -14,6 +14,7 @@ namespace ZubarskaOrd
 {
     public partial class PatientWindowsForm : Form
     {
+        private static SqlCeConnection connection = DbConnection.Instance.Connection;
 
         public PatientWindowsForm()
         {
@@ -28,14 +29,13 @@ namespace ZubarskaOrd
         
         private void fillingcombobox1()
         {
-
-            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+            
             comboBox1.Items.Clear();
-            connection.Open();
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT * FROM Patients";
             cmd.ExecuteNonQuery();
+
             DataTable dt = new DataTable();
             SqlCeDataAdapter da = new SqlCeDataAdapter(cmd);
             da.Fill(dt);
@@ -44,7 +44,6 @@ namespace ZubarskaOrd
                 comboBox1.Items.Add(dr["FirstName"].ToString() + " " + dr["LastName"].ToString());
                 
             }
-            connection.Close();
             
         }
 
@@ -71,28 +70,25 @@ namespace ZubarskaOrd
 
         private void DeleteButton_Click_1(object sender, EventArgs e)
         {
-            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
-            connection.Open();
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete from Patients where FirstName + ' ' + LastName='" + comboBox1.SelectedItem.ToString() + "'";
+            cmd.CommandText = "DELETE FROM Patients WHERE FirstName + ' ' + LastName='" + comboBox1.SelectedItem.ToString() + "'";
             cmd.ExecuteNonQuery();
-
-            connection.Close();
+            
             fillingcombobox1();
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
-            connection.Open();
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Patients where FirstName + ' ' + LastName='" + comboBox1.SelectedItem.ToString() + "'";
+            cmd.CommandText = "SELECT * FROM Patients WHERE FirstName + ' ' + LastName='" + comboBox1.SelectedItem.ToString() + "'";
             cmd.ExecuteNonQuery();
+
             DataTable dt = new DataTable();
             SqlCeDataAdapter da = new SqlCeDataAdapter(cmd);
             da.Fill(dt);
+
             foreach (DataRow dr in dt.Rows)
             {
                 textBox1.Text = dr["FirstName"].ToString();
@@ -103,19 +99,15 @@ namespace ZubarskaOrd
                 textBox6.Text = dr["Address"].ToString();
                 textBox7.Text = dr["CitiesID"].ToString();
             }
-            connection.Close();
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
-            connection.Open();
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update Patients set FirstName = '" + textBox1.Text + "',LastName='" + textBox2.Text + "',DateOfBirth= '" + textBox3.Text + "', JMBG = '" + textBox4.Text + "', Contact = '" + textBox5.Text + "', Address = '" + textBox6.Text + "', CitiesID = '" + textBox7.Text + "' where FirstName='" + textBox1.Text + "'";
+            cmd.CommandText = "UPDATE Patients SET FirstName = '" + textBox1.Text + "',LastName='" + textBox2.Text + "',DateOfBirth= '" + textBox3.Text + "', JMBG = '" + textBox4.Text + "', Contact = '" + textBox5.Text + "', Address = '" + textBox6.Text + "', CitiesID = '" + textBox7.Text + "' where FirstName='" + textBox1.Text + "'";
             cmd.ExecuteNonQuery();
-
-            connection.Close();
+            
             fillingcombobox1();
             MessageBox.Show("Record is updated successfully!");
             clearTextBox();

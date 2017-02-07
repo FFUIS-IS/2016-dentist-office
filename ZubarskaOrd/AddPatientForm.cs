@@ -14,7 +14,7 @@ namespace ZubarskaOrd
 {
     public partial class AddPatientForm : Form
     {
-         SqlCeConnection cn = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+        private static SqlCeConnection connection = DbConnection.Instance.Connection;
 
         public AddPatientForm()
         {
@@ -25,26 +25,14 @@ namespace ZubarskaOrd
 
         private void AddPatientForm_Shown(object sender, EventArgs e)
         {
-            try
-            {
-                cn.Open();
-
-            }
-            catch ( SqlCeException ex)
-            {
-                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
-            }
-
-            loadcities();
-
+           loadcities();
         }
 
        
 
         private void loadcities()
         {
-            SqlCeCommand cm = new SqlCeCommand("SELECT CityName FROM Cities ORDER BY CityName ASC", cn);
+            SqlCeCommand cm = new SqlCeCommand("SELECT CityName FROM Cities ORDER BY CityName ASC", connection);
 
             try
             {
