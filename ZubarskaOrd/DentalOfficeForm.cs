@@ -15,22 +15,19 @@ namespace ZubarskaOrd
         public DentalOfficeForm()
         {
             InitializeComponent();
-            
+            this.Location = new Point(0, 0);
+
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+
 
         }
 
         private void Patient_Click(object sender, EventArgs e)
         {
-            /*this.IsMdiContainer = true;
-            Form Form2 = new Form();
-            Form2.MdiParent = this;
-            Form2.Show();*/
-
             this.IsMdiContainer = true;
             PatientWindowsForm patientForm = new PatientWindowsForm();
             patientForm.MdiParent = this;
             patientForm.Show();
-            //DialogResult presult = patientForm.ShowDialog();
         }
 
         private void DentalOfficeForm_Load(object sender, EventArgs e)

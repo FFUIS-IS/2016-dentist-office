@@ -57,11 +57,11 @@
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DbConnection.cs" />
-    <Compile Include="MainDentalOfficeForm.cs">
+    <Compile Include="DentalOfficeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainDentalOfficeForm.Designer.cs">
-      <DependentUpon>MainDentalOfficeForm.cs</DependentUpon>
+    <Compile Include="DentalOfficeForm.Designer.cs">
+      <DependentUpon>DentalOfficeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -84,8 +84,8 @@
     <EmbeddedResource Include="AddPatientForm.resx">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainDentalOfficeForm.resx">
-      <DependentUpon>MainDentalOfficeForm.cs</DependentUpon>
+    <EmbeddedResource Include="DentalOfficeForm.resx">
+      <DependentUpon>DentalOfficeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
