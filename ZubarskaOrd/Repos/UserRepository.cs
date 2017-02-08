@@ -11,14 +11,25 @@ namespace ZubarskaOrd.Repos
 {
     class UserRepository
     {
+
         private static SqlCeConnection connection = DbConnection.Instance.Connection;
 
         public static bool Login(User user)
         {
-            string sql = "SELECT [username],[password] FROM [LoginFormTable] WHERE [username] ='" + user.Username + "' AND [password] ='" + user.Password + "'";
+            string sql = "SELECT * FROM [LoginFormTable] WHERE [username] ='" + user.Username + "' AND [password] ='" + user.Password + "'";
             SqlCeCommand command = new SqlCeCommand(sql, connection);
             SqlCeDataAdapter da = new SqlCeDataAdapter(command);
             DataTable dt = new DataTable();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr["AdministratorID"] != null)
+                    user.IsAdminUser = true;
+                else
+                    user.IsAdminUser = false;
+            }
+
+
             da.Fill(dt);
 
             if (user.Username.Length == 0)

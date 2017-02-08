@@ -9,13 +9,14 @@ namespace ZubarskaOrd
     {
         private string username;
         private string password;
+        public bool loginSucces;
 
         public LoginForm()
         {
             InitializeComponent();
         }
 
-        public bool loginSucces = false;
+        
 
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -28,6 +29,7 @@ namespace ZubarskaOrd
             {
                 UserRepository.Login(user);
                 loginSucces = true;
+                Console.WriteLine(user.Role());
                 DialogResult = DialogResult.OK;
                 Close();
 

@@ -34,6 +34,7 @@ namespace ZubarskaOrd
         {
             LoginForm loginForm = new LoginForm();
             DialogResult result = loginForm.ShowDialog();
+            
 
             if (result == DialogResult.Cancel)
                 this.Close();
