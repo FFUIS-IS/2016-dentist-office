@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZubarskaOrd.Models;
 
 namespace ZubarskaOrd
 {
@@ -35,6 +36,7 @@ namespace ZubarskaOrd
             LoginForm loginForm = new LoginForm();
             DialogResult result = loginForm.ShowDialog();
             
+            //User.IsAdminUser
 
             if (result == DialogResult.Cancel)
                 this.Close();

@@ -20,28 +20,26 @@ namespace ZubarskaOrd.Repos
             SqlCeCommand command = new SqlCeCommand(sql, connection);
             SqlCeDataAdapter da = new SqlCeDataAdapter(command);
             DataTable dt = new DataTable();
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                if (dr["AdministratorID"] != null)
-                    user.IsAdminUser = true;
-                else
-                    user.IsAdminUser = false;
-            }
-
-
+            
             da.Fill(dt);
-
+            command.Prepare();
+            SqlCeDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                if (reader.GetInt32(4) != 0)
+                    User.IsAdminUser = true;
+                else
+                    User.IsAdminUser = false;
+            }
             if (user.Username.Length == 0)
                 throw new Exception("Username must be entered!");
-            if (user.Password.Length == 0)
+            else if (user.Password.Length == 0)
                 throw new Exception("Password must be entered!");
-            if (dt.Rows.Count == 0)
+            else if (dt.Rows.Count == 0)
                 throw new Exception("Invalid Login please check username and password");
             
 
-            command.Prepare();
-            SqlCeDataReader reader = command.ExecuteReader();
+            
 
             return reader.Read();
            
