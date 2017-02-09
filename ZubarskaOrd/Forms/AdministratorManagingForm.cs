@@ -15,13 +15,10 @@ namespace ZubarskaOrd.Forms
     public partial class AdministratorManagingForm : Form
     {
         private static SqlCeConnection connection = DbConnection.Instance.Connection;
-       // private List<Administrator> administrators;
 
         public AdministratorManagingForm()
         {
             InitializeComponent();
-
-            //administrators = new List<Administrator>();
         }
 
        
@@ -57,16 +54,7 @@ namespace ZubarskaOrd.Forms
         {
 
             SqlCeCommand command = new SqlCeCommand("INSERT INTO Administrator(FirstName, LastName) VALUES ('" + firstNameTextBox.Text +  "','" + lastNameTextBox.Text + "')", connection);
-            //command.CommandType = CommandType.Text;
             command.ExecuteReader();
-            /*SqlCommand cmd = new SqlCommand("INSERT INTO Data (Name, PhoneNo, Address) VALUES (@Name, @PhoneNo, @Address)");
-    cmd.CommandType = CommandType.Text;
-    cmd.Connection = connection;
-    cmd.Parameters.AddWithValue("@Name", txtName.Text);
-    cmd.Parameters.AddWithValue("@PhoneNo", txtPhone.Text);
-    cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
-    connection.Open();
-    cmd.ExecuteNonQuery();*/
         }
     }
 }

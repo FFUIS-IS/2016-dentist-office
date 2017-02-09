@@ -40,7 +40,7 @@ namespace ZubarskaOrd
             if(User.IsAdminUser)
             {
                 administratorMenuStrip.Visible = true;
-                //PatientButton.Visible = false;   
+                PatientButton.Visible = false;   
             }
             else if(!User.IsAdminUser)
             {
