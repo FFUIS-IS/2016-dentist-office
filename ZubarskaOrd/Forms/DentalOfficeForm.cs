@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZubarskaOrd.Models;
+using ZubarskaOrd.Forms;
 
 namespace ZubarskaOrd
 {
@@ -36,11 +37,31 @@ namespace ZubarskaOrd
             LoginForm loginForm = new LoginForm();
             DialogResult result = loginForm.ShowDialog();
             
-            //User.IsAdminUser
+            if(User.IsAdminUser)
+            {
+                administratorMenuStrip.Visible = true;
+                //PatientButton.Visible = false;   
+            }
+            else if(!User.IsAdminUser)
+            {
+                administratorMenuStrip.Visible = false;
+                PatientButton.Visible = true;
+            }
 
             if (result == DialogResult.Cancel)
                 this.Close();
             
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listOfAllAdministratorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdministratorManagingForm adminNewForm = new AdministratorManagingForm();
+            adminNewForm.ShowDialog();
         }
     }
 }

@@ -17,13 +17,6 @@ namespace ZubarskaOrd.Models
             Username = username;
             Password = password;
         }
-
-        public string Role()
-        {
-            if (IsAdminUser == true)
-                return "Administrator";
-            else
-                return "Regular user";
-        }
+        
     }
 }

@@ -50,47 +50,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddPatientForm.cs">
+    <Compile Include="Forms\AddPatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddPatientForm.Designer.cs">
+    <Compile Include="Forms\AddPatientForm.Designer.cs">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DbConnection.cs" />
-    <Compile Include="DentalOfficeForm.cs">
+    <Compile Include="Forms\DentalOfficeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DentalOfficeForm.Designer.cs">
+    <Compile Include="Forms\DentalOfficeForm.Designer.cs">
       <DependentUpon>DentalOfficeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Forms\AdministratorManagingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\AdministratorManagingForm.Designer.cs">
+      <DependentUpon>AdministratorManagingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="PatientWindowsForm.cs">
+    <Compile Include="Forms\PatientWindowsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PatientWindowsForm.Designer.cs">
+    <Compile Include="Forms\PatientWindowsForm.Designer.cs">
       <DependentUpon>PatientWindowsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\PatientRepository.cs" />
     <Compile Include="Repos\UserRepository.cs" />
-    <EmbeddedResource Include="AddPatientForm.resx">
+    <EmbeddedResource Include="Forms\AddPatientForm.resx">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DentalOfficeForm.resx">
+    <EmbeddedResource Include="Forms\DentalOfficeForm.resx">
       <DependentUpon>DentalOfficeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\AdministratorManagingForm.resx">
+      <DependentUpon>AdministratorManagingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PatientWindowsForm.resx">
+    <EmbeddedResource Include="Forms\PatientWindowsForm.resx">
       <DependentUpon>PatientWindowsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

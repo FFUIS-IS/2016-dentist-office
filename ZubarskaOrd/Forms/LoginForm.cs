@@ -29,7 +29,6 @@ namespace ZubarskaOrd
             {
                 UserRepository.Login(user);
                 loginSucces = true;
-                Console.WriteLine(user.Role());
                 DialogResult = DialogResult.OK;
                 Close();
 
