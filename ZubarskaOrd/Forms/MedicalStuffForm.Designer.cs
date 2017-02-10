@@ -242,6 +242,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Medical Stuff";
+            this.Activated += new System.EventHandler(this.MedicalStuffForm_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 

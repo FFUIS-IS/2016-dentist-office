@@ -151,6 +151,13 @@ namespace ZubarskaOrd.Forms
             AddMedicalStaffForm addMSForm = new AddMedicalStaffForm();
             addMSForm.ShowDialog();
         }
+
+        private void MedicalStuffForm_Activated(object sender, EventArgs e)
+        {
+
+            fillinMedicalStaffComboBox();
+            fillingCityComboBox();
+        }
     }
 }
 

@@ -43,10 +43,9 @@ namespace ZubarskaOrd.Forms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            // has an error, we need to fix it :D 
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JMBG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + dobTextBox.Text + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','1')";
+            cmd.CommandText = "INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JBMG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + dobTextBox.Text + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','1')";
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Insert is updated successfully!");
