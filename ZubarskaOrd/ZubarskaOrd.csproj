@@ -75,6 +75,12 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TeethForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TeethForm.Designer.cs">
+      <DependentUpon>TeethForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\User.cs" />
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PatientWindowsForm.resx">
       <DependentUpon>PatientWindowsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeethForm.resx">
+      <DependentUpon>TeethForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

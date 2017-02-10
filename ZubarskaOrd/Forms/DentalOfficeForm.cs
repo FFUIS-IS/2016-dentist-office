@@ -48,7 +48,9 @@ namespace ZubarskaOrd
             }
 
             if (result == DialogResult.Cancel)
+            {
                 this.Close();
+            }
         }
         private void logoutButton_Click(object sender, EventArgs e)
         {

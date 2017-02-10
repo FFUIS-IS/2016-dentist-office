@@ -18,6 +18,7 @@ namespace ZubarskaOrd
             try { connection.Open();  }
             catch (Exception e)
             { MessageBox.Show(e.ToString()); };
+            connection.Close();
 
         }
 

@@ -49,9 +49,7 @@ namespace ZubarskaOrd
 
         private void DeleteButton_Click_1(object sender, EventArgs e)
         {
-            //nije radilo zato sto preuzme fokus ovaj messageBox, pa kad ponovo pokupi fokus se izbrisu svi podaci
-            // sa comboBox-a, pa je samim tim i prazan, dakle treba prije MessageBox da se pokupi sta je upisano
-            string full = PatientComboBox.SelectedItem.ToString();
+             string full = PatientComboBox.SelectedItem.ToString();
             DialogResult result = MessageBox.Show("Do you want to delete him?", "Delete?", MessageBoxButtons.OKCancel);
 
             if (result == DialogResult.OK)
