@@ -39,7 +39,7 @@ namespace ZubarskaOrd
                 SqlCeDataReader dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
-                    comboBox1.Items.Add(dr["CityName"]);
+                    CityNameComboBox.Items.Add(dr["CityName"]);
                 }
                 dr.Close();
                 dr.Dispose();
@@ -50,15 +50,21 @@ namespace ZubarskaOrd
             }
         }
 
-        /*private void SaveButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
             connection.Open();
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Insert into Patients values ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "'," + comboBox1.SelectedItem;
+            cmd.CommandText = "INSERT INTO Patients (FirstName, LastName, DateOfBirth, JMBG, Contact, Address, CitiesID) VALUES ('" + FirstNameBox.Text + "','" + LastNameBox.Text + "','" + DateOfBirthBox.Text + "','" + JMBGBox.Text + "','" + ContactBox.Text + "','" + AddressBox.Text + "','1')";
             cmd.ExecuteNonQuery();
             connection.Close();
-        }*/
+            
+            MessageBox.Show("Insert is updated successfully!");
+           
+
+        }
+
+
     }
 }

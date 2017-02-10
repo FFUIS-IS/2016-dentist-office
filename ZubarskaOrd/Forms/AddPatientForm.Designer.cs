@@ -36,13 +36,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.FirstNameBox = new System.Windows.Forms.TextBox();
+            this.LastNameBox = new System.Windows.Forms.TextBox();
+            this.DateOfBirthBox = new System.Windows.Forms.TextBox();
+            this.JMBGBox = new System.Windows.Forms.TextBox();
+            this.ContactBox = new System.Windows.Forms.TextBox();
+            this.AddressBox = new System.Windows.Forms.TextBox();
+            this.CityNameComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -116,70 +116,71 @@
             this.SaveButton.TabIndex = 7;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // textBox1
+            // FirstNameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 20);
-            this.textBox1.TabIndex = 9;
+            this.FirstNameBox.Location = new System.Drawing.Point(96, 25);
+            this.FirstNameBox.Name = "FirstNameBox";
+            this.FirstNameBox.Size = new System.Drawing.Size(160, 20);
+            this.FirstNameBox.TabIndex = 9;
             // 
-            // textBox2
+            // LastNameBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(96, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 20);
-            this.textBox2.TabIndex = 10;
+            this.LastNameBox.Location = new System.Drawing.Point(96, 54);
+            this.LastNameBox.Name = "LastNameBox";
+            this.LastNameBox.Size = new System.Drawing.Size(160, 20);
+            this.LastNameBox.TabIndex = 10;
             // 
-            // textBox3
+            // DateOfBirthBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(96, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 20);
-            this.textBox3.TabIndex = 11;
+            this.DateOfBirthBox.Location = new System.Drawing.Point(96, 83);
+            this.DateOfBirthBox.Name = "DateOfBirthBox";
+            this.DateOfBirthBox.Size = new System.Drawing.Size(160, 20);
+            this.DateOfBirthBox.TabIndex = 11;
             // 
-            // textBox4
+            // JMBGBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(96, 112);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 20);
-            this.textBox4.TabIndex = 12;
+            this.JMBGBox.Location = new System.Drawing.Point(96, 112);
+            this.JMBGBox.Name = "JMBGBox";
+            this.JMBGBox.Size = new System.Drawing.Size(160, 20);
+            this.JMBGBox.TabIndex = 12;
             // 
-            // textBox5
+            // ContactBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(96, 141);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(160, 20);
-            this.textBox5.TabIndex = 13;
+            this.ContactBox.Location = new System.Drawing.Point(96, 141);
+            this.ContactBox.Name = "ContactBox";
+            this.ContactBox.Size = new System.Drawing.Size(160, 20);
+            this.ContactBox.TabIndex = 13;
             // 
-            // textBox6
+            // AddressBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(96, 170);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(160, 20);
-            this.textBox6.TabIndex = 14;
+            this.AddressBox.Location = new System.Drawing.Point(96, 170);
+            this.AddressBox.Name = "AddressBox";
+            this.AddressBox.Size = new System.Drawing.Size(160, 20);
+            this.AddressBox.TabIndex = 14;
             // 
-            // comboBox1
+            // CityNameComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 198);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 21);
-            this.comboBox1.TabIndex = 15;
+            this.CityNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CityNameComboBox.FormattingEnabled = true;
+            this.CityNameComboBox.Location = new System.Drawing.Point(96, 198);
+            this.CityNameComboBox.Name = "CityNameComboBox";
+            this.CityNameComboBox.Size = new System.Drawing.Size(160, 21);
+            this.CityNameComboBox.TabIndex = 15;
             // 
             // AddPatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 265);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CityNameComboBox);
+            this.Controls.Add(this.AddressBox);
+            this.Controls.Add(this.ContactBox);
+            this.Controls.Add(this.JMBGBox);
+            this.Controls.Add(this.DateOfBirthBox);
+            this.Controls.Add(this.LastNameBox);
+            this.Controls.Add(this.FirstNameBox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -209,12 +210,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox FirstNameBox;
+        private System.Windows.Forms.TextBox LastNameBox;
+        private System.Windows.Forms.TextBox DateOfBirthBox;
+        private System.Windows.Forms.TextBox JMBGBox;
+        private System.Windows.Forms.TextBox ContactBox;
+        private System.Windows.Forms.TextBox AddressBox;
+        private System.Windows.Forms.ComboBox CityNameComboBox;
     }
 }

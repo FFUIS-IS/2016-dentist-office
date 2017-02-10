@@ -19,46 +19,25 @@ namespace ZubarskaOrd
         public PatientWindowsForm()
         {
             InitializeComponent();
-            loadpatients();
+           
         }
 
-        private void loadpatients()
-        {
-            fillingcombobox1();
-        }
         
-        private void fillingcombobox1()
-        {
-            
-            comboBox1.Items.Clear();
-            SqlCeCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM Patients";
-            cmd.ExecuteNonQuery();
-
-            DataTable dt = new DataTable();
-            SqlCeDataAdapter da = new SqlCeDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
-            {
-                comboBox1.Items.Add(dr["FirstName"].ToString() + " " + dr["LastName"].ToString());
-                
-            }
-            
-        }
 
         private void clearTextBox()
         {
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox6.Clear();
-            textBox7.Clear();
+            FirstNameBox.Clear();
+            LastNameBox.Clear();
+            DateOfBirthBox.Clear();
+            JMBGBox.Clear();
+            AddressBox.Clear();
+            ContactBox.Clear();
+            CityComboBox.ResetText();
+           
+
         }
-       
-         
+
+
 
         private void AddButton_Click_1(object sender, EventArgs e)
         {
@@ -70,55 +49,144 @@ namespace ZubarskaOrd
 
         private void DeleteButton_Click_1(object sender, EventArgs e)
         {
-            SqlCeCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM Patients WHERE FirstName + ' ' + LastName='" + comboBox1.SelectedItem.ToString() + "'";
-            cmd.ExecuteNonQuery();
-            
-            fillingcombobox1();
-        }
+            //nije radilo zato sto preuzme fokus ovaj messageBox, pa kad ponovo pokupi fokus se izbrisu svi podaci
+            // sa comboBox-a, pa je samim tim i prazan, dakle treba prije MessageBox da se pokupi sta je upisano
+            string full = PatientComboBox.SelectedItem.ToString();
+            DialogResult result = MessageBox.Show("Do you want to delete him?", "Delete?", MessageBoxButtons.OKCancel);
 
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            SqlCeCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM Patients WHERE FirstName + ' ' + LastName='" + comboBox1.SelectedItem.ToString() + "'";
-            cmd.ExecuteNonQuery();
-            /*
-            var innerGroupJoinQuery =
-                from category in categories
-                join prod in products on category.ID equals prod.CategoryID into prodGroup
-                select new { CategoryName = category.Name, Products = prodGroup };*/
-
-            DataTable dt = new DataTable();
-            SqlCeDataAdapter da = new SqlCeDataAdapter(cmd);
-            da.Fill(dt);
-
-            foreach (DataRow dr in dt.Rows)
+            if (result == DialogResult.OK)
             {
-                textBox1.Text = dr["FirstName"].ToString();
-                textBox2.Text = dr["LastName"].ToString();
-                textBox3.Text = dr["DateOfBirth"].ToString();
-                textBox4.Text = dr["JMBG"].ToString();
-                textBox5.Text = dr["Contact"].ToString();
-                textBox6.Text = dr["Address"].ToString();
-                textBox7.Text = dr["CitiesID"].ToString();
+                SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+                connection.Open();
+                SqlCeCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete from Patients where Id =" + Int32.Parse(full.Substring(0, full.IndexOf(' '))) + ";";
+
+                cmd.ExecuteNonQuery();
+
+                connection.Close();
+                fillingPatientsComboBox();
+                clearTextBox();
+
+           }
+            else
+            {
+                
             }
+
+
+
         }
+
+
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
+            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+            connection.Open();
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "UPDATE Patients SET FirstName = '" + textBox1.Text + "',LastName='" + textBox2.Text + "',DateOfBirth= '" + textBox3.Text + "', JMBG = '" + textBox4.Text + "', Contact = '" + textBox5.Text + "', Address = '" + textBox6.Text + "', CitiesID = '" + textBox7.Text + "' where FirstName='" + textBox1.Text + "'";
+            cmd.CommandText = "select Id from Cities where CityName ='" + CityComboBox.SelectedItem.ToString() + "';";
+            SqlCeDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            cmd.CommandText = "update Patients set FirstName = '" + FirstNameBox.Text + "',LastName='" + LastNameBox.Text + "',DateOfBirth= '" + DateOfBirthBox.Text + "', JMBG = '" + JMBGBox.Text + "', Contact = '" + ContactBox.Text + "', Address = '" + AddressBox.Text + "', CitiesID = " + reader.GetInt32(0) + " where FirstName='" + FirstNameBox.Text + "'";
             cmd.ExecuteNonQuery();
-            
-            fillingcombobox1();
+
+            connection.Close();
+            fillingPatientsComboBox();
             MessageBox.Show("Record is updated successfully!");
             clearTextBox();
+
+
+
         }
 
-        
+        private void PatientWindowsForm_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void fillingCityComboBox()
+        {
+            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+            CityComboBox.Items.Clear();
+            connection.Open();
+            SqlCeCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Cities";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlCeDataAdapter da = new SqlCeDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                CityComboBox.Items.Add(dr["CityName"].ToString());
+
+            }
+            connection.Close();
+
+        }
+
+        private void fillingPatientsComboBox()
+        {
+            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+            PatientComboBox.Items.Clear();
+            connection.Open();
+            SqlCeCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Patients";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlCeDataAdapter da = new SqlCeDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                PatientComboBox.Items.Add(dr["Id"].ToString()+ " " + dr["FirstName"].ToString() + " " + dr["LastName"].ToString());
+
+            }
+            connection.Close();
+
+        }
+
+        private void PatientComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
+            connection.Open();
+            SqlCeCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            string full = PatientComboBox.SelectedItem.ToString();
+            cmd.CommandText = "select * from Patients where Id='" + full.Substring(0, full.IndexOf(' ')) + "';";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlCeDataAdapter da = new SqlCeDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                FirstNameBox.Text = dr["FirstName"].ToString();
+                LastNameBox.Text = dr["LastName"].ToString();
+                DateOfBirthBox.Text = dr["DateOfBirth"].ToString();
+                JMBGBox.Text = dr["JMBG"].ToString();
+                ContactBox.Text = dr["Contact"].ToString();
+                AddressBox.Text = dr["Address"].ToString();
+                cmd.CommandText = "SELECT CityName FROM Cities WHERE Id = " + dr["CitiesID"] + ";";
+
+                SqlCeDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                    CityComboBox.Text = reader.GetString(0);
+
+
+            }
+
+            connection.Close();
+
+        }
+
+        private void PatientWindowsForm_Activated(object sender, EventArgs e)
+        {
+
+            fillingPatientsComboBox();
+            fillingCityComboBox();
+        }
     }
 }
+
     

@@ -37,16 +37,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.FirstNameBox = new System.Windows.Forms.TextBox();
+            this.LastNameBox = new System.Windows.Forms.TextBox();
+            this.DateOfBirthBox = new System.Windows.Forms.TextBox();
+            this.JMBGBox = new System.Windows.Forms.TextBox();
+            this.ContactBox = new System.Windows.Forms.TextBox();
+            this.AddressBox = new System.Windows.Forms.TextBox();
             this.UpdateButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.PatientComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.CityComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -132,47 +132,47 @@
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click_1);
             // 
-            // textBox1
+            // FirstNameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 18;
+            this.FirstNameBox.Location = new System.Drawing.Point(90, 107);
+            this.FirstNameBox.Name = "FirstNameBox";
+            this.FirstNameBox.Size = new System.Drawing.Size(164, 20);
+            this.FirstNameBox.TabIndex = 18;
             // 
-            // textBox2
+            // LastNameBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(90, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 20);
-            this.textBox2.TabIndex = 19;
+            this.LastNameBox.Location = new System.Drawing.Point(90, 135);
+            this.LastNameBox.Name = "LastNameBox";
+            this.LastNameBox.Size = new System.Drawing.Size(164, 20);
+            this.LastNameBox.TabIndex = 19;
             // 
-            // textBox3
+            // DateOfBirthBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(90, 161);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 20);
-            this.textBox3.TabIndex = 20;
+            this.DateOfBirthBox.Location = new System.Drawing.Point(90, 161);
+            this.DateOfBirthBox.Name = "DateOfBirthBox";
+            this.DateOfBirthBox.Size = new System.Drawing.Size(164, 20);
+            this.DateOfBirthBox.TabIndex = 20;
             // 
-            // textBox4
+            // JMBGBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(90, 187);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(164, 20);
-            this.textBox4.TabIndex = 21;
+            this.JMBGBox.Location = new System.Drawing.Point(90, 187);
+            this.JMBGBox.Name = "JMBGBox";
+            this.JMBGBox.Size = new System.Drawing.Size(164, 20);
+            this.JMBGBox.TabIndex = 21;
             // 
-            // textBox5
+            // ContactBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(90, 213);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(164, 20);
-            this.textBox5.TabIndex = 22;
+            this.ContactBox.Location = new System.Drawing.Point(90, 213);
+            this.ContactBox.Name = "ContactBox";
+            this.ContactBox.Size = new System.Drawing.Size(164, 20);
+            this.ContactBox.TabIndex = 22;
             // 
-            // textBox6
+            // AddressBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(90, 239);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(164, 20);
-            this.textBox6.TabIndex = 23;
+            this.AddressBox.Location = new System.Drawing.Point(90, 239);
+            this.AddressBox.Name = "AddressBox";
+            this.AddressBox.Size = new System.Drawing.Size(164, 20);
+            this.AddressBox.TabIndex = 23;
             // 
             // UpdateButton
             // 
@@ -184,23 +184,16 @@
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
-            // comboBox1
+            // PatientComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(21, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(233, 28);
-            this.comboBox1.TabIndex = 26;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(90, 265);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(164, 20);
-            this.textBox7.TabIndex = 27;
+            this.PatientComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PatientComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.PatientComboBox.FormattingEnabled = true;
+            this.PatientComboBox.Location = new System.Drawing.Point(21, 39);
+            this.PatientComboBox.Name = "PatientComboBox";
+            this.PatientComboBox.Size = new System.Drawing.Size(233, 28);
+            this.PatientComboBox.TabIndex = 26;
+            this.PatientComboBox.SelectedIndexChanged += new System.EventHandler(this.PatientComboBox_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -212,22 +205,30 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "Select patient:";
             // 
+            // CityComboBox
+            // 
+            this.CityComboBox.FormattingEnabled = true;
+            this.CityComboBox.Location = new System.Drawing.Point(90, 263);
+            this.CityComboBox.Name = "CityComboBox";
+            this.CityComboBox.Size = new System.Drawing.Size(164, 21);
+            this.CityComboBox.TabIndex = 29;
+            // 
             // PatientWindowsForm
             // 
             this.AccessibleName = "";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 335);
+            this.Controls.Add(this.CityComboBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.PatientComboBox);
             this.Controls.Add(this.UpdateButton);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AddressBox);
+            this.Controls.Add(this.ContactBox);
+            this.Controls.Add(this.JMBGBox);
+            this.Controls.Add(this.DateOfBirthBox);
+            this.Controls.Add(this.LastNameBox);
+            this.Controls.Add(this.FirstNameBox);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label7);
@@ -242,6 +243,8 @@
             this.Name = "PatientWindowsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patient";
+            this.Activated += new System.EventHandler(this.PatientWindowsForm_Activated);
+            this.Load += new System.EventHandler(this.PatientWindowsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,15 +260,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox FirstNameBox;
+        private System.Windows.Forms.TextBox LastNameBox;
+        private System.Windows.Forms.TextBox DateOfBirthBox;
+        private System.Windows.Forms.TextBox JMBGBox;
+        private System.Windows.Forms.TextBox ContactBox;
+        private System.Windows.Forms.TextBox AddressBox;
         private System.Windows.Forms.Button UpdateButton;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.ComboBox PatientComboBox;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox CityComboBox;
     }
 }

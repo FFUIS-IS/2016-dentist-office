@@ -31,8 +31,8 @@ namespace ZubarskaOrd
             
             if(User.IsAdminUser)
             {
-                administratorMenuStrip.Visible = true;
-                regularUserMenuStrip.Visible = false;
+               /* administratorMenuStrip.Visible = true;
+                regularUserMenuStrip.Visible = false;*/
 
             }
             else if(!User.IsAdminUser)
