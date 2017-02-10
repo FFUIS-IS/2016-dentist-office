@@ -29,32 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DentalOfficeForm));
-            this.PatientButton = new System.Windows.Forms.Button();
             this.administratorMenuStrip = new System.Windows.Forms.MenuStrip();
             this.administratorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfAllAdministratorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicalStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfAllMStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutButton = new System.Windows.Forms.Button();
+            this.regularUserMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.patientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patientsFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorMenuStrip.SuspendLayout();
+            this.regularUserMenuStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // PatientButton
-            // 
-            this.PatientButton.Location = new System.Drawing.Point(12, 28);
-            this.PatientButton.Name = "PatientButton";
-            this.PatientButton.Size = new System.Drawing.Size(75, 51);
-            this.PatientButton.TabIndex = 0;
-            this.PatientButton.Text = "Patient";
-            this.PatientButton.UseVisualStyleBackColor = true;
-            this.PatientButton.Click += new System.EventHandler(this.Patient_Click);
             // 
             // administratorMenuStrip
             // 
             this.administratorMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administratorsToolStripMenuItem,
             this.medicalStuffToolStripMenuItem});
-            this.administratorMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.administratorMenuStrip.Location = new System.Drawing.Point(0, 24);
             this.administratorMenuStrip.Name = "administratorMenuStrip";
             this.administratorMenuStrip.Size = new System.Drawing.Size(866, 24);
             this.administratorMenuStrip.TabIndex = 1;
@@ -99,14 +92,39 @@
             this.logoutButton.UseVisualStyleBackColor = true;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
+            // regularUserMenuStrip
+            // 
+            this.regularUserMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.patientsToolStripMenuItem});
+            this.regularUserMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.regularUserMenuStrip.Name = "regularUserMenuStrip";
+            this.regularUserMenuStrip.Size = new System.Drawing.Size(866, 24);
+            this.regularUserMenuStrip.TabIndex = 3;
+            this.regularUserMenuStrip.Text = "regularUserMenuStrip";
+            // 
+            // patientsToolStripMenuItem
+            // 
+            this.patientsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.patientsFormToolStripMenuItem});
+            this.patientsToolStripMenuItem.Name = "patientsToolStripMenuItem";
+            this.patientsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.patientsToolStripMenuItem.Text = "Patients";
+            // 
+            // patientsFormToolStripMenuItem
+            // 
+            this.patientsFormToolStripMenuItem.Name = "patientsFormToolStripMenuItem";
+            this.patientsFormToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.patientsFormToolStripMenuItem.Text = "PatientsForm";
+            this.patientsFormToolStripMenuItem.Click += new System.EventHandler(this.patientsFormToolStripMenuItem_Click);
+            // 
             // DentalOfficeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 494);
             this.Controls.Add(this.logoutButton);
-            this.Controls.Add(this.PatientButton);
             this.Controls.Add(this.administratorMenuStrip);
+            this.Controls.Add(this.regularUserMenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.administratorMenuStrip;
@@ -117,20 +135,23 @@
             this.Load += new System.EventHandler(this.DentalOfficeForm_Load);
             this.administratorMenuStrip.ResumeLayout(false);
             this.administratorMenuStrip.PerformLayout();
+            this.regularUserMenuStrip.ResumeLayout(false);
+            this.regularUserMenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button PatientButton;
         private System.Windows.Forms.MenuStrip administratorMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem administratorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOfAllAdministratorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem medicalStuffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOfAllMStuffToolStripMenuItem;
         private System.Windows.Forms.Button logoutButton;
+        private System.Windows.Forms.MenuStrip regularUserMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem patientsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patientsFormToolStripMenuItem;
     }
 }
 

@@ -24,14 +24,6 @@ namespace ZubarskaOrd
 
         }
 
-        private void Patient_Click(object sender, EventArgs e)
-        {
-            this.IsMdiContainer = true;
-            PatientWindowsForm patientForm = new PatientWindowsForm();
-            patientForm.MdiParent = this;
-            patientForm.Show();
-        }
-
         private void DentalOfficeForm_Load(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
@@ -40,12 +32,13 @@ namespace ZubarskaOrd
             if(User.IsAdminUser)
             {
                 administratorMenuStrip.Visible = true;
-                PatientButton.Visible = false;   
+                regularUserMenuStrip.Visible = false;
+
             }
             else if(!User.IsAdminUser)
             {
                 administratorMenuStrip.Visible = false;
-                PatientButton.Visible = true;
+                regularUserMenuStrip.Visible = true;
             }
 
             if (result == DialogResult.Cancel)
@@ -63,5 +56,12 @@ namespace ZubarskaOrd
             AdministratorManagingForm adminNewForm = new AdministratorManagingForm();
             adminNewForm.ShowDialog();
         }
+
+        private void patientsFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PatientWindowsForm patientForm = new PatientWindowsForm();
+            patientForm.ShowDialog();
+        }
+        
     }
 }
