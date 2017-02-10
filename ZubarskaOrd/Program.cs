@@ -17,8 +17,12 @@ namespace ZubarskaOrd
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            path = Application.ExecutablePath.Substring(0, Application.ExecutablePath.LastIndexOf('\\')+1);
+            path = Application.ExecutablePath.Substring(0, Application.ExecutablePath.LastIndexOf('\\'));
+            path = path.Substring(0, path.LastIndexOf('\\'));
+            path = path.Substring(0, path.LastIndexOf('\\'));
+            path = path.Substring(0, path.LastIndexOf('\\')+1);
             Application.Run(new DentalOfficeForm());
         }
     }
 }
+//C:\Users\hp\Desktop\Informacioni\2016-zubna-ordinacija\ZubarskaOrd\bin\Debug
