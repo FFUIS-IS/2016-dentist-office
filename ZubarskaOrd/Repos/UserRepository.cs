@@ -18,31 +18,26 @@ namespace ZubarskaOrd.Repos
         {
             string sql = "SELECT * FROM [LoginFormTable] WHERE [username] ='" + user.Username + "' AND [password] ='" + user.Password + "'";
             SqlCeCommand command = new SqlCeCommand(sql, connection);
-            SqlCeDataAdapter da = new SqlCeDataAdapter(command);
-            DataTable dt = new DataTable();
-            
-            da.Fill(dt);
-            command.Prepare();
+             command.Prepare();
             SqlCeDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                if (reader.GetInt32(4) != 0)
-                    User.IsAdminUser = true;
-                else
-                    User.IsAdminUser = false;
-            }
             if (user.Username.Length == 0)
                 throw new Exception("Username must be entered!");
             else if (user.Password.Length == 0)
                 throw new Exception("Password must be entered!");
-            else if (dt.Rows.Count == 0)
-                throw new Exception("Invalid Login please check username and password");
+            else
+            {
+                if (reader.Read())
+                {
+                    if (!(reader.IsDBNull(4)))
+                        User.IsAdminUser = true;
+                    else
+                        User.IsAdminUser = false;
+               }
+                else
+                    throw new Exception("Invalid Login please check username and password");
+            }
             
-
-            
-
             return reader.Read();
-           
         }
 
         public static void Register(User user)

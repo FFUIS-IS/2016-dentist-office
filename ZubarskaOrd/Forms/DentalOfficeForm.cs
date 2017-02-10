@@ -26,16 +26,22 @@ namespace ZubarskaOrd
 
         private void DentalOfficeForm_Load(object sender, EventArgs e)
         {
+            funkcija();
+        }
+
+        private void funkcija()
+        {
+            Opacity = 0;
             LoginForm loginForm = new LoginForm();
             DialogResult result = loginForm.ShowDialog();
-            
-            if(User.IsAdminUser)
+            Opacity = 1;
+            if (User.IsAdminUser)
             {
-               /* administratorMenuStrip.Visible = true;
-                regularUserMenuStrip.Visible = false;*/
+                 administratorMenuStrip.Visible = true;
+                 regularUserMenuStrip.Visible = false;
 
             }
-            else if(!User.IsAdminUser)
+            else if (!User.IsAdminUser)
             {
                 administratorMenuStrip.Visible = false;
                 regularUserMenuStrip.Visible = true;
@@ -43,12 +49,10 @@ namespace ZubarskaOrd
 
             if (result == DialogResult.Cancel)
                 this.Close();
-            
         }
-
         private void logoutButton_Click(object sender, EventArgs e)
         {
-
+            funkcija();
         }
 
         private void listOfAllAdministratorsToolStripMenuItem_Click(object sender, EventArgs e)

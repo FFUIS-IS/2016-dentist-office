@@ -65,5 +65,12 @@ namespace ZubarskaOrd
             DialogResult = DialogResult.Cancel;
             Close();
         }
+        
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                loginButton_Click(sender, e);
+        
+        }
     }
 }

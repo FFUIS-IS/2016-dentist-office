@@ -70,6 +70,7 @@
             this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.Tag = "2";
             this.passwordTextBox.UseSystemPasswordChar = true;
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // loginButton
             // 
