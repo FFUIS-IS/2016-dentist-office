@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddMedicalStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddMedicalStaffForm.Designer.cs">
+      <DependentUpon>AddMedicalStaffForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddPatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MedicalStuffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MedicalStuffForm.Designer.cs">
+      <DependentUpon>MedicalStuffForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TeethForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,7 @@
       <DependentUpon>TeethForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\MedicalStuff.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Forms\PatientWindowsForm.cs">
@@ -94,6 +107,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\PatientRepository.cs" />
     <Compile Include="Repos\UserRepository.cs" />
+    <EmbeddedResource Include="Forms\AddMedicalStaffForm.resx">
+      <DependentUpon>AddMedicalStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddPatientForm.resx">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MedicalStuffForm.resx">
+      <DependentUpon>MedicalStuffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PatientWindowsForm.resx">
       <DependentUpon>PatientWindowsForm.cs</DependentUpon>

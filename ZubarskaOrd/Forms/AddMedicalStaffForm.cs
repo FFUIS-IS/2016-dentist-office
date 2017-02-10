@@ -2,34 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlServerCe;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlServerCe;
 
-
-namespace ZubarskaOrd
+namespace ZubarskaOrd.Forms
 {
-    public partial class AddPatientForm : Form
+    public partial class AddMedicalStaffForm : Form
     {
         private static SqlCeConnection connection = DbConnection.Instance.Connection;
 
-        public AddPatientForm()
+        public AddMedicalStaffForm()
         {
             InitializeComponent();
+            loadcities();
         }
-
         
-
-        private void AddPatientForm_Shown(object sender, EventArgs e)
-        {
-           loadcities();
-        }
-
-       
-
         private void loadcities()
         {
             SqlCeCommand cm = new SqlCeCommand("SELECT CityName FROM Cities ORDER BY CityName ASC", connection);
@@ -39,7 +30,7 @@ namespace ZubarskaOrd
                 SqlCeDataReader dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
-                    CityNameComboBox.Items.Add(dr["CityName"]);
+                    cityNameComboBox.Items.Add(dr["CityName"]);
                 }
                 dr.Close();
                 dr.Dispose();
@@ -52,17 +43,13 @@ namespace ZubarskaOrd
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            //this code needs to be fixed too
+            // has an error, we need to fix it :D 
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Patients (FirstName, LastName, DateOfBirth, JMBG, Contact, Address, CitiesID) VALUES ('" + FirstNameBox.Text + "','" + LastNameBox.Text + "','" + DateOfBirthBox.Text + "','" + JMBGBox.Text + "','" + ContactBox.Text + "','" + AddressBox.Text + "','1')";
+            cmd.CommandText = "INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JMBG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + dobTextBox.Text + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','1')";
             cmd.ExecuteNonQuery();
-            
+
             MessageBox.Show("Insert is updated successfully!");
-           
-
         }
-
-
     }
 }

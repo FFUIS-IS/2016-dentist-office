@@ -81,6 +81,7 @@
             this.listOfAllMStuffToolStripMenuItem.Name = "listOfAllMStuffToolStripMenuItem";
             this.listOfAllMStuffToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.listOfAllMStuffToolStripMenuItem.Text = "List Of All M.Stuff";
+            this.listOfAllMStuffToolStripMenuItem.Click += new System.EventHandler(this.listOfAllMStuffToolStripMenuItem_Click);
             // 
             // logoutButton
             // 

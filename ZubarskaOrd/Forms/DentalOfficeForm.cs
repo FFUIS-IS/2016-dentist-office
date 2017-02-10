@@ -68,6 +68,11 @@ namespace ZubarskaOrd
             PatientWindowsForm patientForm = new PatientWindowsForm();
             patientForm.ShowDialog();
         }
-        
+
+        private void listOfAllMStuffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MedicalStuffForm medicalSForm = new MedicalStuffForm();
+            medicalSForm.ShowDialog();
+        }
     }
 }

@@ -29,22 +29,19 @@
         private void InitializeComponent()
         {
             this.administratorsListView = new System.Windows.Forms.ListView();
-            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.refreshAdminListViewButton = new System.Windows.Forms.Button();
             this.descriptionLabel1 = new System.Windows.Forms.Label();
             this.descriptionLabel2 = new System.Windows.Forms.Label();
             this.descriptionLabel3 = new System.Windows.Forms.Label();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.newAdministratorButton = new System.Windows.Forms.Button();
+            this.saveAdministratorButton = new System.Windows.Forms.Button();
+            this.addNewAdministratorButton = new System.Windows.Forms.Button();
+            this.deleteAdministratorButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // administratorsListView
             // 
-            this.administratorsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.FirstName,
-            this.LastName});
             this.administratorsListView.Location = new System.Drawing.Point(12, 12);
             this.administratorsListView.Name = "administratorsListView";
             this.administratorsListView.Size = new System.Drawing.Size(189, 258);
@@ -56,7 +53,7 @@
             this.refreshAdminListViewButton.Location = new System.Drawing.Point(12, 291);
             this.refreshAdminListViewButton.Name = "refreshAdminListViewButton";
             this.refreshAdminListViewButton.Size = new System.Drawing.Size(92, 23);
-            this.refreshAdminListViewButton.TabIndex = 1;
+            this.refreshAdminListViewButton.TabIndex = 4;
             this.refreshAdminListViewButton.Text = "Refresh List";
             this.refreshAdminListViewButton.UseVisualStyleBackColor = true;
             this.refreshAdminListViewButton.Click += new System.EventHandler(this.refreshAdminListViewButton_Click);
@@ -70,6 +67,7 @@
             this.descriptionLabel1.Size = new System.Drawing.Size(128, 19);
             this.descriptionLabel1.TabIndex = 2;
             this.descriptionLabel1.Text = "New Administrator:";
+            this.descriptionLabel1.Visible = false;
             // 
             // descriptionLabel2
             // 
@@ -80,6 +78,7 @@
             this.descriptionLabel2.Size = new System.Drawing.Size(72, 19);
             this.descriptionLabel2.TabIndex = 3;
             this.descriptionLabel2.Text = "FirstName";
+            this.descriptionLabel2.Visible = false;
             // 
             // descriptionLabel3
             // 
@@ -90,6 +89,7 @@
             this.descriptionLabel3.Size = new System.Drawing.Size(71, 19);
             this.descriptionLabel3.TabIndex = 4;
             this.descriptionLabel3.Text = "LastName";
+            this.descriptionLabel3.Visible = false;
             // 
             // firstNameTextBox
             // 
@@ -97,6 +97,7 @@
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(198, 20);
             this.firstNameTextBox.TabIndex = 1;
+            this.firstNameTextBox.Visible = false;
             // 
             // lastNameTextBox
             // 
@@ -104,23 +105,47 @@
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(198, 20);
             this.lastNameTextBox.TabIndex = 2;
+            this.lastNameTextBox.Visible = false;
             // 
-            // newAdministratorButton
+            // saveAdministratorButton
             // 
-            this.newAdministratorButton.Location = new System.Drawing.Point(110, 291);
-            this.newAdministratorButton.Name = "newAdministratorButton";
-            this.newAdministratorButton.Size = new System.Drawing.Size(91, 23);
-            this.newAdministratorButton.TabIndex = 5;
-            this.newAdministratorButton.Text = "New Administrator";
-            this.newAdministratorButton.UseVisualStyleBackColor = true;
-            this.newAdministratorButton.Click += new System.EventHandler(this.newAdministratorButton_Click);
+            this.saveAdministratorButton.Location = new System.Drawing.Point(412, 134);
+            this.saveAdministratorButton.Name = "saveAdministratorButton";
+            this.saveAdministratorButton.Size = new System.Drawing.Size(91, 23);
+            this.saveAdministratorButton.TabIndex = 3;
+            this.saveAdministratorButton.Text = "Save";
+            this.saveAdministratorButton.UseVisualStyleBackColor = true;
+            this.saveAdministratorButton.Visible = false;
+            this.saveAdministratorButton.Click += new System.EventHandler(this.saveAdministratorButton_Click);
+            // 
+            // addNewAdministratorButton
+            // 
+            this.addNewAdministratorButton.Location = new System.Drawing.Point(111, 291);
+            this.addNewAdministratorButton.Name = "addNewAdministratorButton";
+            this.addNewAdministratorButton.Size = new System.Drawing.Size(90, 23);
+            this.addNewAdministratorButton.TabIndex = 5;
+            this.addNewAdministratorButton.Text = "Add";
+            this.addNewAdministratorButton.UseVisualStyleBackColor = true;
+            this.addNewAdministratorButton.Click += new System.EventHandler(this.addNewAdministratorButton_Click);
+            // 
+            // deleteAdministratorButton
+            // 
+            this.deleteAdministratorButton.Location = new System.Drawing.Point(428, 297);
+            this.deleteAdministratorButton.Name = "deleteAdministratorButton";
+            this.deleteAdministratorButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteAdministratorButton.TabIndex = 6;
+            this.deleteAdministratorButton.Text = "Delete";
+            this.deleteAdministratorButton.UseVisualStyleBackColor = true;
+            this.deleteAdministratorButton.Click += new System.EventHandler(this.deleteAdministratorButton_Click);
             // 
             // AdministratorManagingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 332);
-            this.Controls.Add(this.newAdministratorButton);
+            this.Controls.Add(this.deleteAdministratorButton);
+            this.Controls.Add(this.addNewAdministratorButton);
+            this.Controls.Add(this.saveAdministratorButton);
             this.Controls.Add(this.lastNameTextBox);
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.descriptionLabel3);
@@ -147,8 +172,8 @@
         private System.Windows.Forms.Label descriptionLabel3;
         private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.TextBox lastNameTextBox;
-        private System.Windows.Forms.ColumnHeader FirstName;
-        private System.Windows.Forms.ColumnHeader LastName;
-        private System.Windows.Forms.Button newAdministratorButton;
+        private System.Windows.Forms.Button saveAdministratorButton;
+        private System.Windows.Forms.Button addNewAdministratorButton;
+        private System.Windows.Forms.Button deleteAdministratorButton;
     }
 }

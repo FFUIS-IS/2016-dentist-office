@@ -80,8 +80,6 @@ namespace ZubarskaOrd
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
-            connection.Open();
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select Id from Cities where CityName ='" + CityComboBox.SelectedItem.ToString() + "';";
@@ -89,8 +87,7 @@ namespace ZubarskaOrd
             reader.Read();
             cmd.CommandText = "update Patients set FirstName = '" + FirstNameBox.Text + "',LastName='" + LastNameBox.Text + "',DateOfBirth= '" + DateOfBirthBox.Text + "', JMBG = '" + JMBGBox.Text + "', Contact = '" + ContactBox.Text + "', Address = '" + AddressBox.Text + "', CitiesID = " + reader.GetInt32(0) + " where FirstName='" + FirstNameBox.Text + "'";
             cmd.ExecuteNonQuery();
-
-            connection.Close();
+            
             fillingPatientsComboBox();
             MessageBox.Show("Record is updated successfully!");
             clearTextBox();
@@ -105,9 +102,7 @@ namespace ZubarskaOrd
 
         private void fillingCityComboBox()
         {
-            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
             CityComboBox.Items.Clear();
-            connection.Open();
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT * FROM Cities";
@@ -120,15 +115,12 @@ namespace ZubarskaOrd
                 CityComboBox.Items.Add(dr["CityName"].ToString());
 
             }
-            connection.Close();
 
         }
 
         private void fillingPatientsComboBox()
         {
-            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
             PatientComboBox.Items.Clear();
-            connection.Open();
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT * FROM Patients";
@@ -141,14 +133,11 @@ namespace ZubarskaOrd
                 PatientComboBox.Items.Add(dr["Id"].ToString()+ " " + dr["FirstName"].ToString() + " " + dr["LastName"].ToString());
 
             }
-            connection.Close();
 
         }
 
         private void PatientComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCeConnection connection = new SqlCeConnection("Data Source=" + Program.path + "Database.sdf; Password=database32");
-            connection.Open();
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             string full = PatientComboBox.SelectedItem.ToString();
@@ -173,8 +162,7 @@ namespace ZubarskaOrd
 
 
             }
-
-            connection.Close();
+            
 
         }
 
