@@ -71,6 +71,7 @@
             this.MedicalStaffNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceDurationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.makeReservationButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -526,13 +527,26 @@
             this.serviceDurationColumn.Name = "serviceDurationColumn";
             this.serviceDurationColumn.ReadOnly = true;
             // 
+            // makeReservationButton
+            // 
+            this.makeReservationButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.makeReservationButton.Location = new System.Drawing.Point(0, 411);
+            this.makeReservationButton.Name = "makeReservationButton";
+            this.makeReservationButton.Size = new System.Drawing.Size(450, 40);
+            this.makeReservationButton.TabIndex = 4;
+            this.makeReservationButton.Text = "New Intervention";
+            this.makeReservationButton.UseVisualStyleBackColor = true;
+            this.makeReservationButton.Click += new System.EventHandler(this.makeReservationButton_Click);
+            // 
             // TeethForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 451);
+            this.Controls.Add(this.makeReservationButton);
             this.Controls.Add(this.teethInfoDataGrid);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TeethForm";
             this.Text = "TeethForm";
@@ -590,5 +604,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MedicalStaffNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn serviceTypeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn serviceDurationColumn;
+        private System.Windows.Forms.Button makeReservationButton;
     }
 }

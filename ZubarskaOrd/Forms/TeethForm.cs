@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+/*Reyervacija Zaric >D 
+nova forma, datagrid, bojenje celija u yavisnosti od dostupnosti termina*/
+
 
 namespace ZubarskaOrd.Forms
 {
@@ -110,7 +113,15 @@ namespace ZubarskaOrd.Forms
                 teethInfoDataGrid.Rows.Add(row);
               
                 teethInfoDataGrid.AllowUserToAddRows = false;
+                teethInfoDataGrid[0, 0].Style.BackColor = Color.Red;
+                
             }
+        }
+
+        private void makeReservationButton_Click(object sender, EventArgs e)
+        {
+            ReservationForPatientForm reservationForm = new ReservationForPatientForm();
+            reservationForm.ShowDialog();
         }
     }
 }
