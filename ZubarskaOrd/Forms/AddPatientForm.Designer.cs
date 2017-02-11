@@ -39,11 +39,11 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.FirstNameBox = new System.Windows.Forms.TextBox();
             this.LastNameBox = new System.Windows.Forms.TextBox();
-            this.DateOfBirthBox = new System.Windows.Forms.TextBox();
             this.JMBGBox = new System.Windows.Forms.TextBox();
             this.ContactBox = new System.Windows.Forms.TextBox();
             this.AddressBox = new System.Windows.Forms.TextBox();
             this.CityNameComboBox = new System.Windows.Forms.ComboBox();
+            this.dobTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -133,13 +133,6 @@
             this.LastNameBox.Size = new System.Drawing.Size(160, 20);
             this.LastNameBox.TabIndex = 2;
             // 
-            // DateOfBirthBox
-            // 
-            this.DateOfBirthBox.Location = new System.Drawing.Point(96, 83);
-            this.DateOfBirthBox.Name = "DateOfBirthBox";
-            this.DateOfBirthBox.Size = new System.Drawing.Size(160, 20);
-            this.DateOfBirthBox.TabIndex = 3;
-            // 
             // JMBGBox
             // 
             this.JMBGBox.Location = new System.Drawing.Point(96, 112);
@@ -170,16 +163,23 @@
             this.CityNameComboBox.Size = new System.Drawing.Size(160, 21);
             this.CityNameComboBox.TabIndex = 7;
             // 
+            // dobTimePicker
+            // 
+            this.dobTimePicker.Location = new System.Drawing.Point(96, 84);
+            this.dobTimePicker.Name = "dobTimePicker";
+            this.dobTimePicker.Size = new System.Drawing.Size(160, 20);
+            this.dobTimePicker.TabIndex = 9;
+            // 
             // AddPatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 265);
+            this.Controls.Add(this.dobTimePicker);
             this.Controls.Add(this.CityNameComboBox);
             this.Controls.Add(this.AddressBox);
             this.Controls.Add(this.ContactBox);
             this.Controls.Add(this.JMBGBox);
-            this.Controls.Add(this.DateOfBirthBox);
             this.Controls.Add(this.LastNameBox);
             this.Controls.Add(this.FirstNameBox);
             this.Controls.Add(this.SaveButton);
@@ -216,10 +216,10 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.TextBox FirstNameBox;
         private System.Windows.Forms.TextBox LastNameBox;
-        private System.Windows.Forms.TextBox DateOfBirthBox;
         private System.Windows.Forms.TextBox JMBGBox;
         private System.Windows.Forms.TextBox ContactBox;
         private System.Windows.Forms.TextBox AddressBox;
         private System.Windows.Forms.ComboBox CityNameComboBox;
+        private System.Windows.Forms.DateTimePicker dobTimePicker;
     }
 }

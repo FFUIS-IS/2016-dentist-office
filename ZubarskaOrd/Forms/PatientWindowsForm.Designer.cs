@@ -48,6 +48,7 @@
             this.PatientComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.CityComboBox = new System.Windows.Forms.ComboBox();
+            this.recordButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -177,9 +178,9 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(90, 294);
+            this.UpdateButton.Location = new System.Drawing.Point(12, 294);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(164, 32);
+            this.UpdateButton.Size = new System.Drawing.Size(115, 29);
             this.UpdateButton.TabIndex = 11;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
@@ -214,12 +215,23 @@
             this.CityComboBox.Size = new System.Drawing.Size(164, 21);
             this.CityComboBox.TabIndex = 10;
             // 
+            // recordButton
+            // 
+            this.recordButton.Location = new System.Drawing.Point(143, 294);
+            this.recordButton.Name = "recordButton";
+            this.recordButton.Size = new System.Drawing.Size(111, 29);
+            this.recordButton.TabIndex = 29;
+            this.recordButton.Text = "Dental record";
+            this.recordButton.UseVisualStyleBackColor = true;
+            this.recordButton.Click += new System.EventHandler(this.recordButton_Click);
+            // 
             // PatientWindowsForm
             // 
             this.AccessibleName = "";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 335);
+            this.Controls.Add(this.recordButton);
             this.Controls.Add(this.CityComboBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.PatientComboBox);
@@ -274,5 +286,6 @@
         private System.Windows.Forms.ComboBox PatientComboBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox CityComboBox;
+        private System.Windows.Forms.Button recordButton;
     }
 }

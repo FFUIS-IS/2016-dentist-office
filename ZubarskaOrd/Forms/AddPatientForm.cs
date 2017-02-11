@@ -54,7 +54,7 @@ namespace ZubarskaOrd
         {
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Patients (FirstName, LastName, DateOfBirth, JMBG, Contact, Address, CitiesID) VALUES ('" + FirstNameBox.Text + "','" + LastNameBox.Text + "','" + DateOfBirthBox.Text + "','" + JMBGBox.Text + "','" + ContactBox.Text + "','" + AddressBox.Text + "','1')";
+            cmd.CommandText = "INSERT INTO Patients (FirstName, LastName, DateOfBirth, JMBG, Contact, Address, CitiesID) VALUES ('" + FirstNameBox.Text + "','" + LastNameBox.Text + "','" + convert(dobTimePicker.Value.Date) + "','" + JMBGBox.Text + "','" + ContactBox.Text + "','" + AddressBox.Text + "','1')";
             cmd.ExecuteNonQuery();
             
             MessageBox.Show("Insert is updated successfully!");
@@ -62,7 +62,11 @@ namespace ZubarskaOrd
 
 
         }
-
-
+        private string convert(DateTime time)
+        {
+            string month = (time.Month < 10) ? ("0" + time.Month) : ("" + time.Month);
+            string day = (time.Day < 10) ? ("0" + time.Day) : ("" + time.Day);
+            return "" + time.Year + "-" + month + "-" + day;
+        }
     }
 }

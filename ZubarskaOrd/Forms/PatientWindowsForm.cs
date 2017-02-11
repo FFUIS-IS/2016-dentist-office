@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlServerCe;
-
+using ZubarskaOrd.Forms;
 
 namespace ZubarskaOrd
 {
@@ -171,6 +171,15 @@ namespace ZubarskaOrd
 
             fillingPatientsComboBox();
             fillingCityComboBox();
+        }
+
+        private void recordButton_Click(object sender, EventArgs e)
+        {
+            if (PatientComboBox.SelectedIndex != -1)
+            {
+                TeethForm teethForm = new TeethForm(PatientComboBox.SelectedItem.ToString().Substring(0, PatientComboBox.SelectedItem.ToString().IndexOf(' ')));
+                teethForm.ShowDialog();
+            }
         }
     }
 }
