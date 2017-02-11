@@ -90,13 +90,9 @@ namespace ZubarskaOrd.Forms
 
         private void deleteMStuffButton_Click(object sender, EventArgs e)
         {
-            /*
-             * Not working properly :/
-             * 
-            MessageBox.Show("YOLO");
-            string full = medicalStuffComboBox.SelectedItem.ToString(); 
+            string full = medicalStuffComboBox.SelectedItem.ToString();
             DialogResult result = MessageBox.Show("Do you want to delete him?", "Delete?", MessageBoxButtons.OKCancel);
-            MessageBox.Show("YOLOlo");
+  
             if (result == DialogResult.OK)
             {
                 SqlCeCommand cmd = connection.CreateCommand();
@@ -104,13 +100,14 @@ namespace ZubarskaOrd.Forms
                 cmd.CommandText = "DELETE FROM MedicalStaff where Id =" + Int32.Parse(full.Substring(0, full.IndexOf(' '))) + ";";
 
                 cmd.ExecuteNonQuery();
-
+                MessageBox.Show("Successfully deleted Medical Staff!");
                 fillinMedicalStaffComboBox();
                 clearTextBox();
+                
 
             }
             else { }
-             */
+          
 
         }
 

@@ -123,26 +123,25 @@ namespace ZubarskaOrd.Forms
 
         private void deleteAdministratorButton_Click(object sender, EventArgs e)
         {
-
-            // not working properly, nedd to be fixed :D 
-            /*
-            string full = administratorsListView.SelectedItems.ToString();
+            
             DialogResult result = MessageBox.Show("Do you want to delete him?", "Delete?", MessageBoxButtons.OKCancel);
 
             if (result == DialogResult.OK)
             {
                 SqlCeCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "DELETE FROM Administrator where Id = " + int.Parse(full.Substring(0, full.IndexOf(' '))) + ";";
+                cmd.CommandText = "DELETE FROM Administrator where Id = " + int.Parse(administratorsListView.SelectedItems[0].Text) + ";";
 
                 cmd.ExecuteNonQuery();
-                
+                refreshingListView();
+
+
 
             }
             else
             {
 
-            }*/
+            }
         }
     }
 }

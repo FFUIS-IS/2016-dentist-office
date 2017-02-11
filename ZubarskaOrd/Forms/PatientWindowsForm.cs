@@ -49,7 +49,7 @@ namespace ZubarskaOrd
 
         private void DeleteButton_Click_1(object sender, EventArgs e)
         {
-             string full = PatientComboBox.SelectedItem.ToString();
+            string full = PatientComboBox.SelectedItem.ToString();
             DialogResult result = MessageBox.Show("Do you want to delete him?", "Delete?", MessageBoxButtons.OKCancel);
 
             if (result == DialogResult.OK)
