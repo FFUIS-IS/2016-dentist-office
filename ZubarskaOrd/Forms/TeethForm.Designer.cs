@@ -66,11 +66,17 @@
             this.DR6 = new System.Windows.Forms.Button();
             this.DR7 = new System.Windows.Forms.Button();
             this.DR8 = new System.Windows.Forms.Button();
+            this.teethInfoDataGrid = new System.Windows.Forms.DataGridView();
+            this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MedicalStaffNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDurationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teethInfoDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -445,11 +451,47 @@
             this.DR8.Text = "8";
             this.DR8.UseVisualStyleBackColor = true;
             // 
+            // teethInfoDataGrid
+            // 
+            this.teethInfoDataGrid.AllowUserToAddRows = false;
+            this.teethInfoDataGrid.AllowUserToDeleteRows = false;
+            this.teethInfoDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.teethInfoDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dateColumn,
+            this.MedicalStaffNameColumn,
+            this.serviceTypeColumn,
+            this.serviceDurationColumn});
+            this.teethInfoDataGrid.Location = new System.Drawing.Point(7, 188);
+            this.teethInfoDataGrid.Name = "teethInfoDataGrid";
+            this.teethInfoDataGrid.Size = new System.Drawing.Size(423, 217);
+            this.teethInfoDataGrid.TabIndex = 3;
+            // 
+            // dateColumn
+            // 
+            this.dateColumn.HeaderText = "Date of intervention";
+            this.dateColumn.Name = "dateColumn";
+            // 
+            // MedicalStaffNameColumn
+            // 
+            this.MedicalStaffNameColumn.HeaderText = "Name of Medical Staff";
+            this.MedicalStaffNameColumn.Name = "MedicalStaffNameColumn";
+            // 
+            // serviceTypeColumn
+            // 
+            this.serviceTypeColumn.HeaderText = "Type of intervention";
+            this.serviceTypeColumn.Name = "serviceTypeColumn";
+            // 
+            // serviceDurationColumn
+            // 
+            this.serviceDurationColumn.HeaderText = "Expected duration of service";
+            this.serviceDurationColumn.Name = "serviceDurationColumn";
+            // 
             // TeethForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 442);
+            this.ClientSize = new System.Drawing.Size(450, 451);
+            this.Controls.Add(this.teethInfoDataGrid);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TeethForm";
@@ -460,6 +502,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.teethInfoDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -502,5 +545,10 @@
         private System.Windows.Forms.Button DR6;
         private System.Windows.Forms.Button DR7;
         private System.Windows.Forms.Button DR8;
+        private System.Windows.Forms.DataGridView teethInfoDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MedicalStaffNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceTypeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDurationColumn;
     }
 }

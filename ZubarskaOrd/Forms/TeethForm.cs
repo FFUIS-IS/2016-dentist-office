@@ -20,7 +20,6 @@ namespace ZubarskaOrd.Forms
         int patient;
         public TeethForm(string patientID)
         {
-            Console.Out.WriteLine(patientID);
             patient = int.Parse(patientID);
             InitializeComponent();
         }
@@ -28,8 +27,8 @@ namespace ZubarskaOrd.Forms
         private void TeethForm_Load(object sender, EventArgs e)
         {
             UpdateButtons();
-            
-         }
+
+        }
 
         private void UpdateButtons()
         {
@@ -45,14 +44,10 @@ namespace ZubarskaOrd.Forms
         }
         private void setButton(Button button)
         {
-            Console.Out.WriteLine("SELECT " + button.Name + " FROM Patients WHERE ID = "
-                + patient + ";");
             try
             {
                 command.CommandText = "SELECT " + button.Name + " FROM Patients WHERE ID = "
                 + patient + ";";
-                Console.Out.WriteLine("SELECT " + button.Name + " FROM Patients WHERE ID = "
-                    + patient + ";");
                 reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -70,11 +65,51 @@ namespace ZubarskaOrd.Forms
                     }
                 }
             }
-            catch(SqlCeException ee)
+            catch (SqlCeException ee)
             {
                 MessageBox.Show(ee.ToString());
             }
         }
+        private void ButtonClick(object sender, EventArgs e)
+        {
+            SqlCeCommand ReserveCommand = new SqlCeCommand("", connection);
+            SqlCeDataReader ReserveReader;
+            string teethName = ((Button)sender).Name + patient;
+            command.CommandText = "SELECT * FROM Interventions_Teeth WHERE TeethID = '" + teethName + "';";
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                ReserveCommand.CommandText = "SELECT * FROM Intervetions WHERE Id = " + reader.GetInt32(1) + ";";
+                ReserveReader = ReserveCommand.ExecuteReader();
+                ReserveReader.Read();
+                DateTime dateOfIntervention = ReserveReader.GetDateTime(1);
+                ReserveCommand.CommandText = "SELECT * FROM MedicalStaff WHERE Id = " + ReserveReader.GetInt32(2) + ";";
+                ReserveReader = ReserveCommand.ExecuteReader();
+                ReserveReader.Read();
+                string medicalStaffName = ReserveReader.GetString(1) + " " + ReserveReader.GetString(2);
+                ReserveCommand.CommandText = "SELECT * FROM Items WHERE InterventionsID = " + reader.GetInt32(1) + ";";
+                ReserveReader = ReserveCommand.ExecuteReader();
+                ReserveReader.Read();
 
+                ReserveCommand.CommandText = "SELECT * FROM Services WHERE Id = " + ReserveReader.GetInt32(3) + ";";
+                ReserveReader = ReserveCommand.ExecuteReader();
+                ReserveReader.Read();
+                string serviceName = ReserveReader.GetString(1);
+                int serviceDuration = ReserveReader.GetInt32(2);
+                DataGridViewRow row;
+                teethInfoDataGrid.AllowUserToAddRows = true;
+                row = (DataGridViewRow)teethInfoDataGrid.Rows[0].Clone();
+                    row = (DataGridViewRow)teethInfoDataGrid.Rows[0].Clone();
+                row.Cells[0].Value = "" + dateOfIntervention;
+                row.Cells[1].Value = medicalStaffName ;
+                row.Cells[2].Value = serviceName;
+                row.Cells[3].Value = serviceDuration;
+
+
+                teethInfoDataGrid.Rows.Add(row);
+              
+                teethInfoDataGrid.AllowUserToAddRows = false;
+            }
+        }
     }
 }
