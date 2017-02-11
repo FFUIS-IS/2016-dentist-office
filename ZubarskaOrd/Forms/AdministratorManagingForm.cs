@@ -15,13 +15,13 @@ namespace ZubarskaOrd.Forms
     public partial class AdministratorManagingForm : Form
     {
         private static SqlCeConnection connection = DbConnection.Instance.Connection;
-       // private ListViewColumnSorter lvwColumnSorter;
         ColumnHeader columnheader;
 
         public AdministratorManagingForm()
         {
             InitializeComponent();
             AdministratorListViewLoad();
+            refreshingListView();
         }
 
         public void AdministratorListViewLoad()
@@ -45,10 +45,10 @@ namespace ZubarskaOrd.Forms
             }
         }
 
-        private void refreshAdminListViewButton_Click(object sender, EventArgs e)
+        private void refreshingListView()
         {
             administratorsListView.Items.Clear();
-            SqlCeCommand command = new SqlCeCommand("SELECT * FROM Administrator ORDER BY FirstName", connection);
+            SqlCeCommand command = new SqlCeCommand("SELECT * FROM Administrator ORDER BY Id", connection);
 
             try
             {
@@ -74,14 +74,29 @@ namespace ZubarskaOrd.Forms
             }
         }
 
+        private void refreshAdminListViewButton_Click(object sender, EventArgs e)
+        {
+            refreshingListView();
+        }
+
         private void saveAdministratorButton_Click(object sender, EventArgs e)
         {
 
             SqlCeCommand command = new SqlCeCommand("INSERT INTO Administrator(FirstName, LastName) VALUES ('" + firstNameTextBox.Text +  "','" + lastNameTextBox.Text + "')", connection);
             command.ExecuteReader();
+            MessageBox.Show("New Admin successfully added to database!");
+            resetingTextBoxes();
+            hidingAddAdminOptions();
         }
 
-        private void addNewAdministratorButton_Click(object sender, EventArgs e)
+        private void resetingTextBoxes()
+        {
+            firstNameTextBox.Text = "";
+            lastNameTextBox.Text = "";
+            firstNameTextBox.Focus();
+        }
+
+        private void showingAddAdminOptions()
         {
             descriptionLabel1.Visible = true;
             descriptionLabel2.Visible = true;
@@ -89,6 +104,21 @@ namespace ZubarskaOrd.Forms
             firstNameTextBox.Visible = true;
             lastNameTextBox.Visible = true;
             saveAdministratorButton.Visible = true;
+        }
+        
+        private void hidingAddAdminOptions()
+        {
+            descriptionLabel1.Visible = false;
+            descriptionLabel2.Visible = false;
+            descriptionLabel3.Visible = false;
+            firstNameTextBox.Visible = false;
+            lastNameTextBox.Visible = false;
+            saveAdministratorButton.Visible = false;
+        }
+
+        private void addNewAdministratorButton_Click(object sender, EventArgs e)
+        {
+            showingAddAdminOptions();
         }
 
         private void deleteAdministratorButton_Click(object sender, EventArgs e)

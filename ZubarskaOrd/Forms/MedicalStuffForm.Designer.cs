@@ -59,6 +59,7 @@
             this.medicalStuffComboBox.Name = "medicalStuffComboBox";
             this.medicalStuffComboBox.Size = new System.Drawing.Size(268, 27);
             this.medicalStuffComboBox.TabIndex = 0;
+            this.medicalStuffComboBox.SelectedIndexChanged += new System.EventHandler(this.medicalStuffComboBox_SelectedIndexChanged_1);
             // 
             // descriptionLabel1
             // 
@@ -88,6 +89,7 @@
             this.deleteMStuffButton.TabIndex = 3;
             this.deleteMStuffButton.Text = "Delete";
             this.deleteMStuffButton.UseVisualStyleBackColor = true;
+            this.deleteMStuffButton.Click += new System.EventHandler(this.deleteMStuffButton_Click);
             // 
             // descriptionLabel8
             // 
@@ -210,6 +212,7 @@
             this.UpdateButton.TabIndex = 37;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click_1);
             // 
             // MedicalStuffForm
             // 

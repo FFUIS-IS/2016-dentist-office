@@ -49,6 +49,7 @@ namespace ZubarskaOrd.Forms
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Insert is updated successfully!");
+            this.Close();
         }
     }
 }
