@@ -151,6 +151,7 @@
             this.Name = "DentalOfficeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dental Office";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DentalOfficeForm_FormClosing);
             this.Load += new System.EventHandler(this.DentalOfficeForm_Load);
             this.administratorMenuStrip.ResumeLayout(false);
             this.administratorMenuStrip.PerformLayout();

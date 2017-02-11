@@ -80,5 +80,10 @@ namespace ZubarskaOrd
             CitiesForm cform = new CitiesForm();
             cform.ShowDialog();
         }
+
+        private void DentalOfficeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DbConnection.Instance.Connection.Close();
+        }
     }
 }
