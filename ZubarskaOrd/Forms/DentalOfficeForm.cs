@@ -74,5 +74,11 @@ namespace ZubarskaOrd
             MedicalStuffForm medicalSForm = new MedicalStuffForm();
             medicalSForm.ShowDialog();
         }
+
+        private void addNewCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CitiesForm cform = new CitiesForm();
+            cform.ShowDialog();
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPatientForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -110,10 +111,10 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(92, 225);
+            this.SaveButton.Location = new System.Drawing.Point(131, 225);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 28);
-            this.SaveButton.TabIndex = 7;
+            this.SaveButton.Size = new System.Drawing.Size(90, 28);
+            this.SaveButton.TabIndex = 8;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -123,42 +124,42 @@
             this.FirstNameBox.Location = new System.Drawing.Point(96, 25);
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(160, 20);
-            this.FirstNameBox.TabIndex = 9;
+            this.FirstNameBox.TabIndex = 1;
             // 
             // LastNameBox
             // 
             this.LastNameBox.Location = new System.Drawing.Point(96, 54);
             this.LastNameBox.Name = "LastNameBox";
             this.LastNameBox.Size = new System.Drawing.Size(160, 20);
-            this.LastNameBox.TabIndex = 10;
+            this.LastNameBox.TabIndex = 2;
             // 
             // DateOfBirthBox
             // 
             this.DateOfBirthBox.Location = new System.Drawing.Point(96, 83);
             this.DateOfBirthBox.Name = "DateOfBirthBox";
             this.DateOfBirthBox.Size = new System.Drawing.Size(160, 20);
-            this.DateOfBirthBox.TabIndex = 11;
+            this.DateOfBirthBox.TabIndex = 3;
             // 
             // JMBGBox
             // 
             this.JMBGBox.Location = new System.Drawing.Point(96, 112);
             this.JMBGBox.Name = "JMBGBox";
             this.JMBGBox.Size = new System.Drawing.Size(160, 20);
-            this.JMBGBox.TabIndex = 12;
+            this.JMBGBox.TabIndex = 4;
             // 
             // ContactBox
             // 
             this.ContactBox.Location = new System.Drawing.Point(96, 141);
             this.ContactBox.Name = "ContactBox";
             this.ContactBox.Size = new System.Drawing.Size(160, 20);
-            this.ContactBox.TabIndex = 13;
+            this.ContactBox.TabIndex = 5;
             // 
             // AddressBox
             // 
             this.AddressBox.Location = new System.Drawing.Point(96, 170);
             this.AddressBox.Name = "AddressBox";
             this.AddressBox.Size = new System.Drawing.Size(160, 20);
-            this.AddressBox.TabIndex = 14;
+            this.AddressBox.TabIndex = 6;
             // 
             // CityNameComboBox
             // 
@@ -167,7 +168,7 @@
             this.CityNameComboBox.Location = new System.Drawing.Point(96, 198);
             this.CityNameComboBox.Name = "CityNameComboBox";
             this.CityNameComboBox.Size = new System.Drawing.Size(160, 21);
-            this.CityNameComboBox.TabIndex = 15;
+            this.CityNameComboBox.TabIndex = 7;
             // 
             // AddPatientForm
             // 
@@ -189,7 +190,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(290, 304);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(290, 304);
             this.Name = "AddPatientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

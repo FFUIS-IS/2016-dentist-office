@@ -38,6 +38,8 @@
             this.regularUserMenuStrip = new System.Windows.Forms.MenuStrip();
             this.patientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patientsFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.citiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorMenuStrip.SuspendLayout();
             this.regularUserMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +48,8 @@
             // 
             this.administratorMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administratorsToolStripMenuItem,
-            this.medicalStuffToolStripMenuItem});
+            this.medicalStuffToolStripMenuItem,
+            this.citiesToolStripMenuItem});
             this.administratorMenuStrip.Location = new System.Drawing.Point(0, 24);
             this.administratorMenuStrip.Name = "administratorMenuStrip";
             this.administratorMenuStrip.Size = new System.Drawing.Size(866, 24);
@@ -118,6 +121,21 @@
             this.patientsFormToolStripMenuItem.Text = "PatientsForm";
             this.patientsFormToolStripMenuItem.Click += new System.EventHandler(this.patientsFormToolStripMenuItem_Click);
             // 
+            // citiesToolStripMenuItem
+            // 
+            this.citiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewCToolStripMenuItem});
+            this.citiesToolStripMenuItem.Name = "citiesToolStripMenuItem";
+            this.citiesToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.citiesToolStripMenuItem.Text = "Cities";
+            // 
+            // addNewCToolStripMenuItem
+            // 
+            this.addNewCToolStripMenuItem.Name = "addNewCToolStripMenuItem";
+            this.addNewCToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.addNewCToolStripMenuItem.Text = "List Of All Cities";
+            this.addNewCToolStripMenuItem.Click += new System.EventHandler(this.addNewCToolStripMenuItem_Click);
+            // 
             // DentalOfficeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +171,8 @@
         private System.Windows.Forms.MenuStrip regularUserMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem patientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patientsFormToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem citiesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewCToolStripMenuItem;
     }
 }
 

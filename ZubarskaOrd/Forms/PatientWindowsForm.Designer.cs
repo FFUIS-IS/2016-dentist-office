@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientWindowsForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -117,7 +118,7 @@
             this.AddButton.Location = new System.Drawing.Point(21, 73);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(106, 28);
-            this.AddButton.TabIndex = 15;
+            this.AddButton.TabIndex = 2;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click_1);
@@ -127,7 +128,7 @@
             this.DeleteButton.Location = new System.Drawing.Point(133, 73);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(121, 28);
-            this.DeleteButton.TabIndex = 16;
+            this.DeleteButton.TabIndex = 3;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click_1);
@@ -137,49 +138,49 @@
             this.FirstNameBox.Location = new System.Drawing.Point(90, 107);
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(164, 20);
-            this.FirstNameBox.TabIndex = 18;
+            this.FirstNameBox.TabIndex = 4;
             // 
             // LastNameBox
             // 
             this.LastNameBox.Location = new System.Drawing.Point(90, 135);
             this.LastNameBox.Name = "LastNameBox";
             this.LastNameBox.Size = new System.Drawing.Size(164, 20);
-            this.LastNameBox.TabIndex = 19;
+            this.LastNameBox.TabIndex = 5;
             // 
             // DateOfBirthBox
             // 
             this.DateOfBirthBox.Location = new System.Drawing.Point(90, 161);
             this.DateOfBirthBox.Name = "DateOfBirthBox";
             this.DateOfBirthBox.Size = new System.Drawing.Size(164, 20);
-            this.DateOfBirthBox.TabIndex = 20;
+            this.DateOfBirthBox.TabIndex = 6;
             // 
             // JMBGBox
             // 
             this.JMBGBox.Location = new System.Drawing.Point(90, 187);
             this.JMBGBox.Name = "JMBGBox";
             this.JMBGBox.Size = new System.Drawing.Size(164, 20);
-            this.JMBGBox.TabIndex = 21;
+            this.JMBGBox.TabIndex = 7;
             // 
             // ContactBox
             // 
             this.ContactBox.Location = new System.Drawing.Point(90, 213);
             this.ContactBox.Name = "ContactBox";
             this.ContactBox.Size = new System.Drawing.Size(164, 20);
-            this.ContactBox.TabIndex = 22;
+            this.ContactBox.TabIndex = 8;
             // 
             // AddressBox
             // 
             this.AddressBox.Location = new System.Drawing.Point(90, 239);
             this.AddressBox.Name = "AddressBox";
             this.AddressBox.Size = new System.Drawing.Size(164, 20);
-            this.AddressBox.TabIndex = 23;
+            this.AddressBox.TabIndex = 9;
             // 
             // UpdateButton
             // 
             this.UpdateButton.Location = new System.Drawing.Point(90, 294);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(164, 32);
-            this.UpdateButton.TabIndex = 25;
+            this.UpdateButton.TabIndex = 11;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
@@ -192,7 +193,7 @@
             this.PatientComboBox.Location = new System.Drawing.Point(21, 39);
             this.PatientComboBox.Name = "PatientComboBox";
             this.PatientComboBox.Size = new System.Drawing.Size(233, 28);
-            this.PatientComboBox.TabIndex = 26;
+            this.PatientComboBox.TabIndex = 1;
             this.PatientComboBox.SelectedIndexChanged += new System.EventHandler(this.PatientComboBox_SelectedIndexChanged);
             // 
             // label8
@@ -211,7 +212,7 @@
             this.CityComboBox.Location = new System.Drawing.Point(90, 263);
             this.CityComboBox.Name = "CityComboBox";
             this.CityComboBox.Size = new System.Drawing.Size(164, 21);
-            this.CityComboBox.TabIndex = 29;
+            this.CityComboBox.TabIndex = 10;
             // 
             // PatientWindowsForm
             // 
@@ -238,8 +239,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(318, 374);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(318, 374);
             this.Name = "PatientWindowsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patient";

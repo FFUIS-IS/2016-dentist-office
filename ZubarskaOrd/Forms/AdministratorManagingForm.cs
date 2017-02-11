@@ -87,6 +87,7 @@ namespace ZubarskaOrd.Forms
             MessageBox.Show("New Admin successfully added to database!");
             resetingTextBoxes();
             hidingAddAdminOptions();
+            refreshingListView();
         }
 
         private void resetingTextBoxes()

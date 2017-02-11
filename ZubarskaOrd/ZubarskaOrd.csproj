@@ -63,6 +63,12 @@
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DbConnection.cs" />
+    <Compile Include="Forms\CitiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CitiesForm.Designer.cs">
+      <DependentUpon>CitiesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DentalOfficeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,7 @@
       <DependentUpon>TeethForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\Cities.cs" />
     <Compile Include="Models\MedicalStuff.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\User.cs" />
@@ -112,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddPatientForm.resx">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CitiesForm.resx">
+      <DependentUpon>CitiesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DentalOfficeForm.resx">
       <DependentUpon>DentalOfficeForm.cs</DependentUpon>
