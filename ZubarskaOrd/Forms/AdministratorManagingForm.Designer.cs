@@ -39,6 +39,8 @@
             this.saveAdministratorButton = new System.Windows.Forms.Button();
             this.addNewAdministratorButton = new System.Windows.Forms.Button();
             this.deleteAdministratorButton = new System.Windows.Forms.Button();
+            this.newUsernameTextBox = new System.Windows.Forms.TextBox();
+            this.newPasswordTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // administratorsListView
@@ -110,7 +112,7 @@
             // 
             // saveAdministratorButton
             // 
-            this.saveAdministratorButton.Location = new System.Drawing.Point(412, 134);
+            this.saveAdministratorButton.Location = new System.Drawing.Point(412, 232);
             this.saveAdministratorButton.Name = "saveAdministratorButton";
             this.saveAdministratorButton.Size = new System.Drawing.Size(91, 23);
             this.saveAdministratorButton.TabIndex = 3;
@@ -139,11 +141,27 @@
             this.deleteAdministratorButton.UseVisualStyleBackColor = true;
             this.deleteAdministratorButton.Click += new System.EventHandler(this.deleteAdministratorButton_Click);
             // 
+            // newUsernameTextBox
+            // 
+            this.newUsernameTextBox.Location = new System.Drawing.Point(305, 142);
+            this.newUsernameTextBox.Name = "newUsernameTextBox";
+            this.newUsernameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.newUsernameTextBox.TabIndex = 3;
+            // 
+            // newPasswordTextBox
+            // 
+            this.newPasswordTextBox.Location = new System.Drawing.Point(305, 178);
+            this.newPasswordTextBox.Name = "newPasswordTextBox";
+            this.newPasswordTextBox.Size = new System.Drawing.Size(100, 20);
+            this.newPasswordTextBox.TabIndex = 4;
+            // 
             // AdministratorManagingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 332);
+            this.Controls.Add(this.newPasswordTextBox);
+            this.Controls.Add(this.newUsernameTextBox);
             this.Controls.Add(this.deleteAdministratorButton);
             this.Controls.Add(this.addNewAdministratorButton);
             this.Controls.Add(this.saveAdministratorButton);
@@ -177,5 +195,7 @@
         private System.Windows.Forms.Button saveAdministratorButton;
         private System.Windows.Forms.Button addNewAdministratorButton;
         private System.Windows.Forms.Button deleteAdministratorButton;
+        private System.Windows.Forms.TextBox newUsernameTextBox;
+        private System.Windows.Forms.TextBox newPasswordTextBox;
     }
 }
