@@ -117,6 +117,7 @@
             this.UL8.TabIndex = 7;
             this.UL8.Text = "8";
             this.UL8.UseVisualStyleBackColor = true;
+            this.UL8.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UL7
             // 
@@ -126,6 +127,7 @@
             this.UL7.TabIndex = 6;
             this.UL7.Text = "7";
             this.UL7.UseVisualStyleBackColor = true;
+            this.UL7.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UL6
             // 
@@ -135,6 +137,7 @@
             this.UL6.TabIndex = 5;
             this.UL6.Text = "6";
             this.UL6.UseVisualStyleBackColor = true;
+            this.UL6.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UL5
             // 
@@ -144,6 +147,7 @@
             this.UL5.TabIndex = 4;
             this.UL5.Text = "5";
             this.UL5.UseVisualStyleBackColor = true;
+            this.UL5.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UL4
             // 
@@ -153,6 +157,7 @@
             this.UL4.TabIndex = 3;
             this.UL4.Text = "4";
             this.UL4.UseVisualStyleBackColor = true;
+            this.UL4.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UL3
             // 
@@ -162,6 +167,7 @@
             this.UL3.TabIndex = 2;
             this.UL3.Text = "3";
             this.UL3.UseVisualStyleBackColor = true;
+            this.UL3.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UL2
             // 
@@ -171,6 +177,7 @@
             this.UL2.TabIndex = 1;
             this.UL2.Text = "2";
             this.UL2.UseVisualStyleBackColor = true;
+            this.UL2.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UL1
             // 
@@ -180,6 +187,7 @@
             this.UL1.TabIndex = 0;
             this.UL1.Text = " 1";
             this.UL1.UseVisualStyleBackColor = true;
+            this.UL1.Click += new System.EventHandler(this.ButtonClick);
             // 
             // tabPage2
             // 
@@ -207,6 +215,7 @@
             this.UR1.TabIndex = 15;
             this.UR1.Text = "1";
             this.UR1.UseVisualStyleBackColor = true;
+            this.UR1.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UR2
             // 
@@ -216,6 +225,7 @@
             this.UR2.TabIndex = 14;
             this.UR2.Text = "2";
             this.UR2.UseVisualStyleBackColor = true;
+            this.UR2.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UR3
             // 
@@ -225,6 +235,7 @@
             this.UR3.TabIndex = 13;
             this.UR3.Text = "3";
             this.UR3.UseVisualStyleBackColor = true;
+            this.UR3.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UR4
             // 
@@ -234,6 +245,7 @@
             this.UR4.TabIndex = 12;
             this.UR4.Text = "4";
             this.UR4.UseVisualStyleBackColor = true;
+            this.UR4.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UR5
             // 
@@ -243,6 +255,7 @@
             this.UR5.TabIndex = 11;
             this.UR5.Text = "5";
             this.UR5.UseVisualStyleBackColor = true;
+            this.UR5.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UR6
             // 
@@ -252,6 +265,7 @@
             this.UR6.TabIndex = 10;
             this.UR6.Text = "6";
             this.UR6.UseVisualStyleBackColor = true;
+            this.UR6.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UR7
             // 
@@ -261,6 +275,7 @@
             this.UR7.TabIndex = 9;
             this.UR7.Text = "7";
             this.UR7.UseVisualStyleBackColor = true;
+            this.UR7.Click += new System.EventHandler(this.ButtonClick);
             // 
             // UR8
             // 
@@ -270,6 +285,7 @@
             this.UR8.TabIndex = 8;
             this.UR8.Text = "8";
             this.UR8.UseVisualStyleBackColor = true;
+            this.UR8.Click += new System.EventHandler(this.ButtonClick);
             // 
             // tabPage3
             // 
@@ -297,6 +313,7 @@
             this.DL1.TabIndex = 15;
             this.DL1.Text = "1";
             this.DL1.UseVisualStyleBackColor = true;
+            this.DL1.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DL2
             // 
@@ -306,6 +323,7 @@
             this.DL2.TabIndex = 14;
             this.DL2.Text = "2";
             this.DL2.UseVisualStyleBackColor = true;
+            this.DL2.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DL3
             // 
@@ -315,6 +333,7 @@
             this.DL3.TabIndex = 13;
             this.DL3.Text = "3";
             this.DL3.UseVisualStyleBackColor = true;
+            this.DL3.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DL4
             // 
@@ -324,6 +343,7 @@
             this.DL4.TabIndex = 12;
             this.DL4.Text = "4";
             this.DL4.UseVisualStyleBackColor = true;
+            this.DL4.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DL5
             // 
@@ -333,6 +353,7 @@
             this.DL5.TabIndex = 11;
             this.DL5.Text = "5";
             this.DL5.UseVisualStyleBackColor = true;
+            this.DL5.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DL6
             // 
@@ -342,6 +363,7 @@
             this.DL6.TabIndex = 10;
             this.DL6.Text = "6";
             this.DL6.UseVisualStyleBackColor = true;
+            this.DL6.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DL7
             // 
@@ -351,6 +373,7 @@
             this.DL7.TabIndex = 9;
             this.DL7.Text = "7";
             this.DL7.UseVisualStyleBackColor = true;
+            this.DL7.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DL8
             // 
@@ -360,6 +383,7 @@
             this.DL8.TabIndex = 8;
             this.DL8.Text = "8";
             this.DL8.UseVisualStyleBackColor = true;
+            this.DL8.Click += new System.EventHandler(this.ButtonClick);
             // 
             // tabPage4
             // 
@@ -387,6 +411,7 @@
             this.DR1.TabIndex = 15;
             this.DR1.Text = "1";
             this.DR1.UseVisualStyleBackColor = true;
+            this.DR1.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DR2
             // 
@@ -396,6 +421,7 @@
             this.DR2.TabIndex = 14;
             this.DR2.Text = "2";
             this.DR2.UseVisualStyleBackColor = true;
+            this.DR2.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DR3
             // 
@@ -405,6 +431,7 @@
             this.DR3.TabIndex = 13;
             this.DR3.Text = "3";
             this.DR3.UseVisualStyleBackColor = true;
+            this.DR3.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DR4
             // 
@@ -414,6 +441,7 @@
             this.DR4.TabIndex = 12;
             this.DR4.Text = "4";
             this.DR4.UseVisualStyleBackColor = true;
+            this.DR4.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DR5
             // 
@@ -423,6 +451,7 @@
             this.DR5.TabIndex = 11;
             this.DR5.Text = "5";
             this.DR5.UseVisualStyleBackColor = true;
+            this.DR5.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DR6
             // 
@@ -432,6 +461,7 @@
             this.DR6.TabIndex = 10;
             this.DR6.Text = "6";
             this.DR6.UseVisualStyleBackColor = true;
+            this.DR6.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DR7
             // 
@@ -441,6 +471,7 @@
             this.DR7.TabIndex = 9;
             this.DR7.Text = "7";
             this.DR7.UseVisualStyleBackColor = true;
+            this.DR7.Click += new System.EventHandler(this.ButtonClick);
             // 
             // DR8
             // 
@@ -450,11 +481,14 @@
             this.DR8.TabIndex = 8;
             this.DR8.Text = "8";
             this.DR8.UseVisualStyleBackColor = true;
+            this.DR8.Click += new System.EventHandler(this.ButtonClick);
             // 
             // teethInfoDataGrid
             // 
             this.teethInfoDataGrid.AllowUserToAddRows = false;
             this.teethInfoDataGrid.AllowUserToDeleteRows = false;
+            this.teethInfoDataGrid.AllowUserToResizeColumns = false;
+            this.teethInfoDataGrid.AllowUserToResizeRows = false;
             this.teethInfoDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.teethInfoDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dateColumn,
@@ -463,6 +497,8 @@
             this.serviceDurationColumn});
             this.teethInfoDataGrid.Location = new System.Drawing.Point(7, 188);
             this.teethInfoDataGrid.Name = "teethInfoDataGrid";
+            this.teethInfoDataGrid.ReadOnly = true;
+            this.teethInfoDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.teethInfoDataGrid.Size = new System.Drawing.Size(423, 217);
             this.teethInfoDataGrid.TabIndex = 3;
             // 
@@ -470,21 +506,25 @@
             // 
             this.dateColumn.HeaderText = "Date of intervention";
             this.dateColumn.Name = "dateColumn";
+            this.dateColumn.ReadOnly = true;
             // 
             // MedicalStaffNameColumn
             // 
             this.MedicalStaffNameColumn.HeaderText = "Name of Medical Staff";
             this.MedicalStaffNameColumn.Name = "MedicalStaffNameColumn";
+            this.MedicalStaffNameColumn.ReadOnly = true;
             // 
             // serviceTypeColumn
             // 
             this.serviceTypeColumn.HeaderText = "Type of intervention";
             this.serviceTypeColumn.Name = "serviceTypeColumn";
+            this.serviceTypeColumn.ReadOnly = true;
             // 
             // serviceDurationColumn
             // 
             this.serviceDurationColumn.HeaderText = "Expected duration of service";
             this.serviceDurationColumn.Name = "serviceDurationColumn";
+            this.serviceDurationColumn.ReadOnly = true;
             // 
             // TeethForm
             // 

@@ -72,6 +72,9 @@ namespace ZubarskaOrd.Forms
         }
         private void ButtonClick(object sender, EventArgs e)
         {
+
+
+            teethInfoDataGrid.Rows.Clear();
             SqlCeCommand ReserveCommand = new SqlCeCommand("", connection);
             SqlCeDataReader ReserveReader;
             string teethName = ((Button)sender).Name + patient;
@@ -100,12 +103,10 @@ namespace ZubarskaOrd.Forms
                 teethInfoDataGrid.AllowUserToAddRows = true;
                 row = (DataGridViewRow)teethInfoDataGrid.Rows[0].Clone();
                     row = (DataGridViewRow)teethInfoDataGrid.Rows[0].Clone();
-                row.Cells[0].Value = "" + dateOfIntervention;
+                row.Cells[0].Value = "" + dateOfIntervention.ToShortDateString();
                 row.Cells[1].Value = medicalStaffName ;
                 row.Cells[2].Value = serviceName;
                 row.Cells[3].Value = serviceDuration;
-
-
                 teethInfoDataGrid.Rows.Add(row);
               
                 teethInfoDataGrid.AllowUserToAddRows = false;
