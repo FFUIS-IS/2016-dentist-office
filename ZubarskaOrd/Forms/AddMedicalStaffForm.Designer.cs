@@ -243,6 +243,7 @@
             this.Controls.Add(this.descriptionLabel4);
             this.Controls.Add(this.descriptionLabel3);
             this.Controls.Add(this.descriptionLabel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

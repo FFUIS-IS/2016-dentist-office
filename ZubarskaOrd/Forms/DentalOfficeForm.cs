@@ -91,5 +91,11 @@ namespace ZubarskaOrd
             AddServiceForm addServiceForm = new AddServiceForm();
             addServiceForm.ShowDialog();
         }
+
+        private void listOfAllDOfficeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InformationAboutDOfficeForm infoForm = new InformationAboutDOfficeForm();
+            infoForm.ShowDialog();
+        }
     }
 }

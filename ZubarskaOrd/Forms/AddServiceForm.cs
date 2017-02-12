@@ -82,6 +82,7 @@ namespace ZubarskaOrd.Forms
             command.ExecuteReader();
             MessageBox.Show("New Service successfully added to database!");
             refreshingServiceList();
+            clearingInput();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -98,12 +99,18 @@ namespace ZubarskaOrd.Forms
                 refreshingServiceList();
 
 
-
             }
             else
             {
 
             }
+        }
+
+        private void clearingInput()
+        {
+            serviceNameTextBox.Text = "";
+            serviceDurationComboBox.ResetText();
+            serviceNameTextBox.Focus();
         }
     }
 }

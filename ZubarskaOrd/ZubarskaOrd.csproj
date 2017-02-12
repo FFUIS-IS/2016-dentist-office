@@ -87,6 +87,12 @@
     <Compile Include="Forms\AdministratorManagingForm.Designer.cs">
       <DependentUpon>AdministratorManagingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InformationAboutDOfficeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InformationAboutDOfficeForm.Designer.cs">
+      <DependentUpon>InformationAboutDOfficeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     <EmbeddedResource Include="Forms\AdministratorManagingForm.resx">
       <DependentUpon>AdministratorManagingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InformationAboutDOfficeForm.resx">
+      <DependentUpon>InformationAboutDOfficeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PatientWindowsForm.resx">
       <DependentUpon>PatientWindowsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReservationForPatientForm.resx">
+      <DependentUpon>ReservationForPatientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeethForm.resx">
       <DependentUpon>TeethForm.cs</DependentUpon>

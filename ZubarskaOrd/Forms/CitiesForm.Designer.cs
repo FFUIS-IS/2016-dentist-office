@@ -82,6 +82,7 @@
             this.Controls.Add(this.citytextbox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CitiesList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
