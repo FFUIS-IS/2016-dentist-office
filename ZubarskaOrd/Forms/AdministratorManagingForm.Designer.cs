@@ -41,6 +41,8 @@
             this.deleteAdministratorButton = new System.Windows.Forms.Button();
             this.newUsernameTextBox = new System.Windows.Forms.TextBox();
             this.newPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionLabel5 = new System.Windows.Forms.Label();
+            this.descriptionLabel4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // administratorsListView
@@ -76,7 +78,7 @@
             // 
             this.descriptionLabel2.AutoSize = true;
             this.descriptionLabel2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel2.Location = new System.Drawing.Point(209, 54);
+            this.descriptionLabel2.Location = new System.Drawing.Point(208, 53);
             this.descriptionLabel2.Name = "descriptionLabel2";
             this.descriptionLabel2.Size = new System.Drawing.Size(72, 19);
             this.descriptionLabel2.TabIndex = 3;
@@ -87,7 +89,7 @@
             // 
             this.descriptionLabel3.AutoSize = true;
             this.descriptionLabel3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel3.Location = new System.Drawing.Point(210, 90);
+            this.descriptionLabel3.Location = new System.Drawing.Point(208, 90);
             this.descriptionLabel3.Name = "descriptionLabel3";
             this.descriptionLabel3.Size = new System.Drawing.Size(71, 19);
             this.descriptionLabel3.TabIndex = 4;
@@ -143,23 +145,50 @@
             // 
             // newUsernameTextBox
             // 
-            this.newUsernameTextBox.Location = new System.Drawing.Point(305, 142);
+            this.newUsernameTextBox.Location = new System.Drawing.Point(305, 135);
             this.newUsernameTextBox.Name = "newUsernameTextBox";
-            this.newUsernameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.newUsernameTextBox.Size = new System.Drawing.Size(198, 20);
             this.newUsernameTextBox.TabIndex = 3;
+            this.newUsernameTextBox.Visible = false;
             // 
             // newPasswordTextBox
             // 
-            this.newPasswordTextBox.Location = new System.Drawing.Point(305, 178);
+            this.newPasswordTextBox.Location = new System.Drawing.Point(305, 174);
             this.newPasswordTextBox.Name = "newPasswordTextBox";
-            this.newPasswordTextBox.Size = new System.Drawing.Size(100, 20);
+            this.newPasswordTextBox.Size = new System.Drawing.Size(198, 20);
             this.newPasswordTextBox.TabIndex = 4;
+            this.newPasswordTextBox.UseSystemPasswordChar = true;
+            this.newPasswordTextBox.Visible = false;
+            // 
+            // descriptionLabel5
+            // 
+            this.descriptionLabel5.AutoSize = true;
+            this.descriptionLabel5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel5.Location = new System.Drawing.Point(208, 173);
+            this.descriptionLabel5.Name = "descriptionLabel5";
+            this.descriptionLabel5.Size = new System.Drawing.Size(67, 19);
+            this.descriptionLabel5.TabIndex = 8;
+            this.descriptionLabel5.Text = "Password";
+            this.descriptionLabel5.Visible = false;
+            // 
+            // descriptionLabel4
+            // 
+            this.descriptionLabel4.AutoSize = true;
+            this.descriptionLabel4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel4.Location = new System.Drawing.Point(208, 134);
+            this.descriptionLabel4.Name = "descriptionLabel4";
+            this.descriptionLabel4.Size = new System.Drawing.Size(71, 19);
+            this.descriptionLabel4.TabIndex = 7;
+            this.descriptionLabel4.Text = "Username";
+            this.descriptionLabel4.Visible = false;
             // 
             // AdministratorManagingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 332);
+            this.Controls.Add(this.descriptionLabel5);
+            this.Controls.Add(this.descriptionLabel4);
             this.Controls.Add(this.newPasswordTextBox);
             this.Controls.Add(this.newUsernameTextBox);
             this.Controls.Add(this.deleteAdministratorButton);
@@ -197,5 +226,7 @@
         private System.Windows.Forms.Button deleteAdministratorButton;
         private System.Windows.Forms.TextBox newUsernameTextBox;
         private System.Windows.Forms.TextBox newPasswordTextBox;
+        private System.Windows.Forms.Label descriptionLabel5;
+        private System.Windows.Forms.Label descriptionLabel4;
     }
 }

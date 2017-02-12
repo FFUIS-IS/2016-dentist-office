@@ -88,7 +88,7 @@ namespace ZubarskaOrd.Forms
             SqlCeDataReader reader = command.ExecuteReader();
             if(reader.Read())
             {
-                command.CommandText = "INSERT INTO LoginFormTable(username, password,AdministratorID) VALUES ('" + newUsernameTextBox.Text + "','" + newPasswordTextBox.Text + "'," + reader.GetInt32(0) + ");";
+                command.CommandText = "INSERT INTO LoginFormTable(username, password,AdministratorID) VALUES ('" + newUsernameTextBox.Text + "','" + HashPassword.HashNewPassword(newPasswordTextBox.Text) + "'," + reader.GetInt32(0) + ");";
                 command.ExecuteNonQuery();
             }
             MessageBox.Show("New Admin successfully added to database!");
@@ -109,8 +109,12 @@ namespace ZubarskaOrd.Forms
             descriptionLabel1.Visible = true;
             descriptionLabel2.Visible = true;
             descriptionLabel3.Visible = true;
+            descriptionLabel4.Visible = true;
+            descriptionLabel5.Visible = true;
             firstNameTextBox.Visible = true;
             lastNameTextBox.Visible = true;
+            newUsernameTextBox.Visible = true;
+            newPasswordTextBox.Visible = true;
             saveAdministratorButton.Visible = true;
         }
         
@@ -119,8 +123,12 @@ namespace ZubarskaOrd.Forms
             descriptionLabel1.Visible = false;
             descriptionLabel2.Visible = false;
             descriptionLabel3.Visible = false;
+            descriptionLabel4.Visible = false;
+            descriptionLabel5.Visible = false;
             firstNameTextBox.Visible = false;
             lastNameTextBox.Visible = false;
+            newUsernameTextBox.Visible = false;
+            newPasswordTextBox.Visible = false;
             saveAdministratorButton.Visible = false;
         }
 

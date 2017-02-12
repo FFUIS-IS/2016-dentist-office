@@ -1,0 +1,6 @@
+administrator:
+	uname: kebab
+	pass:  ke123
+m.s.user:
+	uname: milos
+	pass:  mi123

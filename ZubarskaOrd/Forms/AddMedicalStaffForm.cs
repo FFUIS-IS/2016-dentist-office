@@ -43,12 +43,16 @@ namespace ZubarskaOrd.Forms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            SqlCeCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JBMG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + dobTextBox.Text + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','1')";
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("Insert is updated successfully!");
+            SqlCeCommand cmd = new SqlCeCommand("INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JBMG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + dobTextBox.Text + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','1')", connection);
+            cmd.ExecuteReader();
+            cmd.CommandText = "SELECT MAX(Id) FROM MedicalStaff";
+            SqlCeDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                cmd.CommandText = "INSERT INTO LoginFormTable(username, password,MedicalStaffID) VALUES ('" + newUsernameTextBox.Text + "','" + HashPassword.HashNewPassword(newPasswordTextBox.Text) + "'," + reader.GetInt32(0) + ");";
+                cmd.ExecuteNonQuery();
+            }
+            MessageBox.Show("New member succesfully added to Medical Staff!");
             this.Close();
         }
     }

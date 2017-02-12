@@ -45,6 +45,10 @@
             this.descriptionLabel3 = new System.Windows.Forms.Label();
             this.descriptionLabel2 = new System.Windows.Forms.Label();
             this.descriptionLabel1 = new System.Windows.Forms.Label();
+            this.newPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.newUsernameTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionLabel10 = new System.Windows.Forms.Label();
+            this.descriptionLabel9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cityNameComboBox
@@ -100,10 +104,10 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(146, 248);
+            this.SaveButton.Location = new System.Drawing.Point(146, 309);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 28);
-            this.SaveButton.TabIndex = 8;
+            this.SaveButton.TabIndex = 10;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -181,11 +185,48 @@
             this.descriptionLabel1.TabIndex = 31;
             this.descriptionLabel1.Text = "Add New Medical Staff:";
             // 
+            // newPasswordTextBox
+            // 
+            this.newPasswordTextBox.Location = new System.Drawing.Point(104, 283);
+            this.newPasswordTextBox.Name = "newPasswordTextBox";
+            this.newPasswordTextBox.Size = new System.Drawing.Size(160, 20);
+            this.newPasswordTextBox.TabIndex = 9;
+            this.newPasswordTextBox.UseSystemPasswordChar = true;
+            // 
+            // newUsernameTextBox
+            // 
+            this.newUsernameTextBox.Location = new System.Drawing.Point(104, 254);
+            this.newUsernameTextBox.Name = "newUsernameTextBox";
+            this.newUsernameTextBox.Size = new System.Drawing.Size(160, 20);
+            this.newUsernameTextBox.TabIndex = 8;
+            // 
+            // descriptionLabel10
+            // 
+            this.descriptionLabel10.AutoSize = true;
+            this.descriptionLabel10.Location = new System.Drawing.Point(21, 286);
+            this.descriptionLabel10.Name = "descriptionLabel10";
+            this.descriptionLabel10.Size = new System.Drawing.Size(56, 13);
+            this.descriptionLabel10.TabIndex = 35;
+            this.descriptionLabel10.Text = "Password:";
+            // 
+            // descriptionLabel9
+            // 
+            this.descriptionLabel9.AutoSize = true;
+            this.descriptionLabel9.Location = new System.Drawing.Point(21, 257);
+            this.descriptionLabel9.Name = "descriptionLabel9";
+            this.descriptionLabel9.Size = new System.Drawing.Size(58, 13);
+            this.descriptionLabel9.TabIndex = 34;
+            this.descriptionLabel9.Text = "Username:";
+            // 
             // AddMedicalStaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 288);
+            this.ClientSize = new System.Drawing.Size(288, 343);
+            this.Controls.Add(this.newPasswordTextBox);
+            this.Controls.Add(this.newUsernameTextBox);
+            this.Controls.Add(this.descriptionLabel10);
+            this.Controls.Add(this.descriptionLabel9);
             this.Controls.Add(this.descriptionLabel1);
             this.Controls.Add(this.cityNameComboBox);
             this.Controls.Add(this.addressTextBox);
@@ -231,5 +272,9 @@
         private System.Windows.Forms.Label descriptionLabel3;
         private System.Windows.Forms.Label descriptionLabel2;
         private System.Windows.Forms.Label descriptionLabel1;
+        private System.Windows.Forms.TextBox newPasswordTextBox;
+        private System.Windows.Forms.TextBox newUsernameTextBox;
+        private System.Windows.Forms.Label descriptionLabel10;
+        private System.Windows.Forms.Label descriptionLabel9;
     }
 }

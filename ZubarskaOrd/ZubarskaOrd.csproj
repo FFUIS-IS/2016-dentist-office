@@ -105,6 +105,7 @@
     <Compile Include="Forms\TeethForm.Designer.cs">
       <DependentUpon>TeethForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HashPassword.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Cities.cs" />
     <Compile Include="Models\MedicalStuff.cs" />
