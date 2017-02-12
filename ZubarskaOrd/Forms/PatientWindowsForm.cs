@@ -28,6 +28,7 @@ namespace ZubarskaOrd
         {
             FirstNameBox.Clear();
             LastNameBox.Clear();
+            dobTimePicker.Value = DateTime.Now;
             JMBGBox.Clear();
             AddressBox.Clear();
             ContactBox.Clear();
@@ -90,7 +91,6 @@ namespace ZubarskaOrd
             fillingPatientsComboBox();
             MessageBox.Show("Record is updated successfully!");
             clearTextBox();
-            dobLabel.Visible = false;
 
 
 
@@ -157,8 +157,7 @@ namespace ZubarskaOrd
             {
                 FirstNameBox.Text = dr["FirstName"].ToString();
                 LastNameBox.Text = dr["LastName"].ToString();
-                dobLabel.Visible = true;
-                dobLabel.Text = dr["DateOfBirth"].ToString();
+                dobTimePicker.Value = DateTime.Parse(dr["DateOfBirth"].ToString());
                 JMBGBox.Text = dr["JMBG"].ToString();
                 ContactBox.Text = dr["Contact"].ToString();
                 AddressBox.Text = dr["Address"].ToString();

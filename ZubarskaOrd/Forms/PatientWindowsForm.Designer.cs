@@ -48,7 +48,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.CityComboBox = new System.Windows.Forms.ComboBox();
             this.recordButton = new System.Windows.Forms.Button();
-            this.dobLabel = new System.Windows.Forms.Label();
             this.dobTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
@@ -82,7 +81,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 205);
+            this.label4.Location = new System.Drawing.Point(18, 188);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 4;
@@ -91,7 +90,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 234);
+            this.label5.Location = new System.Drawing.Point(18, 217);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 5;
@@ -100,7 +99,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 260);
+            this.label6.Location = new System.Drawing.Point(18, 243);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 6;
@@ -109,7 +108,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 289);
+            this.label7.Location = new System.Drawing.Point(18, 272);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(27, 13);
             this.label7.TabIndex = 7;
@@ -151,28 +150,28 @@
             // 
             // JMBGBox
             // 
-            this.JMBGBox.Location = new System.Drawing.Point(90, 205);
+            this.JMBGBox.Location = new System.Drawing.Point(90, 188);
             this.JMBGBox.Name = "JMBGBox";
             this.JMBGBox.Size = new System.Drawing.Size(164, 20);
             this.JMBGBox.TabIndex = 7;
             // 
             // ContactBox
             // 
-            this.ContactBox.Location = new System.Drawing.Point(90, 231);
+            this.ContactBox.Location = new System.Drawing.Point(90, 214);
             this.ContactBox.Name = "ContactBox";
             this.ContactBox.Size = new System.Drawing.Size(164, 20);
             this.ContactBox.TabIndex = 8;
             // 
             // AddressBox
             // 
-            this.AddressBox.Location = new System.Drawing.Point(90, 257);
+            this.AddressBox.Location = new System.Drawing.Point(90, 240);
             this.AddressBox.Name = "AddressBox";
             this.AddressBox.Size = new System.Drawing.Size(164, 20);
             this.AddressBox.TabIndex = 9;
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(12, 312);
+            this.UpdateButton.Location = new System.Drawing.Point(12, 295);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(115, 29);
             this.UpdateButton.TabIndex = 11;
@@ -204,30 +203,20 @@
             // CityComboBox
             // 
             this.CityComboBox.FormattingEnabled = true;
-            this.CityComboBox.Location = new System.Drawing.Point(90, 281);
+            this.CityComboBox.Location = new System.Drawing.Point(90, 264);
             this.CityComboBox.Name = "CityComboBox";
             this.CityComboBox.Size = new System.Drawing.Size(164, 21);
             this.CityComboBox.TabIndex = 10;
             // 
             // recordButton
             // 
-            this.recordButton.Location = new System.Drawing.Point(143, 312);
+            this.recordButton.Location = new System.Drawing.Point(143, 295);
             this.recordButton.Name = "recordButton";
             this.recordButton.Size = new System.Drawing.Size(111, 29);
             this.recordButton.TabIndex = 29;
             this.recordButton.Text = "Dental record";
             this.recordButton.UseVisualStyleBackColor = true;
             this.recordButton.Click += new System.EventHandler(this.recordButton_Click);
-            // 
-            // dobLabel
-            // 
-            this.dobLabel.AutoSize = true;
-            this.dobLabel.Location = new System.Drawing.Point(92, 189);
-            this.dobLabel.Name = "dobLabel";
-            this.dobLabel.Size = new System.Drawing.Size(35, 13);
-            this.dobLabel.TabIndex = 41;
-            this.dobLabel.Text = "label1";
-            this.dobLabel.Visible = false;
             // 
             // dobTimePicker
             // 
@@ -241,8 +230,7 @@
             this.AccessibleName = "";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 348);
-            this.Controls.Add(this.dobLabel);
+            this.ClientSize = new System.Drawing.Size(284, 339);
             this.Controls.Add(this.dobTimePicker);
             this.Controls.Add(this.recordButton);
             this.Controls.Add(this.CityComboBox);
@@ -296,7 +284,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox CityComboBox;
         private System.Windows.Forms.Button recordButton;
-        private System.Windows.Forms.Label dobLabel;
         private System.Windows.Forms.DateTimePicker dobTimePicker;
     }
 }
