@@ -34,12 +34,14 @@
             this.listOfAllAdministratorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicalStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfAllMStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.citiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutButton = new System.Windows.Forms.Button();
             this.regularUserMenuStrip = new System.Windows.Forms.MenuStrip();
             this.patientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patientsFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.citiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listOfAllServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorMenuStrip.SuspendLayout();
             this.regularUserMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +51,8 @@
             this.administratorMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administratorsToolStripMenuItem,
             this.medicalStuffToolStripMenuItem,
-            this.citiesToolStripMenuItem});
+            this.citiesToolStripMenuItem,
+            this.servicesToolStripMenuItem});
             this.administratorMenuStrip.Location = new System.Drawing.Point(0, 24);
             this.administratorMenuStrip.Name = "administratorMenuStrip";
             this.administratorMenuStrip.Size = new System.Drawing.Size(866, 24);
@@ -86,6 +89,21 @@
             this.listOfAllMStuffToolStripMenuItem.Text = "List Of All M.Stuff";
             this.listOfAllMStuffToolStripMenuItem.Click += new System.EventHandler(this.listOfAllMStuffToolStripMenuItem_Click);
             // 
+            // citiesToolStripMenuItem
+            // 
+            this.citiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewCToolStripMenuItem});
+            this.citiesToolStripMenuItem.Name = "citiesToolStripMenuItem";
+            this.citiesToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.citiesToolStripMenuItem.Text = "Cities";
+            // 
+            // addNewCToolStripMenuItem
+            // 
+            this.addNewCToolStripMenuItem.Name = "addNewCToolStripMenuItem";
+            this.addNewCToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.addNewCToolStripMenuItem.Text = "List Of All Cities";
+            this.addNewCToolStripMenuItem.Click += new System.EventHandler(this.addNewCToolStripMenuItem_Click);
+            // 
             // logoutButton
             // 
             this.logoutButton.Location = new System.Drawing.Point(779, 444);
@@ -121,20 +139,20 @@
             this.patientsFormToolStripMenuItem.Text = "PatientsForm";
             this.patientsFormToolStripMenuItem.Click += new System.EventHandler(this.patientsFormToolStripMenuItem_Click);
             // 
-            // citiesToolStripMenuItem
+            // servicesToolStripMenuItem
             // 
-            this.citiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewCToolStripMenuItem});
-            this.citiesToolStripMenuItem.Name = "citiesToolStripMenuItem";
-            this.citiesToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.citiesToolStripMenuItem.Text = "Cities";
+            this.servicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listOfAllServicesToolStripMenuItem});
+            this.servicesToolStripMenuItem.Name = "servicesToolStripMenuItem";
+            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.servicesToolStripMenuItem.Text = "Services";
             // 
-            // addNewCToolStripMenuItem
+            // listOfAllServicesToolStripMenuItem
             // 
-            this.addNewCToolStripMenuItem.Name = "addNewCToolStripMenuItem";
-            this.addNewCToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.addNewCToolStripMenuItem.Text = "List Of All Cities";
-            this.addNewCToolStripMenuItem.Click += new System.EventHandler(this.addNewCToolStripMenuItem_Click);
+            this.listOfAllServicesToolStripMenuItem.Name = "listOfAllServicesToolStripMenuItem";
+            this.listOfAllServicesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.listOfAllServicesToolStripMenuItem.Text = "List Of All Services";
+            this.listOfAllServicesToolStripMenuItem.Click += new System.EventHandler(this.listOfAllServicesToolStripMenuItem_Click);
             // 
             // DentalOfficeForm
             // 
@@ -174,6 +192,8 @@
         private System.Windows.Forms.ToolStripMenuItem patientsFormToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem citiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem servicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listOfAllServicesToolStripMenuItem;
     }
 }
 

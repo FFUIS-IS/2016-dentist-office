@@ -85,5 +85,11 @@ namespace ZubarskaOrd
         {
             DbConnection.Instance.Connection.Close();
         }
+
+        private void listOfAllServicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddServiceForm addServiceForm = new AddServiceForm();
+            addServiceForm.ShowDialog();
+        }
     }
 }

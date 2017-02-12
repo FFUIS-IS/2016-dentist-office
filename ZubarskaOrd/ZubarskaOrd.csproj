@@ -63,6 +63,12 @@
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DbConnection.cs" />
+    <Compile Include="Forms\AddServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddServiceForm.Designer.cs">
+      <DependentUpon>AddServiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CitiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddPatientForm.resx">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddServiceForm.resx">
+      <DependentUpon>AddServiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CitiesForm.resx">
       <DependentUpon>CitiesForm.cs</DependentUpon>
