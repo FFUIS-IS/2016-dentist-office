@@ -29,7 +29,6 @@ namespace ZubarskaOrd.Forms
         {
             firstNameTextBox.Clear();
             lastNameTextBox.Clear();
-            dobTextBox.Clear();
             JMBGTextBox.Clear();
             addressTextBox.Clear();
             contactTextBox.Clear();
@@ -125,7 +124,8 @@ namespace ZubarskaOrd.Forms
             {
                 firstNameTextBox.Text = dr["FirstName"].ToString();
                 lastNameTextBox.Text = dr["LastName"].ToString();
-                dobTextBox.Text = dr["DateOfBirth"].ToString();
+                dobLabel.Visible = true;
+                dobLabel.Text = dr["DateOfBirth"].ToString();
                 JMBGTextBox.Text = dr["JBMG"].ToString();
                 contactTextBox.Text = dr["Contact"].ToString();
                 addressTextBox.Text = dr["Address"].ToString();
@@ -147,13 +147,20 @@ namespace ZubarskaOrd.Forms
             cmd.CommandText = "SELECT Id FROM Cities WHERE CityName ='" + cityComboBox.SelectedItem.ToString() + "';";
             SqlCeDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            cmd.CommandText = "UPDATE MedicalStaff SET FirstName = '" + firstNameTextBox.Text + "',LastName='" + lastNameTextBox.Text + "',DateOfBirth= '" + dobTextBox.Text + "', JBMG = '" + JMBGTextBox.Text + "', Contact = '" + contactTextBox.Text + "', Address = '" + addressTextBox.Text + "', CitiesID = " + reader.GetInt32(0) + " where FirstName='" + firstNameTextBox.Text + "'";
+            cmd.CommandText = "UPDATE MedicalStaff SET FirstName = '" + firstNameTextBox.Text + "',LastName='" + lastNameTextBox.Text + "',DateOfBirth= '" + convert(dobTimePicker.Value.Date) + "', JBMG = '" + JMBGTextBox.Text + "', Contact = '" + contactTextBox.Text + "', Address = '" + addressTextBox.Text + "', CitiesID = " + reader.GetInt32(0) + " where FirstName='" + firstNameTextBox.Text + "'";
             cmd.ExecuteNonQuery();
 
             fillinMedicalStaffComboBox();
             MessageBox.Show("Record is updated successfully!");
             clearTextBox();
+            dobLabel.Visible = false;
 
+        }
+        private string convert(DateTime time)
+        {
+            string month = (time.Month < 10) ? ("0" + time.Month) : ("" + time.Month);
+            string day = (time.Day < 10) ? ("0" + time.Day) : ("" + time.Day);
+            return "" + time.Year + "-" + month + "-" + day;
         }
     }
 }

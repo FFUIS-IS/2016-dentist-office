@@ -44,10 +44,11 @@
             this.addressTextBox = new System.Windows.Forms.TextBox();
             this.contactTextBox = new System.Windows.Forms.TextBox();
             this.JMBGTextBox = new System.Windows.Forms.TextBox();
-            this.dobTextBox = new System.Windows.Forms.TextBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.UpdateButton = new System.Windows.Forms.Button();
+            this.dobTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.dobLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // medicalStuffComboBox
@@ -94,7 +95,7 @@
             // descriptionLabel8
             // 
             this.descriptionLabel8.AutoSize = true;
-            this.descriptionLabel8.Location = new System.Drawing.Point(13, 272);
+            this.descriptionLabel8.Location = new System.Drawing.Point(13, 292);
             this.descriptionLabel8.Name = "descriptionLabel8";
             this.descriptionLabel8.Size = new System.Drawing.Size(27, 13);
             this.descriptionLabel8.TabIndex = 14;
@@ -103,7 +104,7 @@
             // descriptionLabel7
             // 
             this.descriptionLabel7.AutoSize = true;
-            this.descriptionLabel7.Location = new System.Drawing.Point(13, 245);
+            this.descriptionLabel7.Location = new System.Drawing.Point(13, 265);
             this.descriptionLabel7.Name = "descriptionLabel7";
             this.descriptionLabel7.Size = new System.Drawing.Size(48, 13);
             this.descriptionLabel7.TabIndex = 13;
@@ -112,7 +113,7 @@
             // descriptionLabel6
             // 
             this.descriptionLabel6.AutoSize = true;
-            this.descriptionLabel6.Location = new System.Drawing.Point(13, 218);
+            this.descriptionLabel6.Location = new System.Drawing.Point(13, 238);
             this.descriptionLabel6.Name = "descriptionLabel6";
             this.descriptionLabel6.Size = new System.Drawing.Size(47, 13);
             this.descriptionLabel6.TabIndex = 12;
@@ -121,7 +122,7 @@
             // descriptionLabel5
             // 
             this.descriptionLabel5.AutoSize = true;
-            this.descriptionLabel5.Location = new System.Drawing.Point(13, 191);
+            this.descriptionLabel5.Location = new System.Drawing.Point(13, 211);
             this.descriptionLabel5.Name = "descriptionLabel5";
             this.descriptionLabel5.Size = new System.Drawing.Size(39, 13);
             this.descriptionLabel5.TabIndex = 11;
@@ -157,38 +158,31 @@
             // cityComboBox
             // 
             this.cityComboBox.FormattingEnabled = true;
-            this.cityComboBox.Location = new System.Drawing.Point(93, 269);
+            this.cityComboBox.Location = new System.Drawing.Point(93, 289);
             this.cityComboBox.Name = "cityComboBox";
             this.cityComboBox.Size = new System.Drawing.Size(164, 21);
             this.cityComboBox.TabIndex = 36;
             // 
             // addressTextBox
             // 
-            this.addressTextBox.Location = new System.Drawing.Point(93, 242);
+            this.addressTextBox.Location = new System.Drawing.Point(93, 262);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(164, 20);
             this.addressTextBox.TabIndex = 35;
             // 
             // contactTextBox
             // 
-            this.contactTextBox.Location = new System.Drawing.Point(93, 215);
+            this.contactTextBox.Location = new System.Drawing.Point(93, 235);
             this.contactTextBox.Name = "contactTextBox";
             this.contactTextBox.Size = new System.Drawing.Size(164, 20);
             this.contactTextBox.TabIndex = 34;
             // 
             // JMBGTextBox
             // 
-            this.JMBGTextBox.Location = new System.Drawing.Point(93, 188);
+            this.JMBGTextBox.Location = new System.Drawing.Point(93, 208);
             this.JMBGTextBox.Name = "JMBGTextBox";
             this.JMBGTextBox.Size = new System.Drawing.Size(164, 20);
             this.JMBGTextBox.TabIndex = 33;
-            // 
-            // dobTextBox
-            // 
-            this.dobTextBox.Location = new System.Drawing.Point(93, 161);
-            this.dobTextBox.Name = "dobTextBox";
-            this.dobTextBox.Size = new System.Drawing.Size(164, 20);
-            this.dobTextBox.TabIndex = 32;
             // 
             // lastNameTextBox
             // 
@@ -206,7 +200,7 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(93, 296);
+            this.UpdateButton.Location = new System.Drawing.Point(93, 316);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(164, 32);
             this.UpdateButton.TabIndex = 37;
@@ -214,17 +208,35 @@
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click_1);
             // 
+            // dobTimePicker
+            // 
+            this.dobTimePicker.Location = new System.Drawing.Point(93, 156);
+            this.dobTimePicker.Name = "dobTimePicker";
+            this.dobTimePicker.Size = new System.Drawing.Size(164, 20);
+            this.dobTimePicker.TabIndex = 38;
+            // 
+            // dobLabel
+            // 
+            this.dobLabel.AutoSize = true;
+            this.dobLabel.Location = new System.Drawing.Point(93, 183);
+            this.dobLabel.Name = "dobLabel";
+            this.dobLabel.Size = new System.Drawing.Size(35, 13);
+            this.dobLabel.TabIndex = 39;
+            this.dobLabel.Text = "label1";
+            this.dobLabel.Visible = false;
+            // 
             // MedicalStuffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 343);
+            this.ClientSize = new System.Drawing.Size(292, 367);
+            this.Controls.Add(this.dobLabel);
+            this.Controls.Add(this.dobTimePicker);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.cityComboBox);
             this.Controls.Add(this.addressTextBox);
             this.Controls.Add(this.contactTextBox);
             this.Controls.Add(this.JMBGTextBox);
-            this.Controls.Add(this.dobTextBox);
             this.Controls.Add(this.lastNameTextBox);
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.descriptionLabel8);
@@ -268,9 +280,10 @@
         private System.Windows.Forms.TextBox addressTextBox;
         private System.Windows.Forms.TextBox contactTextBox;
         private System.Windows.Forms.TextBox JMBGTextBox;
-        private System.Windows.Forms.TextBox dobTextBox;
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.DateTimePicker dobTimePicker;
+        private System.Windows.Forms.Label dobLabel;
     }
 }

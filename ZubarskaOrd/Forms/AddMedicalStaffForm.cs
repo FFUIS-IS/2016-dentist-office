@@ -43,7 +43,7 @@ namespace ZubarskaOrd.Forms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            SqlCeCommand cmd = new SqlCeCommand("INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JBMG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + dobTextBox.Text + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','1')", connection);
+            SqlCeCommand cmd = new SqlCeCommand("INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JBMG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + convert(dobTimePicker.Value.Date) + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','1')", connection);
             cmd.ExecuteReader();
             cmd.CommandText = "SELECT MAX(Id) FROM MedicalStaff";
             SqlCeDataReader reader = cmd.ExecuteReader();
@@ -54,6 +54,12 @@ namespace ZubarskaOrd.Forms
             }
             MessageBox.Show("New member succesfully added to Medical Staff!");
             this.Close();
+        }
+        private string convert(DateTime time)
+        {
+            string month = (time.Month < 10) ? ("0" + time.Month) : ("" + time.Month);
+            string day = (time.Day < 10) ? ("0" + time.Day) : ("" + time.Day);
+            return "" + time.Year + "-" + month + "-" + day;
         }
     }
 }

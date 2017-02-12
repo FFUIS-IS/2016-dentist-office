@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CitiesForm));
             this.CitiesList = new System.Windows.Forms.ListView();
             this.SaveButton = new System.Windows.Forms.Button();
             this.citytextbox = new System.Windows.Forms.TextBox();
@@ -81,9 +82,11 @@
             this.Controls.Add(this.citytextbox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CitiesList);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CitiesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CitiesForm";
             this.Load += new System.EventHandler(this.CitiesForm_Load);
             this.ResumeLayout(false);

@@ -33,7 +33,6 @@
             this.addressTextBox = new System.Windows.Forms.TextBox();
             this.contactTextBox = new System.Windows.Forms.TextBox();
             this.JMBGTextBox = new System.Windows.Forms.TextBox();
-            this.dobTextBox = new System.Windows.Forms.TextBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
@@ -49,6 +48,7 @@
             this.newUsernameTextBox = new System.Windows.Forms.TextBox();
             this.descriptionLabel10 = new System.Windows.Forms.Label();
             this.descriptionLabel9 = new System.Windows.Forms.Label();
+            this.dobTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // cityNameComboBox
@@ -80,13 +80,6 @@
             this.JMBGTextBox.Name = "JMBGTextBox";
             this.JMBGTextBox.Size = new System.Drawing.Size(160, 20);
             this.JMBGTextBox.TabIndex = 4;
-            // 
-            // dobTextBox
-            // 
-            this.dobTextBox.Location = new System.Drawing.Point(104, 105);
-            this.dobTextBox.Name = "dobTextBox";
-            this.dobTextBox.Size = new System.Drawing.Size(160, 20);
-            this.dobTextBox.TabIndex = 3;
             // 
             // lastNameTextBox
             // 
@@ -218,11 +211,19 @@
             this.descriptionLabel9.TabIndex = 34;
             this.descriptionLabel9.Text = "Username:";
             // 
+            // dobTimePicker
+            // 
+            this.dobTimePicker.Location = new System.Drawing.Point(104, 103);
+            this.dobTimePicker.Name = "dobTimePicker";
+            this.dobTimePicker.Size = new System.Drawing.Size(160, 20);
+            this.dobTimePicker.TabIndex = 36;
+            // 
             // AddMedicalStaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(288, 343);
+            this.Controls.Add(this.dobTimePicker);
             this.Controls.Add(this.newPasswordTextBox);
             this.Controls.Add(this.newUsernameTextBox);
             this.Controls.Add(this.descriptionLabel10);
@@ -232,7 +233,6 @@
             this.Controls.Add(this.addressTextBox);
             this.Controls.Add(this.contactTextBox);
             this.Controls.Add(this.JMBGTextBox);
-            this.Controls.Add(this.dobTextBox);
             this.Controls.Add(this.lastNameTextBox);
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.SaveButton);
@@ -260,7 +260,6 @@
         private System.Windows.Forms.TextBox addressTextBox;
         private System.Windows.Forms.TextBox contactTextBox;
         private System.Windows.Forms.TextBox JMBGTextBox;
-        private System.Windows.Forms.TextBox dobTextBox;
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.Button SaveButton;
@@ -276,5 +275,6 @@
         private System.Windows.Forms.TextBox newUsernameTextBox;
         private System.Windows.Forms.Label descriptionLabel10;
         private System.Windows.Forms.Label descriptionLabel9;
+        private System.Windows.Forms.DateTimePicker dobTimePicker;
     }
 }

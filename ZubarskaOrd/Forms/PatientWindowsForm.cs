@@ -28,7 +28,6 @@ namespace ZubarskaOrd
         {
             FirstNameBox.Clear();
             LastNameBox.Clear();
-            DateOfBirthBox.Clear();
             JMBGBox.Clear();
             AddressBox.Clear();
             ContactBox.Clear();
@@ -85,15 +84,23 @@ namespace ZubarskaOrd
             cmd.CommandText = "select Id from Cities where CityName ='" + CityComboBox.SelectedItem.ToString() + "';";
             SqlCeDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            cmd.CommandText = "update Patients set FirstName = '" + FirstNameBox.Text + "',LastName='" + LastNameBox.Text + "',DateOfBirth= '" + DateOfBirthBox.Text + "', JMBG = '" + JMBGBox.Text + "', Contact = '" + ContactBox.Text + "', Address = '" + AddressBox.Text + "', CitiesID = " + reader.GetInt32(0) + " where FirstName='" + FirstNameBox.Text + "'";
+            cmd.CommandText = "update Patients set FirstName = '" + FirstNameBox.Text + "',LastName='" + LastNameBox.Text + "',DateOfBirth= '" + convert(dobTimePicker.Value.Date) + "', JMBG = '" + JMBGBox.Text + "', Contact = '" + ContactBox.Text + "', Address = '" + AddressBox.Text + "', CitiesID = " + reader.GetInt32(0) + " where FirstName='" + FirstNameBox.Text + "'";
             cmd.ExecuteNonQuery();
             
             fillingPatientsComboBox();
             MessageBox.Show("Record is updated successfully!");
             clearTextBox();
+            dobLabel.Visible = false;
 
 
 
+        }
+
+        private string convert(DateTime time)
+        {
+            string month = (time.Month < 10) ? ("0" + time.Month) : ("" + time.Month);
+            string day = (time.Day < 10) ? ("0" + time.Day) : ("" + time.Day);
+            return "" + time.Year + "-" + month + "-" + day;
         }
 
         private void PatientWindowsForm_Load(object sender, EventArgs e)
@@ -150,7 +157,8 @@ namespace ZubarskaOrd
             {
                 FirstNameBox.Text = dr["FirstName"].ToString();
                 LastNameBox.Text = dr["LastName"].ToString();
-                DateOfBirthBox.Text = dr["DateOfBirth"].ToString();
+                dobLabel.Visible = true;
+                dobLabel.Text = dr["DateOfBirth"].ToString();
                 JMBGBox.Text = dr["JMBG"].ToString();
                 ContactBox.Text = dr["Contact"].ToString();
                 AddressBox.Text = dr["Address"].ToString();
@@ -162,9 +170,10 @@ namespace ZubarskaOrd
 
 
             }
-            
+        
 
-        }
+
+    }
 
         private void PatientWindowsForm_Activated(object sender, EventArgs e)
         {
