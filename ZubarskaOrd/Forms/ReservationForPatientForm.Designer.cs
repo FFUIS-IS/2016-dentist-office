@@ -49,6 +49,7 @@
             this.thirdPart});
             this.reservationDataGrid.Location = new System.Drawing.Point(12, 23);
             this.reservationDataGrid.Name = "reservationDataGrid";
+            this.reservationDataGrid.ReadOnly = true;
             this.reservationDataGrid.Size = new System.Drawing.Size(482, 215);
             this.reservationDataGrid.TabIndex = 0;
             // 
@@ -74,26 +75,30 @@
             // 
             // zeroPart
             // 
-            this.zeroPart.HeaderText = "00";
+            this.zeroPart.HeaderText = "00-15";
             this.zeroPart.Name = "zeroPart";
+            this.zeroPart.ReadOnly = true;
             this.zeroPart.Width = 80;
             // 
             // firstPart
             // 
-            this.firstPart.HeaderText = "15";
+            this.firstPart.HeaderText = "15-30";
             this.firstPart.Name = "firstPart";
+            this.firstPart.ReadOnly = true;
             this.firstPart.Width = 80;
             // 
             // secondPart
             // 
-            this.secondPart.HeaderText = "30";
+            this.secondPart.HeaderText = "30-45";
             this.secondPart.Name = "secondPart";
+            this.secondPart.ReadOnly = true;
             this.secondPart.Width = 80;
             // 
             // thirdPart
             // 
-            this.thirdPart.HeaderText = "45";
+            this.thirdPart.HeaderText = "45-60";
             this.thirdPart.Name = "thirdPart";
+            this.thirdPart.ReadOnly = true;
             this.thirdPart.Width = 80;
             // 
             // ReservationForPatientForm
@@ -117,10 +122,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView reservationDataGrid;
+        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn zeroPart;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstPart;
         private System.Windows.Forms.DataGridViewTextBoxColumn secondPart;
         private System.Windows.Forms.DataGridViewTextBoxColumn thirdPart;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }

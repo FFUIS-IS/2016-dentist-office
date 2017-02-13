@@ -27,12 +27,21 @@ namespace ZubarskaOrd.Forms
             {
                 row = (DataGridViewRow)reservationDataGrid.Rows[0].Clone();
                 row.Cells[0].Value = "";
+                row.Cells[0].Style.BackColor = Color.Green;
                 row.Cells[1].Value = "";
+                row.Cells[1].Style.BackColor = Color.Green;
                 row.Cells[2].Value = "";
+                row.Cells[2].Style.BackColor = Color.Green;
                 row.Cells[3].Value = "";
+                row.Cells[3].Style.BackColor = Color.Green;
                 Console.Out.WriteLine(rows);
                 reservationDataGrid.Rows.Add(row);
+
             }
+
+            reservationDataGrid[0, 2].Style.BackColor = Color.Black;
+            reservationDataGrid[1, 2].Style.BackColor = Color.Black;
+
             reservationDataGrid.AllowUserToAddRows = false;
 
         }
