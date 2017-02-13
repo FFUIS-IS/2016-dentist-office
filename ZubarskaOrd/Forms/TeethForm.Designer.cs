@@ -549,6 +549,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TeethForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TeethForm";
             this.Load += new System.EventHandler(this.TeethForm_Load);
             this.tabControl1.ResumeLayout(false);
