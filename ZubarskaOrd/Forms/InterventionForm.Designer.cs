@@ -39,9 +39,9 @@
             // 
             this.serviceTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serviceTypeComboBox.FormattingEnabled = true;
-            this.serviceTypeComboBox.Location = new System.Drawing.Point(80, 12);
+            this.serviceTypeComboBox.Location = new System.Drawing.Point(60, 12);
             this.serviceTypeComboBox.Name = "serviceTypeComboBox";
-            this.serviceTypeComboBox.Size = new System.Drawing.Size(162, 21);
+            this.serviceTypeComboBox.Size = new System.Drawing.Size(182, 21);
             this.serviceTypeComboBox.TabIndex = 1;
             this.serviceTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.serviceTypeComboBox_SelectedIndexChanged);
             // 
@@ -64,9 +64,9 @@
             // 
             // timeOfInterventionDatePicker
             // 
-            this.timeOfInterventionDatePicker.Location = new System.Drawing.Point(80, 58);
+            this.timeOfInterventionDatePicker.Location = new System.Drawing.Point(60, 58);
             this.timeOfInterventionDatePicker.Name = "timeOfInterventionDatePicker";
-            this.timeOfInterventionDatePicker.Size = new System.Drawing.Size(162, 20);
+            this.timeOfInterventionDatePicker.Size = new System.Drawing.Size(182, 20);
             this.timeOfInterventionDatePicker.TabIndex = 4;
             this.timeOfInterventionDatePicker.ValueChanged += new System.EventHandler(this.timeOfInterventionDatePicker_ValueChanged);
             // 

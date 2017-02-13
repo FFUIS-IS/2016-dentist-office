@@ -128,6 +128,5 @@ namespace ZubarskaOrd.Forms
 
             return hourTemp + ":" + minuteTemp + ":00";
         }
-
     }
 }

@@ -93,11 +93,11 @@
     <Compile Include="Forms\InformationAboutDOfficeForm.Designer.cs">
       <DependentUpon>InformationAboutDOfficeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InterventionFormcs.cs">
+    <Compile Include="Forms\InterventionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InterventionFormcs.Designer.cs">
-      <DependentUpon>InterventionFormcs.cs</DependentUpon>
+    <Compile Include="Forms\InterventionForm.Designer.cs">
+      <DependentUpon>InterventionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -160,8 +160,8 @@
     <EmbeddedResource Include="Forms\InformationAboutDOfficeForm.resx">
       <DependentUpon>InformationAboutDOfficeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InterventionFormcs.resx">
-      <DependentUpon>InterventionFormcs.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InterventionForm.resx">
+      <DependentUpon>InterventionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

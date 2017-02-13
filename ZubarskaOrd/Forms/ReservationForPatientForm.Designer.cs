@@ -45,7 +45,10 @@
             this.ReservationDateTime = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.interventionDetails = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.reservateButton = new System.Windows.Forms.Button();
+            this.toothOnFocusComboBox = new System.Windows.Forms.ComboBox();
+            this.toothNameLabel = new System.Windows.Forms.Label();
+            this.resDetailLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,22 +197,84 @@
             this.interventionDetails.Text = "";
             this.interventionDetails.Visible = false;
             // 
-            // button1
+            // reservateButton
             // 
-            this.button1.Location = new System.Drawing.Point(520, 279);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 95);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
+            this.reservateButton.Location = new System.Drawing.Point(520, 279);
+            this.reservateButton.Name = "reservateButton";
+            this.reservateButton.Size = new System.Drawing.Size(200, 95);
+            this.reservateButton.TabIndex = 13;
+            this.reservateButton.Text = "Reservate";
+            this.reservateButton.UseVisualStyleBackColor = true;
+            this.reservateButton.Visible = false;
+            // 
+            // toothOnFocusComboBox
+            // 
+            this.toothOnFocusComboBox.FormattingEnabled = true;
+            this.toothOnFocusComboBox.Items.AddRange(new object[] {
+            "UL1",
+            "UL2",
+            "UL3",
+            "UL4",
+            "UL5",
+            "UL6",
+            "UL7",
+            "UL8",
+            "UR1",
+            "UR2",
+            "UR3",
+            "UR4",
+            "UR5",
+            "UR6",
+            "UR7",
+            "UR8",
+            "DL1",
+            "DL2",
+            "DL3",
+            "DL4",
+            "DL5",
+            "DL6",
+            "DL7",
+            "DL8",
+            "DR1",
+            "DR2",
+            "DR3",
+            "DR4",
+            "DR5",
+            "DR6",
+            "DR7",
+            "DR8"});
+            this.toothOnFocusComboBox.Location = new System.Drawing.Point(53, 318);
+            this.toothOnFocusComboBox.Name = "toothOnFocusComboBox";
+            this.toothOnFocusComboBox.Size = new System.Drawing.Size(121, 21);
+            this.toothOnFocusComboBox.TabIndex = 14;
+            // 
+            // toothNameLabel
+            // 
+            this.toothNameLabel.AutoSize = true;
+            this.toothNameLabel.Location = new System.Drawing.Point(50, 302);
+            this.toothNameLabel.Name = "toothNameLabel";
+            this.toothNameLabel.Size = new System.Drawing.Size(64, 13);
+            this.toothNameLabel.TabIndex = 15;
+            this.toothNameLabel.Text = "Tooth name";
+            // 
+            // resDetailLabel
+            // 
+            this.resDetailLabel.AutoSize = true;
+            this.resDetailLabel.Location = new System.Drawing.Point(517, 44);
+            this.resDetailLabel.Name = "resDetailLabel";
+            this.resDetailLabel.Size = new System.Drawing.Size(97, 13);
+            this.resDetailLabel.TabIndex = 16;
+            this.resDetailLabel.Text = "Reservation details";
             // 
             // ReservationForPatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 386);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.resDetailLabel);
+            this.Controls.Add(this.toothNameLabel);
+            this.Controls.Add(this.toothOnFocusComboBox);
+            this.Controls.Add(this.reservateButton);
             this.Controls.Add(this.interventionDetails);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.ReservationDateTime);
@@ -252,6 +317,9 @@
         private System.Windows.Forms.DateTimePicker ReservationDateTime;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.RichTextBox interventionDetails;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button reservateButton;
+        private System.Windows.Forms.ComboBox toothOnFocusComboBox;
+        private System.Windows.Forms.Label toothNameLabel;
+        private System.Windows.Forms.Label resDetailLabel;
     }
 }
