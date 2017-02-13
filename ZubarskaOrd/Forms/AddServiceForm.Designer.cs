@@ -84,6 +84,7 @@
             // 
             // serviceDurationComboBox
             // 
+            this.serviceDurationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serviceDurationComboBox.FormattingEnabled = true;
             this.serviceDurationComboBox.Items.AddRange(new object[] {
             "15",

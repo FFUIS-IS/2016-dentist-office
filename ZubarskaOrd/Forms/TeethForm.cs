@@ -110,10 +110,9 @@ namespace ZubarskaOrd.Forms
                 row.Cells[1].Value = medicalStaffName ;
                 row.Cells[2].Value = serviceName;
                 row.Cells[3].Value = serviceDuration;
-                teethInfoDataGrid.Rows.Add(row);
+               // teethInfoDataGrid.Rows.Add(row);
               
                 teethInfoDataGrid.AllowUserToAddRows = false;
-                teethInfoDataGrid[0, 0].Style.BackColor = Color.Red;
                 
             }
         }

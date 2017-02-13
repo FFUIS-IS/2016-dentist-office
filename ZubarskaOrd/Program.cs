@@ -21,7 +21,7 @@ namespace ZubarskaOrd
             path = path.Substring(0, path.LastIndexOf('\\'));
             path = path.Substring(0, path.LastIndexOf('\\'));
             path = path.Substring(0, path.LastIndexOf('\\')+1);
-            Application.Run(new DentalOfficeForm());
+            Application.Run(new Forms.ReservationForPatientForm());
         }
     }
 }
