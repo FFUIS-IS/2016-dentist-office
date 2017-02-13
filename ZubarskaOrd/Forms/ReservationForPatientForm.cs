@@ -26,7 +26,7 @@ namespace ZubarskaOrd.Forms
 
         private void FillDataGrid()
         {
-            
+
             DataGridViewRow row;
             reservationDataGrid.AllowUserToAddRows = true;
             reservationDataGrid.Rows.Clear();
@@ -41,7 +41,6 @@ namespace ZubarskaOrd.Forms
                 row.Cells[2].Style.BackColor = Color.Green;
                 row.Cells[3].Value = "";
                 row.Cells[3].Style.BackColor = Color.Green;
-                Console.Out.WriteLine(rows);
                 reservationDataGrid.Rows.Add(row);
 
             }
@@ -55,7 +54,7 @@ namespace ZubarskaOrd.Forms
 
         private void ReservationForPatientForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ReservationDateTime_ValueChanged(object sender, EventArgs e)
@@ -70,37 +69,33 @@ namespace ZubarskaOrd.Forms
                 int reservationDuration = reader.GetInt32(2);
                 int startTimeHour = reader.GetDateTime(0).Hour;
                 int tempTimeHour = startTimeHour;
-                
+
                 int startTimeMinute = reader.GetDateTime(0).Minute;
                 int tempTimeMinute = startTimeMinute;
                 reservationDataGrid[tempTimeMinute / 15, tempTimeHour - 8].Style.BackColor = Color.Red;
-                for (int count = 1; count < reservationDuration/15; count++)
+                for (int count = 1; count < reservationDuration / 15; count++)
                 {
-                   while(tempTimeMinute + 15 > 59)
+                    while (tempTimeMinute + 15 > 59)
                     {
                         tempTimeMinute -= 60;
                         tempTimeHour++;
                     }
                     tempTimeMinute += 15;
 
-                    if(tempTimeMinute/15 < 4 && tempTimeHour < 16)
-                    reservationDataGrid[tempTimeMinute/15, tempTimeHour-8].Style.BackColor = Color.Red;
+                    if (tempTimeMinute / 15 < 4 && tempTimeHour < 16)
+                        reservationDataGrid[tempTimeMinute / 15, tempTimeHour - 8].Style.BackColor = Color.Red;
                 }
             }
         }
 
-        
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void reservationDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(reservationDataGrid[e.ColumnIndex, e.RowIndex].Style.BackColor == Color.Red)
+            interventionDetails.Clear();
+            if (reservationDataGrid[e.ColumnIndex, e.RowIndex].Style.BackColor == Color.Red)
             {
-                interventionDetails.Clear();
-                command.CommandText = "SELECT * FROM Reservations WHERE StartTime >= '" + parse(ReservationDateTime.Value.Date) + " " + convertTime(e.ColumnIndex * 15, e.RowIndex + 8) + "';";
+                interventionDetails.Visible = true;
+                command.CommandText = "SELECT * FROM Reservations WHERE "
+                    + " datediff(mi, StartTime, '" + parse(ReservationDateTime.Value.Date) + " " + convertTime(e.RowIndex + 8, e.ColumnIndex * 15) + "') >= 0;";
                 try
                 {
                     reader = command.ExecuteReader();
@@ -110,12 +105,14 @@ namespace ZubarskaOrd.Forms
                     reserveReader.Read();
                     interventionDetails.Text += "Patient Name: " + reserveReader.GetString(0) + " " + reserveReader.GetString(1) + "\n";
                 }
-                catch(SqlCeException ee)
+                catch (SqlCeException ee)
                 {
                     Console.Out.WriteLine(ee.ToString());
                 }
-                // command.CommandText = "SELECT * FROM "
             }
+            else
+
+                interventionDetails.Visible = false;
         }
         private string parse(DateTime time)
         {
@@ -128,7 +125,7 @@ namespace ZubarskaOrd.Forms
         {
             string hourTemp = (hour < 10) ? ("0" + hour) : ("" + hour);
             string minuteTemp = (minute < 10) ? ("0" + minute) : ("" + minute);
-          
+
             return hourTemp + ":" + minuteTemp + ":00";
         }
 

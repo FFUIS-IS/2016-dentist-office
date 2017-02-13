@@ -101,7 +101,6 @@
             this.textBox1.Size = new System.Drawing.Size(72, 23);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "08:00-09:00";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
