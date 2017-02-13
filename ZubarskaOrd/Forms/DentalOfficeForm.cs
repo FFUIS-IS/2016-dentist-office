@@ -20,8 +20,6 @@ namespace ZubarskaOrd
             this.Location = new Point(0, 0);
 
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-
-
         }
 
         private void DentalOfficeForm_Load(object sender, EventArgs e)

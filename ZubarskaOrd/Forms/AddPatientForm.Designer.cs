@@ -174,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 265);
+            this.ClientSize = new System.Drawing.Size(270, 261);
             this.Controls.Add(this.dobTimePicker);
             this.Controls.Add(this.CityNameComboBox);
             this.Controls.Add(this.AddressBox);

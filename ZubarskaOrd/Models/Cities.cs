@@ -13,7 +13,6 @@ namespace ZubarskaOrd.Models
         public Cities(string cityname)
         {
             CityName = cityname;
-            
         }
     }
 }

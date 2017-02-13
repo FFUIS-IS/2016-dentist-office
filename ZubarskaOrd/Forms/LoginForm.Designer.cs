@@ -74,20 +74,20 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(137, 112);
+            this.loginButton.Location = new System.Drawing.Point(87, 112);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.Size = new System.Drawing.Size(112, 23);
             this.loginButton.TabIndex = 5;
             this.loginButton.Tag = "3";
-            this.loginButton.Text = "Login!";
+            this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(234, 112);
+            this.cancelButton.Location = new System.Drawing.Point(205, 112);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(104, 23);
             this.cancelButton.TabIndex = 6;
             this.cancelButton.Tag = "4";
             this.cancelButton.Text = "Cancel";

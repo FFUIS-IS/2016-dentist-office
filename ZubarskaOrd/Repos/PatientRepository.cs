@@ -10,7 +10,5 @@ namespace ZubarskaOrd.Repos
     class PatientRepository
     {
         private static SqlCeConnection connection = DbConnection.Instance.Connection;
-
-
     }
 }

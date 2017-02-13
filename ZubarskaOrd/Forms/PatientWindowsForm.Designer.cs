@@ -118,7 +118,7 @@
             // 
             this.AddButton.Location = new System.Drawing.Point(21, 73);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(106, 28);
+            this.AddButton.Size = new System.Drawing.Size(116, 28);
             this.AddButton.TabIndex = 2;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -126,9 +126,9 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(133, 73);
+            this.DeleteButton.Location = new System.Drawing.Point(143, 73);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(121, 28);
+            this.DeleteButton.Size = new System.Drawing.Size(111, 28);
             this.DeleteButton.TabIndex = 3;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(12, 295);
+            this.UpdateButton.Location = new System.Drawing.Point(21, 295);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(115, 29);
             this.UpdateButton.TabIndex = 11;
@@ -210,7 +210,7 @@
             // 
             // recordButton
             // 
-            this.recordButton.Location = new System.Drawing.Point(143, 295);
+            this.recordButton.Location = new System.Drawing.Point(145, 295);
             this.recordButton.Name = "recordButton";
             this.recordButton.Size = new System.Drawing.Size(111, 29);
             this.recordButton.TabIndex = 29;

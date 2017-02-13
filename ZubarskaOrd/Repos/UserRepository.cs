@@ -19,6 +19,7 @@ namespace ZubarskaOrd.Repos
             string sql = "SELECT * FROM [LoginFormTable] WHERE [username] ='" + user.Username + "' AND [password] ='" + HashPassword.HashNewPassword(user.Password) + "'";
             SqlCeCommand command = new SqlCeCommand(sql, connection);
             command.Prepare();
+
             SqlCeDataReader reader = command.ExecuteReader();
             if (user.Username.Length == 0)
                 throw new Exception("Username must be entered!");
@@ -32,15 +33,13 @@ namespace ZubarskaOrd.Repos
                         User.IsAdminUser = true;
                     else
                         User.IsAdminUser = false;
-               }
+                }
                 else
                     throw new Exception("Invalid Login please check username and password");
             }
             
             return reader.Read();
-        }
-
-       
+        }    
     }
 }
 

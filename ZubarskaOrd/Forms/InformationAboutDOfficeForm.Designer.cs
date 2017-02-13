@@ -91,7 +91,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(221, 146);
+            this.saveButton.Location = new System.Drawing.Point(287, 121);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 3;
@@ -101,7 +101,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(367, 145);
+            this.deleteButton.Location = new System.Drawing.Point(368, 121);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 4;

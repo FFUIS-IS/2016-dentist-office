@@ -243,7 +243,7 @@
             "DR6",
             "DR7",
             "DR8"});
-            this.toothOnFocusComboBox.Location = new System.Drawing.Point(53, 318);
+            this.toothOnFocusComboBox.Location = new System.Drawing.Point(31, 318);
             this.toothOnFocusComboBox.Name = "toothOnFocusComboBox";
             this.toothOnFocusComboBox.Size = new System.Drawing.Size(121, 21);
             this.toothOnFocusComboBox.TabIndex = 14;
@@ -251,7 +251,7 @@
             // toothNameLabel
             // 
             this.toothNameLabel.AutoSize = true;
-            this.toothNameLabel.Location = new System.Drawing.Point(50, 302);
+            this.toothNameLabel.Location = new System.Drawing.Point(28, 302);
             this.toothNameLabel.Name = "toothNameLabel";
             this.toothNameLabel.Size = new System.Drawing.Size(64, 13);
             this.toothNameLabel.TabIndex = 15;

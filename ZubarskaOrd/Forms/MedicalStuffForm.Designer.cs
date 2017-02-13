@@ -75,7 +75,7 @@
             // 
             this.addMStuffButton.Location = new System.Drawing.Point(12, 72);
             this.addMStuffButton.Name = "addMStuffButton";
-            this.addMStuffButton.Size = new System.Drawing.Size(119, 23);
+            this.addMStuffButton.Size = new System.Drawing.Size(136, 23);
             this.addMStuffButton.TabIndex = 2;
             this.addMStuffButton.Text = "Add";
             this.addMStuffButton.UseVisualStyleBackColor = true;
@@ -83,9 +83,9 @@
             // 
             // deleteMStuffButton
             // 
-            this.deleteMStuffButton.Location = new System.Drawing.Point(156, 72);
+            this.deleteMStuffButton.Location = new System.Drawing.Point(146, 72);
             this.deleteMStuffButton.Name = "deleteMStuffButton";
-            this.deleteMStuffButton.Size = new System.Drawing.Size(124, 23);
+            this.deleteMStuffButton.Size = new System.Drawing.Size(134, 23);
             this.deleteMStuffButton.TabIndex = 3;
             this.deleteMStuffButton.Text = "Delete";
             this.deleteMStuffButton.UseVisualStyleBackColor = true;
