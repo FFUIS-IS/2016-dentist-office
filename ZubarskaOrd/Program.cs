@@ -21,8 +21,7 @@ namespace ZubarskaOrd
             path = path.Substring(0, path.LastIndexOf('\\'));
             path = path.Substring(0, path.LastIndexOf('\\'));
             path = path.Substring(0, path.LastIndexOf('\\')+1);
-            Application.Run(new Forms.ReservationForPatientForm());
+            Application.Run(new LoginForm());
         }
     }
 }
-//C:\Users\hp\Desktop\Informacioni\2016-zubna-ordinacija\ZubarskaOrd\bin\Debug

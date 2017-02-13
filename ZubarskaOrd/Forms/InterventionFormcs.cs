@@ -22,10 +22,14 @@ namespace ZubarskaOrd.Forms
         {
             patient = patientID;
             InitializeComponent();
+            timeOfInterventionDatePicker.MinDate = DateTime.Today;
+
+            refreshListOfAppointments();
         }
 
         private void InterventionForm_Load(object sender, EventArgs e)
         {
+
             command.CommandText = "SELECT * FROM Services;";
             reader = command.ExecuteReader();
             while(reader.Read())
@@ -36,10 +40,7 @@ namespace ZubarskaOrd.Forms
 
         private void serviceTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label1.Visible = true;
-            listOfAppointment.Visible = true;
-            timeOfInterventionDatePicker.Visible = true;
-         //   refreshListOfAppointments();
+               refreshListOfAppointments();
         }
 
         private void timeOfInterventionDatePicker_ValueChanged(object sender, EventArgs e)

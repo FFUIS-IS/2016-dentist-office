@@ -43,6 +43,9 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.ReservationDateTime = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.interventionDetails = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,31 +60,37 @@
             this.thirdPart});
             this.reservationDataGrid.Location = new System.Drawing.Point(31, 56);
             this.reservationDataGrid.Name = "reservationDataGrid";
+            this.reservationDataGrid.ReadOnly = true;
             this.reservationDataGrid.Size = new System.Drawing.Size(384, 212);
             this.reservationDataGrid.TabIndex = 0;
+            this.reservationDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationDataGrid_CellDoubleClick);
             // 
             // zeroPart
             // 
             this.zeroPart.HeaderText = "00-15";
             this.zeroPart.Name = "zeroPart";
+            this.zeroPart.ReadOnly = true;
             this.zeroPart.Width = 80;
             // 
             // firstPart
             // 
             this.firstPart.HeaderText = "15-30";
             this.firstPart.Name = "firstPart";
+            this.firstPart.ReadOnly = true;
             this.firstPart.Width = 80;
             // 
             // secondPart
             // 
             this.secondPart.HeaderText = "30-45";
             this.secondPart.Name = "secondPart";
+            this.secondPart.ReadOnly = true;
             this.secondPart.Width = 80;
             // 
             // thirdPart
             // 
             this.thirdPart.HeaderText = "45-60";
             this.thirdPart.Name = "thirdPart";
+            this.thirdPart.ReadOnly = true;
             this.thirdPart.Width = 80;
             // 
             // textBox1
@@ -165,11 +174,45 @@
             this.ReservationDateTime.TabIndex = 10;
             this.ReservationDateTime.ValueChanged += new System.EventHandler(this.ReservationDateTime_ValueChanged);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(529, 256);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
+            // 
+            // interventionDetails
+            // 
+            this.interventionDetails.Enabled = false;
+            this.interventionDetails.Location = new System.Drawing.Point(520, 60);
+            this.interventionDetails.Name = "interventionDetails";
+            this.interventionDetails.Size = new System.Drawing.Size(200, 194);
+            this.interventionDetails.TabIndex = 12;
+            this.interventionDetails.Text = "";
+            this.interventionDetails.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(520, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 95);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            // 
             // ReservationForPatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 386);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.interventionDetails);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.ReservationDateTime);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
@@ -208,5 +251,8 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.DateTimePicker ReservationDateTime;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.RichTextBox interventionDetails;
+        private System.Windows.Forms.Button button1;
     }
 }

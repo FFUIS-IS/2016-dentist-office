@@ -21,6 +21,7 @@ namespace ZubarskaOrd.Forms
         {
             InitializeComponent();
             FillDataGrid();
+            ReservationDateTime.MinDate = DateTime.Today;
         }
 
         private void FillDataGrid()
@@ -88,26 +89,48 @@ namespace ZubarskaOrd.Forms
             }
         }
 
-        private string parse(DateTime time)
-        {
-            string month = (time.Month < 10) ? ("0" + time.Month) : ("" + time.Month);
-            string day = (time.Day < 10) ? ("0" + time.Day) : ("" + time.Day);
-            return "" + time.Year + "-" + month + "-" + day;
-        }
-        private string convertTime(int hour, int minute)
-        {
-            string hourTemp = (hour < 10) ? ("0" + hour) : ("" + hour);
-            string minuteTemp = (minute < 10) ? ("0" + minute) : ("" + minute);
-            int minuteRight = (minute == 45) ? (0) : (minute + 15);
-            int hourRight = (minuteRight == 0) ? (hour + 1) : (hour);
-            string minuteString = (minuteRight < 10) ? ("0" + minuteRight) : ("" + minuteRight);
-            string hourString = (hourRight < 10) ? ("0" + hourRight) : ("" + hourRight);
-            return hourTemp + ":" + minuteTemp + " - " + hourString + ":" + minuteString;
-        }
-
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void reservationDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(reservationDataGrid[e.ColumnIndex, e.RowIndex].Style.BackColor == Color.Red)
+            {
+                interventionDetails.Clear();
+                command.CommandText = "SELECT * FROM Reservations WHERE StartTime >= '" + parse(ReservationDateTime.Value.Date) + " " + convertTime(e.ColumnIndex * 15, e.RowIndex + 8) + "';";
+                try
+                {
+                    reader = command.ExecuteReader();
+                    reader.Read();
+                    command.CommandText = "SELECT FirstName, LastName FROM Patients WHERE Id = " + reader.GetInt32(2) + ";";
+                    SqlCeDataReader reserveReader = command.ExecuteReader();
+                    reserveReader.Read();
+                    interventionDetails.Text += "Patient Name: " + reserveReader.GetString(0) + " " + reserveReader.GetString(1) + "\n";
+                }
+                catch(SqlCeException ee)
+                {
+                    Console.Out.WriteLine(ee.ToString());
+                }
+                // command.CommandText = "SELECT * FROM "
+            }
+        }
+        private string parse(DateTime time)
+        {
+            string month = (time.Month < 10) ? ("0" + time.Month) : ("" + time.Month);
+            string day = (time.Day < 10) ? ("0" + time.Day) : ("" + time.Day);
+            return time.Year + "-" + month + "-" + day;
+        }
+
+        private string convertTime(int hour, int minute)
+        {
+            string hourTemp = (hour < 10) ? ("0" + hour) : ("" + hour);
+            string minuteTemp = (minute < 10) ? ("0" + minute) : ("" + minute);
+          
+            return hourTemp + ":" + minuteTemp + ":00";
+        }
+
     }
 }

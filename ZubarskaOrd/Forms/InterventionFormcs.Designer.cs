@@ -52,7 +52,6 @@
             this.listOfAppointment.Name = "listOfAppointment";
             this.listOfAppointment.Size = new System.Drawing.Size(182, 238);
             this.listOfAppointment.TabIndex = 2;
-            this.listOfAppointment.Visible = false;
             // 
             // label1
             // 
@@ -62,7 +61,6 @@
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Free appointment";
-            this.label1.Visible = false;
             // 
             // timeOfInterventionDatePicker
             // 
@@ -70,7 +68,6 @@
             this.timeOfInterventionDatePicker.Name = "timeOfInterventionDatePicker";
             this.timeOfInterventionDatePicker.Size = new System.Drawing.Size(162, 20);
             this.timeOfInterventionDatePicker.TabIndex = 4;
-            this.timeOfInterventionDatePicker.Visible = false;
             this.timeOfInterventionDatePicker.ValueChanged += new System.EventHandler(this.timeOfInterventionDatePicker_ValueChanged);
             // 
             // InterventionForm
