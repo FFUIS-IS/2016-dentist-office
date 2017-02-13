@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeethForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.upperLeftTabPage = new System.Windows.Forms.TabPage();
             this.UL8 = new System.Windows.Forms.Button();
             this.UL7 = new System.Windows.Forms.Button();
             this.UL6 = new System.Windows.Forms.Button();
@@ -39,7 +39,7 @@
             this.UL3 = new System.Windows.Forms.Button();
             this.UL2 = new System.Windows.Forms.Button();
             this.UL1 = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.upperRightTabPage = new System.Windows.Forms.TabPage();
             this.UR1 = new System.Windows.Forms.Button();
             this.UR2 = new System.Windows.Forms.Button();
             this.UR3 = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.UR6 = new System.Windows.Forms.Button();
             this.UR7 = new System.Windows.Forms.Button();
             this.UR8 = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.downLeftTabPage = new System.Windows.Forms.TabPage();
             this.DL1 = new System.Windows.Forms.Button();
             this.DL2 = new System.Windows.Forms.Button();
             this.DL3 = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.DL6 = new System.Windows.Forms.Button();
             this.DL7 = new System.Windows.Forms.Button();
             this.DL8 = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.downRightTabPage = new System.Windows.Forms.TabPage();
             this.DR1 = new System.Windows.Forms.Button();
             this.DR2 = new System.Windows.Forms.Button();
             this.DR3 = new System.Windows.Forms.Button();
@@ -73,42 +73,42 @@
             this.serviceDurationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.makeReservationButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.upperLeftTabPage.SuspendLayout();
+            this.upperRightTabPage.SuspendLayout();
+            this.downLeftTabPage.SuspendLayout();
+            this.downRightTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teethInfoDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.upperLeftTabPage);
+            this.tabControl1.Controls.Add(this.upperRightTabPage);
+            this.tabControl1.Controls.Add(this.downLeftTabPage);
+            this.tabControl1.Controls.Add(this.downRightTabPage);
             this.tabControl1.Location = new System.Drawing.Point(7, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(423, 158);
             this.tabControl1.TabIndex = 2;
             // 
-            // tabPage1
+            // upperLeftTabPage
             // 
-            this.tabPage1.Controls.Add(this.UL8);
-            this.tabPage1.Controls.Add(this.UL7);
-            this.tabPage1.Controls.Add(this.UL6);
-            this.tabPage1.Controls.Add(this.UL5);
-            this.tabPage1.Controls.Add(this.UL4);
-            this.tabPage1.Controls.Add(this.UL3);
-            this.tabPage1.Controls.Add(this.UL2);
-            this.tabPage1.Controls.Add(this.UL1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(415, 132);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Gore lijevo";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.upperLeftTabPage.Controls.Add(this.UL8);
+            this.upperLeftTabPage.Controls.Add(this.UL7);
+            this.upperLeftTabPage.Controls.Add(this.UL6);
+            this.upperLeftTabPage.Controls.Add(this.UL5);
+            this.upperLeftTabPage.Controls.Add(this.UL4);
+            this.upperLeftTabPage.Controls.Add(this.UL3);
+            this.upperLeftTabPage.Controls.Add(this.UL2);
+            this.upperLeftTabPage.Controls.Add(this.UL1);
+            this.upperLeftTabPage.Location = new System.Drawing.Point(4, 22);
+            this.upperLeftTabPage.Name = "upperLeftTabPage";
+            this.upperLeftTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.upperLeftTabPage.Size = new System.Drawing.Size(415, 132);
+            this.upperLeftTabPage.TabIndex = 0;
+            this.upperLeftTabPage.Text = "Upper left";
+            this.upperLeftTabPage.UseVisualStyleBackColor = true;
             // 
             // UL8
             // 
@@ -190,23 +190,23 @@
             this.UL1.UseVisualStyleBackColor = true;
             this.UL1.Click += new System.EventHandler(this.ButtonClick);
             // 
-            // tabPage2
+            // upperRightTabPage
             // 
-            this.tabPage2.Controls.Add(this.UR1);
-            this.tabPage2.Controls.Add(this.UR2);
-            this.tabPage2.Controls.Add(this.UR3);
-            this.tabPage2.Controls.Add(this.UR4);
-            this.tabPage2.Controls.Add(this.UR5);
-            this.tabPage2.Controls.Add(this.UR6);
-            this.tabPage2.Controls.Add(this.UR7);
-            this.tabPage2.Controls.Add(this.UR8);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(415, 132);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Gore desno";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.upperRightTabPage.Controls.Add(this.UR1);
+            this.upperRightTabPage.Controls.Add(this.UR2);
+            this.upperRightTabPage.Controls.Add(this.UR3);
+            this.upperRightTabPage.Controls.Add(this.UR4);
+            this.upperRightTabPage.Controls.Add(this.UR5);
+            this.upperRightTabPage.Controls.Add(this.UR6);
+            this.upperRightTabPage.Controls.Add(this.UR7);
+            this.upperRightTabPage.Controls.Add(this.UR8);
+            this.upperRightTabPage.Location = new System.Drawing.Point(4, 22);
+            this.upperRightTabPage.Name = "upperRightTabPage";
+            this.upperRightTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.upperRightTabPage.Size = new System.Drawing.Size(415, 132);
+            this.upperRightTabPage.TabIndex = 1;
+            this.upperRightTabPage.Text = "Upper right";
+            this.upperRightTabPage.UseVisualStyleBackColor = true;
             // 
             // UR1
             // 
@@ -288,23 +288,23 @@
             this.UR8.UseVisualStyleBackColor = true;
             this.UR8.Click += new System.EventHandler(this.ButtonClick);
             // 
-            // tabPage3
+            // downLeftTabPage
             // 
-            this.tabPage3.Controls.Add(this.DL1);
-            this.tabPage3.Controls.Add(this.DL2);
-            this.tabPage3.Controls.Add(this.DL3);
-            this.tabPage3.Controls.Add(this.DL4);
-            this.tabPage3.Controls.Add(this.DL5);
-            this.tabPage3.Controls.Add(this.DL6);
-            this.tabPage3.Controls.Add(this.DL7);
-            this.tabPage3.Controls.Add(this.DL8);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(415, 132);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Dole lijevo";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.downLeftTabPage.Controls.Add(this.DL1);
+            this.downLeftTabPage.Controls.Add(this.DL2);
+            this.downLeftTabPage.Controls.Add(this.DL3);
+            this.downLeftTabPage.Controls.Add(this.DL4);
+            this.downLeftTabPage.Controls.Add(this.DL5);
+            this.downLeftTabPage.Controls.Add(this.DL6);
+            this.downLeftTabPage.Controls.Add(this.DL7);
+            this.downLeftTabPage.Controls.Add(this.DL8);
+            this.downLeftTabPage.Location = new System.Drawing.Point(4, 22);
+            this.downLeftTabPage.Name = "downLeftTabPage";
+            this.downLeftTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.downLeftTabPage.Size = new System.Drawing.Size(415, 132);
+            this.downLeftTabPage.TabIndex = 2;
+            this.downLeftTabPage.Text = "Down left";
+            this.downLeftTabPage.UseVisualStyleBackColor = true;
             // 
             // DL1
             // 
@@ -386,23 +386,23 @@
             this.DL8.UseVisualStyleBackColor = true;
             this.DL8.Click += new System.EventHandler(this.ButtonClick);
             // 
-            // tabPage4
+            // downRightTabPage
             // 
-            this.tabPage4.Controls.Add(this.DR1);
-            this.tabPage4.Controls.Add(this.DR2);
-            this.tabPage4.Controls.Add(this.DR3);
-            this.tabPage4.Controls.Add(this.DR4);
-            this.tabPage4.Controls.Add(this.DR5);
-            this.tabPage4.Controls.Add(this.DR6);
-            this.tabPage4.Controls.Add(this.DR7);
-            this.tabPage4.Controls.Add(this.DR8);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(415, 132);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Dole desno";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.downRightTabPage.Controls.Add(this.DR1);
+            this.downRightTabPage.Controls.Add(this.DR2);
+            this.downRightTabPage.Controls.Add(this.DR3);
+            this.downRightTabPage.Controls.Add(this.DR4);
+            this.downRightTabPage.Controls.Add(this.DR5);
+            this.downRightTabPage.Controls.Add(this.DR6);
+            this.downRightTabPage.Controls.Add(this.DR7);
+            this.downRightTabPage.Controls.Add(this.DR8);
+            this.downRightTabPage.Location = new System.Drawing.Point(4, 22);
+            this.downRightTabPage.Name = "downRightTabPage";
+            this.downRightTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.downRightTabPage.Size = new System.Drawing.Size(415, 132);
+            this.downRightTabPage.TabIndex = 3;
+            this.downRightTabPage.Text = "Down right";
+            this.downRightTabPage.UseVisualStyleBackColor = true;
             // 
             // DR1
             // 
@@ -553,10 +553,10 @@
             this.Text = "TeethForm";
             this.Load += new System.EventHandler(this.TeethForm_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
+            this.upperLeftTabPage.ResumeLayout(false);
+            this.upperRightTabPage.ResumeLayout(false);
+            this.downLeftTabPage.ResumeLayout(false);
+            this.downRightTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.teethInfoDataGrid)).EndInit();
             this.ResumeLayout(false);
 
@@ -564,7 +564,7 @@
 
         #endregion
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage upperLeftTabPage;
         private System.Windows.Forms.Button UL8;
         private System.Windows.Forms.Button UL7;
         private System.Windows.Forms.Button UL6;
@@ -573,7 +573,7 @@
         private System.Windows.Forms.Button UL3;
         private System.Windows.Forms.Button UL2;
         private System.Windows.Forms.Button UL1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage upperRightTabPage;
         private System.Windows.Forms.Button UR1;
         private System.Windows.Forms.Button UR2;
         private System.Windows.Forms.Button UR3;
@@ -582,7 +582,7 @@
         private System.Windows.Forms.Button UR6;
         private System.Windows.Forms.Button UR7;
         private System.Windows.Forms.Button UR8;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage downLeftTabPage;
         private System.Windows.Forms.Button DL1;
         private System.Windows.Forms.Button DL2;
         private System.Windows.Forms.Button DL3;
@@ -591,7 +591,7 @@
         private System.Windows.Forms.Button DL6;
         private System.Windows.Forms.Button DL7;
         private System.Windows.Forms.Button DL8;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage downRightTabPage;
         private System.Windows.Forms.Button DR1;
         private System.Windows.Forms.Button DR2;
         private System.Windows.Forms.Button DR3;
