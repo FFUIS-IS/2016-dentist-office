@@ -128,5 +128,14 @@ namespace ZubarskaOrd.Forms
 
             return hourTemp + ":" + minuteTemp + ":00";
         }
+
+       /* private void reservateButton_Click(object sender, EventArgs e)
+        {
+            SqlCeCommand command = new SqlCeCommand("INSERT INTO Reservations(StartTime, EndTime, resDuration) VALUES ('" + ReservationDateTime.Text + "','" + Int32.Parse(ReservationDateTime.Value.ToString()) + "')", connection);
+            command.ExecuteReader();
+            MessageBox.Show("New Reservation successfully added to database!");
+            
+        }
+        */
     }
 }

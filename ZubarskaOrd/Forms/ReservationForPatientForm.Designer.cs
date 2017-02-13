@@ -205,7 +205,6 @@
             this.reservateButton.TabIndex = 13;
             this.reservateButton.Text = "Reservate";
             this.reservateButton.UseVisualStyleBackColor = true;
-            this.reservateButton.Visible = false;
             // 
             // toothOnFocusComboBox
             // 
