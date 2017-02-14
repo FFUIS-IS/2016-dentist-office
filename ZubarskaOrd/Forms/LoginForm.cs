@@ -10,7 +10,7 @@ namespace ZubarskaOrd
         private string username;
         private string password;
         public bool loginSucces;
-
+        public static int userIdentity;
         public LoginForm()
         {
             InitializeComponent();
@@ -30,6 +30,7 @@ namespace ZubarskaOrd
                 UserRepository.Login(user);
                 loginSucces = true;
                 DialogResult = DialogResult.OK;
+                userIdentity = user.Identity;
                 Close();
 
             }

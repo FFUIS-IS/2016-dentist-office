@@ -2,140 +2,205 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlServerCe;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlServerCe;
 
 namespace ZubarskaOrd.Forms
 {
-    public partial class ReservationForPatientForm : Form
+    public partial class InterventionForm : Form
     {
+        private enum toolUsed { serviceType, dateOfReservation, timeOfReservation, toothName};
+        private string[] dataInRichText = {"Patient name: ",  "Service type: ", "Date of reservation: ",
+            "Time of reservation: ", "Tooth name: "};
+
         private static SqlCeConnection connection = DbConnection.Instance.Connection;
         private static SqlCeCommand command = new SqlCeCommand("", connection);
         private static SqlCeDataReader reader;
 
-        public ReservationForPatientForm()
+        int patient;
+        public InterventionForm(int patientID)
         {
+            patient = patientID;
             InitializeComponent();
-            FillDataGrid();
-            ReservationDateTime.MinDate = DateTime.Today;
-        }
-
-        private void FillDataGrid()
-        {
-
-            DataGridViewRow row;
-            reservationDataGrid.AllowUserToAddRows = true;
-            reservationDataGrid.Rows.Clear();
-            for (int rows = 0; rows < 8; rows++)
-            {
-                row = (DataGridViewRow)reservationDataGrid.Rows[0].Clone();
-                row.Cells[0].Value = "";
-                row.Cells[0].Style.BackColor = Color.Green;
-                row.Cells[1].Value = "";
-                row.Cells[1].Style.BackColor = Color.Green;
-                row.Cells[2].Value = "";
-                row.Cells[2].Style.BackColor = Color.Green;
-                row.Cells[3].Value = "";
-                row.Cells[3].Style.BackColor = Color.Green;
-                reservationDataGrid.Rows.Add(row);
-
-            }
-
-            reservationDataGrid[0, 2].Style.BackColor = Color.Black;
-            reservationDataGrid[1, 2].Style.BackColor = Color.Black;
-
-            reservationDataGrid.AllowUserToAddRows = false;
-
-        }
-
-        private void ReservationForPatientForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ReservationDateTime_ValueChanged(object sender, EventArgs e)
-        {
-            FillDataGrid();
-            command.CommandText = "SELECT StartTime, EndTime,  resDuration FROM Reservations WHERE StartTime >= '"
-                + parse(ReservationDateTime.Value.Date) + "' AND "
-                + " EndTime <= '" + parse(ReservationDateTime.Value.Date.AddDays(1)) + "';";
+            timeOfInterventionDatePicker.MinDate = DateTime.Today;
+            command.CommandText = "SELECT FirstName, LastName FROM Patients WHERE id = " + patient + ";";
             reader = command.ExecuteReader();
-            while (reader.Read())
+            if (reader.Read())
             {
-                int reservationDuration = reader.GetInt32(2);
-                int startTimeHour = reader.GetDateTime(0).Hour;
-                int tempTimeHour = startTimeHour;
-
-                int startTimeMinute = reader.GetDateTime(0).Minute;
-                int tempTimeMinute = startTimeMinute;
-                reservationDataGrid[tempTimeMinute / 15, tempTimeHour - 8].Style.BackColor = Color.Red;
-                for (int count = 1; count < reservationDuration / 15; count++)
-                {
-                    while (tempTimeMinute + 15 > 59)
-                    {
-                        tempTimeMinute -= 60;
-                        tempTimeHour++;
-                    }
-                    tempTimeMinute += 15;
-
-                    if (tempTimeMinute / 15 < 4 && tempTimeHour < 16)
-                        reservationDataGrid[tempTimeMinute / 15, tempTimeHour - 8].Style.BackColor = Color.Red;
-                }
+                dataInRichText[0] = "Patient Name: " + reader.GetString(0) + " " + reader.GetString(1);
+                reservationDetails.Text = dataInRichText[0];
             }
         }
 
-        private void reservationDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void InterventionForm_Load(object sender, EventArgs e)
         {
-            interventionDetails.Clear();
-            if (reservationDataGrid[e.ColumnIndex, e.RowIndex].Style.BackColor == Color.Red)
+
+            command.CommandText = "SELECT * FROM Services;";
+            reader = command.ExecuteReader();
+            while(reader.Read())
             {
-                interventionDetails.Visible = true;
-                command.CommandText = "SELECT * FROM Reservations WHERE "
-                    + " datediff(mi, StartTime, '" + parse(ReservationDateTime.Value.Date) + " " + convertTime(e.RowIndex + 8, e.ColumnIndex * 15) + "') >= 0;";
-                try
+                serviceTypeComboBox.Items.Add(reader.GetString(1));
+            }
+        }
+
+        private void serviceTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             refreshListOfAppointments();
+            addToRichTextBox(serviceTypeComboBox.SelectedItem.ToString(), toolUsed.serviceType);
+        }
+
+        private void addToRichTextBox(string text, toolUsed tool)
+        {
+            reservationDetails.Clear();
+            if (tool == toolUsed.serviceType)
+                dataInRichText[1] = "Service Type: " + text;
+            else if (tool == toolUsed.dateOfReservation)
+                dataInRichText[2] = "Date of reservation: " + text;
+            else if (tool == toolUsed.timeOfReservation)
+                dataInRichText[3] = "Time of reservation: " + calculateTimeOfReservation(text.Substring(0, 5), serviceTypeComboBox.SelectedItem.ToString());
+            else if (tool == toolUsed.toothName)
+                dataInRichText[4] = "Tooth name: " + text + "\n";
+                for (int i = 0; i < 5; i++)
+                        reservationDetails.Text += dataInRichText[i] + "\n";
+
+        }
+
+        private string calculateTimeOfReservation(string startTime, string serviceName)
+        {
+            command.CommandText = "SELECT ServiceDuration FROM Services WHERE ServiceName = '" +
+                serviceName + "';";
+            reader = command.ExecuteReader();
+            int duration = -1;
+            int hour = int.Parse(startTime.Substring(0, startTime.IndexOf(':')));
+            int minute = int.Parse(startTime.Substring(startTime.IndexOf(':') + 1, 2));
+            if (reader.Read())
+                duration = reader.GetInt32(0);
+            if(duration != -1)
+            {
+                if (duration + minute > 59)
                 {
-                    reader = command.ExecuteReader();
-                    reader.Read();
-                    command.CommandText = "SELECT FirstName, LastName FROM Patients WHERE Id = " + reader.GetInt32(2) + ";";
-                    SqlCeDataReader reserveReader = command.ExecuteReader();
-                    reserveReader.Read();
-                    interventionDetails.Text += "Patient Name: " + reserveReader.GetString(0) + " " + reserveReader.GetString(1) + "\n";
+                    hour++;
+                    minute -= 60;
                 }
-                catch (SqlCeException ee)
+                minute += duration;
+            }
+            return (startTime.Substring(0, 5) + " - " + convertTime(hour, minute)).Substring(0, 13);
+        }
+
+        private void timeOfInterventionDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            refreshListOfAppointments();
+            addToRichTextBox(timeOfInterventionDatePicker.Value.ToShortDateString(), toolUsed.dateOfReservation);
+        }
+
+        private void refreshListOfAppointments()
+        {
+            listOfAppointment.Items.Clear();
+            command.CommandText = "SELECT * FROM Services WHERE ServiceName = '" 
+                + serviceTypeComboBox.SelectedItem.ToString() + "';";
+            reader = command.ExecuteReader();
+            reader.Read();
+            int duration = reader.GetInt32(2);
+            for (int i = 8; i < 16; i++)
+                for (int minute = 0; minute < 60; minute += 15) 
+                listOfAppointment.Items.Add(convertTime(i, minute));
+
+            command.CommandText = "SELECT StartTime, EndTime,  resDuration FROM Reservations WHERE StartTime >= '"
+                  + parse(timeOfInterventionDatePicker.Value.Date) + "' AND "
+                  + " EndTime <= '" + parse(timeOfInterventionDatePicker.Value.Date.AddDays(1)) + "';";
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
                 {
-                    Console.Out.WriteLine(ee.ToString());
+                    int reservationDuration = reader.GetInt32(2);
+                    string startTime = reader.GetDateTime(0).ToShortTimeString();
+                    int index = -1;
+
+                    for (int counter = 0; counter < listOfAppointment.Items.Count; counter++)
+                        if (listOfAppointment.Items[counter].ToString().Substring(0, 5).Equals(startTime))
+                        {
+                            index = counter;
+                            break;
+                        }
+                    if (index != -1)
+                        for (int counter = 0; counter < reservationDuration / 15; counter++)
+                        {
+                            listOfAppointment.Items.RemoveAt(index);
+                        }
                 }
             }
-            else
-
-                interventionDetails.Visible = false;
+            catch (SqlCeException ee)
+            {
+                Console.Out.WriteLine(ee.ToString());
+            }    
         }
         private string parse(DateTime time)
         {
             string month = (time.Month < 10) ? ("0" + time.Month) : ("" + time.Month);
             string day = (time.Day < 10) ? ("0" + time.Day) : ("" + time.Day);
-            return time.Year + "-" + month + "-" + day;
+            return "" + time.Year + "-" + month + "-" + day;
         }
-
-        private string convertTime(int hour, int minute)
+        private string convertTime(int hour,int  minute)
         {
-            string hourTemp = (hour < 10) ? ("0" + hour) : ("" + hour);
+            string hourTemp = "" + hour;
             string minuteTemp = (minute < 10) ? ("0" + minute) : ("" + minute);
-
-            return hourTemp + ":" + minuteTemp + ":00";
+            int minuteRight = (minute == 45) ? (0) : (minute + 15);
+            int hourRight = (minuteRight == 0) ? (hour + 1) : (hour);
+            string minuteString = (minuteRight < 10) ? ("0" + minuteRight) : ("" + minuteRight);
+            string hourString = "" + hourRight;
+            return hourTemp + ":" + minuteTemp + " - " + hourString + ":" + minuteString; 
         }
 
-       /* private void reservateButton_Click(object sender, EventArgs e)
+        private void listOfAppointment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Reservations(StartTime, EndTime, resDuration) VALUES ('" + ReservationDateTime.Text + "','" + Int32.Parse(ReservationDateTime.Value.ToString()) + "')", connection);
-            command.ExecuteReader();
-            MessageBox.Show("New Reservation successfully added to database!");
-            
+            addToRichTextBox(listOfAppointment.SelectedItem.ToString(), toolUsed.timeOfReservation);
         }
-        */
+
+        private void confirmReservation_Click(object sender, EventArgs e)
+        {
+            if(listOfAppointment.SelectedIndex == -1)
+            {
+
+            }
+            else if(serviceTypeComboBox.SelectedIndex == -1)
+            {
+
+            }
+            else if(toothOnFocusComboBox.SelectedIndex == -1)
+            {
+
+            }
+            else
+            {
+                command.CommandText = "SELECT ID, ServiceDuration FROM Services WHERE ServiceName = '" + serviceTypeComboBox.SelectedItem.ToString() + "';";
+                reader = command.ExecuteReader();
+                reader.Read();
+                string dateOfReservation = parse(timeOfInterventionDatePicker.Value.Date);
+                dateOfReservation += " " + listOfAppointment.SelectedItem.ToString().Substring(0, listOfAppointment.SelectedItem.ToString().IndexOf(' ')) + ":00";
+                string user = toothOnFocusComboBox.SelectedItem.ToString() + patient;
+                command.CommandText = "INSERT INTO Reservations(MedicalStaffID, PatientsID, StartTime, resDuration, ServicesID) VALUES "
+                    + "(" + LoginForm.userIdentity + ", '" + user + "', '" + dateOfReservation + "', " + reader.GetInt32(1) + ", " + reader.GetInt32(0) + ");";
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Unesen u bazu");
+                }
+                catch(SqlCeException ee)
+                {
+                    Console.Out.WriteLine(ee.ToString());
+
+                }
+            }
+        }
+
+        private void toothOnFocusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            addToRichTextBox(toothOnFocusComboBox.SelectedItem.ToString(), toolUsed.toothName);
+        }
     }
 }

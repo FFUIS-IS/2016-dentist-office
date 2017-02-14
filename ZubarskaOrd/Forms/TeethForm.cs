@@ -119,7 +119,7 @@ namespace ZubarskaOrd.Forms
 
         private void makeReservationButton_Click(object sender, EventArgs e)
         {
-            ReservationForPatientForm reservationForm = new ReservationForPatientForm();
+            ReservationForPatientForm1 reservationForm = new ReservationForPatientForm1();
             reservationForm.ShowDialog();
         }
     }

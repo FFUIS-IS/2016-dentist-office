@@ -93,11 +93,11 @@
     <Compile Include="Forms\InformationAboutDOfficeForm.Designer.cs">
       <DependentUpon>InformationAboutDOfficeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InterventionForm.cs">
+    <Compile Include="Forms\ReservationForPatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InterventionForm.Designer.cs">
-      <DependentUpon>InterventionForm.cs</DependentUpon>
+    <Compile Include="Forms\ReservationForPatientForm.Designer.cs">
+      <DependentUpon>ReservationForPatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -111,11 +111,11 @@
     <Compile Include="Forms\MedicalStuffForm.Designer.cs">
       <DependentUpon>MedicalStuffForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ReservationForPatientForm.cs">
+    <Compile Include="Forms\InterventionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ReservationForPatientForm.Designer.cs">
-      <DependentUpon>ReservationForPatientForm.cs</DependentUpon>
+    <Compile Include="Forms\InterventionForm.Designer.cs">
+      <DependentUpon>InterventionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TeethForm.cs">
       <SubType>Form</SubType>
@@ -160,8 +160,8 @@
     <EmbeddedResource Include="Forms\InformationAboutDOfficeForm.resx">
       <DependentUpon>InformationAboutDOfficeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InterventionForm.resx">
-      <DependentUpon>InterventionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ReservationForPatientForm.resx">
+      <DependentUpon>ReservationForPatientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -172,8 +172,8 @@
     <EmbeddedResource Include="Forms\PatientWindowsForm.resx">
       <DependentUpon>PatientWindowsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ReservationForPatientForm.resx">
-      <DependentUpon>ReservationForPatientForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InterventionForm.resx">
+      <DependentUpon>InterventionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeethForm.resx">
       <DependentUpon>TeethForm.cs</DependentUpon>

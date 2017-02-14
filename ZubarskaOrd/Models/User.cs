@@ -11,7 +11,7 @@ namespace ZubarskaOrd.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public static bool IsAdminUser { get; set; }
-
+        public int Identity { get; set; }
         public User(string username, string password)
         {
             Username = username;

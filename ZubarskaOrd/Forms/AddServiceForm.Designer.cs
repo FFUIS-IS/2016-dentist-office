@@ -43,7 +43,7 @@
             // 
             this.servicesListView.Location = new System.Drawing.Point(13, 13);
             this.servicesListView.Name = "servicesListView";
-            this.servicesListView.Size = new System.Drawing.Size(138, 230);
+            this.servicesListView.Size = new System.Drawing.Size(157, 230);
             this.servicesListView.TabIndex = 0;
             this.servicesListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -51,7 +51,7 @@
             // 
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(158, 13);
+            this.descriptionLabel.Location = new System.Drawing.Point(176, 9);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(92, 19);
             this.descriptionLabel.TabIndex = 1;
@@ -60,7 +60,7 @@
             // descriptionLabel2
             // 
             this.descriptionLabel2.AutoSize = true;
-            this.descriptionLabel2.Location = new System.Drawing.Point(159, 47);
+            this.descriptionLabel2.Location = new System.Drawing.Point(177, 43);
             this.descriptionLabel2.Name = "descriptionLabel2";
             this.descriptionLabel2.Size = new System.Drawing.Size(41, 13);
             this.descriptionLabel2.TabIndex = 2;
@@ -69,7 +69,7 @@
             // descriptionLabel3
             // 
             this.descriptionLabel3.AutoSize = true;
-            this.descriptionLabel3.Location = new System.Drawing.Point(159, 77);
+            this.descriptionLabel3.Location = new System.Drawing.Point(177, 82);
             this.descriptionLabel3.Name = "descriptionLabel3";
             this.descriptionLabel3.Size = new System.Drawing.Size(50, 13);
             this.descriptionLabel3.TabIndex = 3;
@@ -77,9 +77,9 @@
             // 
             // serviceNameTextBox
             // 
-            this.serviceNameTextBox.Location = new System.Drawing.Point(221, 44);
+            this.serviceNameTextBox.Location = new System.Drawing.Point(240, 40);
             this.serviceNameTextBox.Name = "serviceNameTextBox";
-            this.serviceNameTextBox.Size = new System.Drawing.Size(145, 20);
+            this.serviceNameTextBox.Size = new System.Drawing.Size(140, 20);
             this.serviceNameTextBox.TabIndex = 1;
             // 
             // serviceDurationComboBox
@@ -91,14 +91,14 @@
             "30",
             "45",
             "60"});
-            this.serviceDurationComboBox.Location = new System.Drawing.Point(221, 74);
+            this.serviceDurationComboBox.Location = new System.Drawing.Point(240, 74);
             this.serviceDurationComboBox.Name = "serviceDurationComboBox";
-            this.serviceDurationComboBox.Size = new System.Drawing.Size(145, 21);
+            this.serviceDurationComboBox.Size = new System.Drawing.Size(140, 21);
             this.serviceDurationComboBox.TabIndex = 2;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(162, 126);
+            this.saveButton.Location = new System.Drawing.Point(180, 126);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 23);
             this.saveButton.TabIndex = 3;
@@ -108,9 +108,9 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(268, 126);
+            this.deleteButton.Location = new System.Drawing.Point(286, 126);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(97, 23);
+            this.deleteButton.Size = new System.Drawing.Size(94, 23);
             this.deleteButton.TabIndex = 4;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 263);
+            this.ClientSize = new System.Drawing.Size(390, 258);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.serviceDurationComboBox);

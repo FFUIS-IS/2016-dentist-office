@@ -1,6 +1,6 @@
 ﻿namespace ZubarskaOrd.Forms
 {
-    partial class InterventionForm
+    partial class ReservationForPatientForm1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,70 +28,244 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterventionForm));
-            this.serviceTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.listOfAppointment = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.timeOfInterventionDatePicker = new System.Windows.Forms.DateTimePicker();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservationForPatientForm1));
+            this.reservationDataGrid = new System.Windows.Forms.DataGridView();
+            this.zeroPart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstPart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.secondPart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thirdPart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.ReservationDateTime = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.interventionDetailsRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.reservationButton = new System.Windows.Forms.Button();
+            this.resDetailLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // serviceTypeComboBox
+            // reservationDataGrid
             // 
-            this.serviceTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.serviceTypeComboBox.FormattingEnabled = true;
-            this.serviceTypeComboBox.Location = new System.Drawing.Point(60, 12);
-            this.serviceTypeComboBox.Name = "serviceTypeComboBox";
-            this.serviceTypeComboBox.Size = new System.Drawing.Size(182, 21);
-            this.serviceTypeComboBox.TabIndex = 1;
-            this.serviceTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.serviceTypeComboBox_SelectedIndexChanged);
+            this.reservationDataGrid.AllowUserToDeleteRows = false;
+            this.reservationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reservationDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.zeroPart,
+            this.firstPart,
+            this.secondPart,
+            this.thirdPart});
+            this.reservationDataGrid.Location = new System.Drawing.Point(31, 56);
+            this.reservationDataGrid.Name = "reservationDataGrid";
+            this.reservationDataGrid.ReadOnly = true;
+            this.reservationDataGrid.Size = new System.Drawing.Size(384, 212);
+            this.reservationDataGrid.TabIndex = 0;
+            this.reservationDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationDataGrid_CellDoubleClick);
             // 
-            // listOfAppointment
+            // zeroPart
             // 
-            this.listOfAppointment.FormattingEnabled = true;
-            this.listOfAppointment.Location = new System.Drawing.Point(60, 110);
-            this.listOfAppointment.Name = "listOfAppointment";
-            this.listOfAppointment.Size = new System.Drawing.Size(182, 238);
-            this.listOfAppointment.TabIndex = 2;
+            this.zeroPart.HeaderText = "00-15";
+            this.zeroPart.Name = "zeroPart";
+            this.zeroPart.ReadOnly = true;
+            this.zeroPart.Width = 80;
             // 
-            // label1
+            // firstPart
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Free appointment";
+            this.firstPart.HeaderText = "15-30";
+            this.firstPart.Name = "firstPart";
+            this.firstPart.ReadOnly = true;
+            this.firstPart.Width = 80;
             // 
-            // timeOfInterventionDatePicker
+            // secondPart
             // 
-            this.timeOfInterventionDatePicker.Location = new System.Drawing.Point(60, 58);
-            this.timeOfInterventionDatePicker.Name = "timeOfInterventionDatePicker";
-            this.timeOfInterventionDatePicker.Size = new System.Drawing.Size(182, 20);
-            this.timeOfInterventionDatePicker.TabIndex = 4;
-            this.timeOfInterventionDatePicker.ValueChanged += new System.EventHandler(this.timeOfInterventionDatePicker_ValueChanged);
+            this.secondPart.HeaderText = "30-45";
+            this.secondPart.Name = "secondPart";
+            this.secondPart.ReadOnly = true;
+            this.secondPart.Width = 80;
             // 
-            // InterventionForm
+            // thirdPart
+            // 
+            this.thirdPart.HeaderText = "45-60";
+            this.thirdPart.Name = "thirdPart";
+            this.thirdPart.ReadOnly = true;
+            this.thirdPart.Width = 80;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox1.Location = new System.Drawing.Point(1, 77);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(72, 23);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "08:00-09:00";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox2.Location = new System.Drawing.Point(1, 98);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(72, 23);
+            this.textBox2.TabIndex = 2;
+            this.textBox2.Text = "09:00-10:00";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox3.Location = new System.Drawing.Point(1, 121);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(72, 23);
+            this.textBox3.TabIndex = 3;
+            this.textBox3.Text = "10:00-11:00";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox4.Location = new System.Drawing.Point(1, 143);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(72, 23);
+            this.textBox4.TabIndex = 4;
+            this.textBox4.Text = "11:00-12:00";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox5.Location = new System.Drawing.Point(0, 165);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(73, 23);
+            this.textBox5.TabIndex = 5;
+            this.textBox5.Text = "12:00-13:00";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox6.Location = new System.Drawing.Point(0, 187);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(73, 23);
+            this.textBox6.TabIndex = 6;
+            this.textBox6.Text = "13:00-14:00";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox7.Location = new System.Drawing.Point(1, 209);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(72, 23);
+            this.textBox7.TabIndex = 7;
+            this.textBox7.Text = "14:00-15:00";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox8.Location = new System.Drawing.Point(2, 231);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(71, 23);
+            this.textBox8.TabIndex = 8;
+            this.textBox8.Text = "15:00-16:00";
+            // 
+            // ReservationDateTime
+            // 
+            this.ReservationDateTime.Location = new System.Drawing.Point(31, 12);
+            this.ReservationDateTime.Name = "ReservationDateTime";
+            this.ReservationDateTime.Size = new System.Drawing.Size(200, 20);
+            this.ReservationDateTime.TabIndex = 10;
+            this.ReservationDateTime.ValueChanged += new System.EventHandler(this.ReservationDateTime_ValueChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(529, 256);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // interventionDetailsRichTextBox
+            // 
+            this.interventionDetailsRichTextBox.Enabled = false;
+            this.interventionDetailsRichTextBox.Location = new System.Drawing.Point(520, 60);
+            this.interventionDetailsRichTextBox.Name = "interventionDetailsRichTextBox";
+            this.interventionDetailsRichTextBox.Size = new System.Drawing.Size(200, 194);
+            this.interventionDetailsRichTextBox.TabIndex = 12;
+            this.interventionDetailsRichTextBox.Text = "Vrijeme:\nUsluga:\nPacijent:\nZub:";
+            this.interventionDetailsRichTextBox.VisibleChanged += new System.EventHandler(this.ReservationForPatientForm_Load);
+            // 
+            // reservationButton
+            // 
+            this.reservationButton.Enabled = false;
+            this.reservationButton.Location = new System.Drawing.Point(520, 279);
+            this.reservationButton.Name = "reservationButton";
+            this.reservationButton.Size = new System.Drawing.Size(200, 95);
+            this.reservationButton.TabIndex = 13;
+            this.reservationButton.Text = "Confirm reservation";
+            this.reservationButton.UseVisualStyleBackColor = true;
+            this.reservationButton.Click += new System.EventHandler(this.reservationButton_Click);
+            // 
+            // resDetailLabel
+            // 
+            this.resDetailLabel.AutoSize = true;
+            this.resDetailLabel.Location = new System.Drawing.Point(517, 44);
+            this.resDetailLabel.Name = "resDetailLabel";
+            this.resDetailLabel.Size = new System.Drawing.Size(97, 13);
+            this.resDetailLabel.TabIndex = 16;
+            this.resDetailLabel.Text = "Reservation details";
+            // 
+            // ReservationForPatientForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 360);
-            this.Controls.Add(this.timeOfInterventionDatePicker);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.listOfAppointment);
-            this.Controls.Add(this.serviceTypeComboBox);
+            this.ClientSize = new System.Drawing.Size(759, 386);
+            this.Controls.Add(this.resDetailLabel);
+            this.Controls.Add(this.reservationButton);
+            this.Controls.Add(this.interventionDetailsRichTextBox);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.ReservationDateTime);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.reservationDataGrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "InterventionForm";
-            this.Text = "InterventionFormcs";
-            this.Load += new System.EventHandler(this.InterventionForm_Load);
+            this.Name = "ReservationForPatientForm1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Form for Intervention";
+            this.Load += new System.EventHandler(this.ReservationForPatientForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox serviceTypeComboBox;
-        private System.Windows.Forms.ListBox listOfAppointment;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker timeOfInterventionDatePicker;
+
+        private System.Windows.Forms.DataGridView reservationDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zeroPart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstPart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn secondPart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thirdPart;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.DateTimePicker ReservationDateTime;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.RichTextBox interventionDetailsRichTextBox;
+        private System.Windows.Forms.Button reservationButton;
+        private System.Windows.Forms.Label resDetailLabel;
     }
 }

@@ -2,108 +2,145 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlServerCe;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlServerCe;
 
 namespace ZubarskaOrd.Forms
 {
-    public partial class InterventionForm : Form
+    public partial class ReservationForPatientForm1 : Form
     {
         private static SqlCeConnection connection = DbConnection.Instance.Connection;
         private static SqlCeCommand command = new SqlCeCommand("", connection);
         private static SqlCeDataReader reader;
 
-        int patient;
-        public InterventionForm(int patientID)
+        public ReservationForPatientForm1()
         {
-            patient = patientID;
             InitializeComponent();
-            timeOfInterventionDatePicker.MinDate = DateTime.Today;
-
-            refreshListOfAppointments();
+            FillDataGrid();
+            ReservationDateTime.MinDate = DateTime.Today;
         }
 
-        private void InterventionForm_Load(object sender, EventArgs e)
+        private void FillDataGrid()
         {
 
-            command.CommandText = "SELECT * FROM Services;";
-            reader = command.ExecuteReader();
-            while(reader.Read())
+            DataGridViewRow row;
+            reservationDataGrid.AllowUserToAddRows = true;
+            reservationDataGrid.Rows.Clear();
+            for (int rows = 0; rows < 8; rows++)
             {
-                serviceTypeComboBox.Items.Add(reader.GetString(1));
+                row = (DataGridViewRow)reservationDataGrid.Rows[0].Clone();
+                row.Cells[0].Value = "";
+                row.Cells[0].Style.BackColor = Color.Green;
+                row.Cells[1].Value = "";
+                row.Cells[1].Style.BackColor = Color.Green;
+                row.Cells[2].Value = "";
+                row.Cells[2].Style.BackColor = Color.Green;
+                row.Cells[3].Value = "";
+                row.Cells[3].Style.BackColor = Color.Green;
+                reservationDataGrid.Rows.Add(row);
+
             }
+
+            reservationDataGrid[0, 2].Style.BackColor = Color.Black;
+            reservationDataGrid[1, 2].Style.BackColor = Color.Black;
+
+            reservationDataGrid.AllowUserToAddRows = false;
+
         }
 
-        private void serviceTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ReservationForPatientForm_Load(object sender, EventArgs e)
         {
-               refreshListOfAppointments();
+
         }
 
-        private void timeOfInterventionDatePicker_ValueChanged(object sender, EventArgs e)
+        private void ReservationDateTime_ValueChanged(object sender, EventArgs e)
         {
-            refreshListOfAppointments();
-        }
-        private void refreshListOfAppointments()
-        {
-            listOfAppointment.Items.Clear();
-            command.CommandText = "SELECT * FROM Services WHERE ServiceName = '" 
-                + serviceTypeComboBox.SelectedItem.ToString() + "';";
-            reader = command.ExecuteReader();
-            reader.Read();
-            int duration = reader.GetInt32(2);
-            for (int i = 8; i < 16; i++)
-                for (int minute = 0; minute < 60; minute += 15) 
-                listOfAppointment.Items.Add(convertTime(i, minute));
-
+            FillDataGrid();
             command.CommandText = "SELECT StartTime, EndTime,  resDuration FROM Reservations WHERE StartTime >= '"
-                  + parse(timeOfInterventionDatePicker.Value.Date) + "' AND "
-                  + " EndTime <= '" + parse(timeOfInterventionDatePicker.Value.Date.AddDays(1)) + "';";
-            try
+                + parse(ReservationDateTime.Value.Date) + "' AND "
+                + " EndTime <= '" + parse(ReservationDateTime.Value.Date.AddDays(1)) + "';";
+            reader = command.ExecuteReader();
+            while (reader.Read())
             {
-                reader = command.ExecuteReader();
-                while (reader.Read())
+                int reservationDuration = reader.GetInt32(2);
+                int startTimeHour = reader.GetDateTime(0).Hour;
+                int tempTimeHour = startTimeHour;
+
+                int startTimeMinute = reader.GetDateTime(0).Minute;
+                int tempTimeMinute = startTimeMinute;
+                reservationDataGrid[tempTimeMinute / 15, tempTimeHour - 8].Style.BackColor = Color.Red;
+                for (int count = 1; count < reservationDuration / 15; count++)
                 {
-                    int reservationDuration = reader.GetInt32(2);
-                    string startTime = reader.GetDateTime(0).Hour + ":" + ((reader.GetDateTime(0).Minute < 10) ? ("0" + reader.GetDateTime(0).Minute) : ("" + reader.GetDateTime(0).Minute));
-                     int index = -1;
-                    for (int counter  = 0; counter < listOfAppointment.Items.Count; counter++)
-                        if(listOfAppointment.Items[counter].ToString().Substring(0, 5).Equals(startTime))
-                        {
-                            index = counter;
-                            break;
-                        }
-                    
-                    if(index != -1)
-                        for (int counter = 0; counter < reservationDuration/15; counter++)
-                        {
-                            listOfAppointment.Items.RemoveAt(index);
-                        }
+                    while (tempTimeMinute + 15 > 59)
+                    {
+                        tempTimeMinute -= 60;
+                        tempTimeHour++;
+                    }
+                    tempTimeMinute += 15;
+
+                    if (tempTimeMinute / 15 < 4 && tempTimeHour < 16)
+                        reservationDataGrid[tempTimeMinute / 15, tempTimeHour - 8].Style.BackColor = Color.Red;
                 }
             }
-            catch(SqlCeException ee)
+        }
+
+        private void reservationDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            interventionDetailsRichTextBox.Clear();
+            if (reservationDataGrid[e.ColumnIndex, e.RowIndex].Style.BackColor == Color.Red)
             {
-                Console.Out.WriteLine(ee.ToString());
-            }    
+                interventionDetailsRichTextBox.Visible = true;
+                command.CommandText = "SELECT * FROM Reservations WHERE "
+                    + " datediff(mi, StartTime, '" + parse(ReservationDateTime.Value.Date) + " " + convertTime(e.RowIndex + 8, e.ColumnIndex * 15) + "') >= 0;";
+                try
+                {
+                    reader = command.ExecuteReader();
+                    reader.Read();
+                    command.CommandText = "SELECT FirstName, LastName FROM Patients WHERE Id = " + reader.GetInt32(2) + ";";
+                    SqlCeDataReader reserveReader = command.ExecuteReader();
+                    reserveReader.Read();
+                    interventionDetailsRichTextBox.Text += "Patient Name: " + reserveReader.GetString(0) + " " + reserveReader.GetString(1) + "\n";
+
+                }
+                catch (SqlCeException ee)
+                {
+                    Console.Out.WriteLine(ee.ToString());
+                }
+            }
+            else
+
+                interventionDetailsRichTextBox.Visible = false;
         }
         private string parse(DateTime time)
         {
             string month = (time.Month < 10) ? ("0" + time.Month) : ("" + time.Month);
             string day = (time.Day < 10) ? ("0" + time.Day) : ("" + time.Day);
-            return "" + time.Year + "-" + month + "-" + day;
+            return time.Year + "-" + month + "-" + day;
         }
-        private string convertTime(int hour,int  minute)
+
+        private string convertTime(int hour, int minute)
         {
             string hourTemp = (hour < 10) ? ("0" + hour) : ("" + hour);
             string minuteTemp = (minute < 10) ? ("0" + minute) : ("" + minute);
-            int minuteRight = (minute == 45) ? (0) : (minute + 15);
-            int hourRight = (minuteRight == 0) ? (hour + 1) : (hour);
-            string minuteString = (minuteRight < 10) ? ("0" + minuteRight) : ("" + minuteRight);
-            string hourString = (hourRight < 10) ? ("0" + hourRight) : ("" + hourRight);
-            return hourTemp + ":" + minuteTemp + " - " + hourString + ":" + minuteString; 
+
+            return hourTemp + ":" + minuteTemp + ":00";
+        }
+
+        private void reservationButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                reservationButton.Enabled = true;
+            else
+                reservationButton.Enabled = false;
         }
     }
 }

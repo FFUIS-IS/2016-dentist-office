@@ -29,6 +29,7 @@ namespace ZubarskaOrd.Repos
             {
                 if (reader.Read())
                 {
+                    user.Identity = reader.GetInt32(0);
                     if (!(reader.IsDBNull(4)))
                         User.IsAdminUser = true;
                     else
