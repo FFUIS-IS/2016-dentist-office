@@ -64,6 +64,7 @@
             this.reservationDataGrid.ReadOnly = true;
             this.reservationDataGrid.Size = new System.Drawing.Size(384, 212);
             this.reservationDataGrid.TabIndex = 0;
+            this.reservationDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationDataGrid_CellDoubleClick);
             this.reservationDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationDataGrid_CellDoubleClick);
             // 
             // zeroPart
@@ -179,9 +180,9 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(529, 256);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.Size = new System.Drawing.Size(109, 17);
             this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.Text = "Intervention done";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.Visible = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -194,6 +195,7 @@
             this.interventionDetailsRichTextBox.Size = new System.Drawing.Size(200, 194);
             this.interventionDetailsRichTextBox.TabIndex = 12;
             this.interventionDetailsRichTextBox.Text = "Vrijeme:\nUsluga:\nPacijent:\nZub:";
+            this.interventionDetailsRichTextBox.Visible = false;
             this.interventionDetailsRichTextBox.VisibleChanged += new System.EventHandler(this.ReservationForPatientForm_Load);
             // 
             // reservationButton
@@ -205,6 +207,7 @@
             this.reservationButton.TabIndex = 13;
             this.reservationButton.Text = "Confirm reservation";
             this.reservationButton.UseVisualStyleBackColor = true;
+            this.reservationButton.Visible = false;
             this.reservationButton.Click += new System.EventHandler(this.reservationButton_Click);
             // 
             // resDetailLabel
@@ -215,6 +218,7 @@
             this.resDetailLabel.Size = new System.Drawing.Size(97, 13);
             this.resDetailLabel.TabIndex = 16;
             this.resDetailLabel.Text = "Reservation details";
+            this.resDetailLabel.Visible = false;
             // 
             // ReservationForPatientForm1
             // 
