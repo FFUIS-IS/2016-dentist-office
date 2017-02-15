@@ -43,10 +43,15 @@ namespace ZubarskaOrd.Forms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            SqlCeCommand cmd = new SqlCeCommand("INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JBMG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + convert(dobTimePicker.Value.Date) + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','1')", connection);
+            SqlCeCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Id from Cities where CityName ='" + cityNameComboBox.SelectedItem.ToString() + "';";
+            SqlCeDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            cmd = new SqlCeCommand("INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JBMG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + convert(dobTimePicker.Value.Date) + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','" + reader.GetInt32(0) + "')", connection);
             cmd.ExecuteReader();
             cmd.CommandText = "SELECT MAX(Id) FROM MedicalStaff";
-            SqlCeDataReader reader = cmd.ExecuteReader();
+            reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 cmd.CommandText = "INSERT INTO LoginFormTable(username, password,MedicalStaffID) VALUES ('" + newUsernameTextBox.Text + "','" + HashPassword.HashNewPassword(newPasswordTextBox.Text) + "'," + reader.GetInt32(0) + ");";

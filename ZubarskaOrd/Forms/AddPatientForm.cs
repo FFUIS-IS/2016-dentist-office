@@ -54,7 +54,10 @@ namespace ZubarskaOrd
         {
             SqlCeCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Patients (FirstName, LastName, DateOfBirth, JMBG, Contact, Address, CitiesID) VALUES ('" + FirstNameBox.Text + "','" + LastNameBox.Text + "','" + convert(dobTimePicker.Value.Date) + "','" + JMBGBox.Text + "','" + ContactBox.Text + "','" + AddressBox.Text + "','1')";
+            cmd.CommandText = "select Id from Cities where CityName ='" + CityNameComboBox.SelectedItem.ToString() + "';";
+            SqlCeDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            cmd = new SqlCeCommand( "INSERT INTO Patients (FirstName, LastName, DateOfBirth, JMBG, Contact, Address, CitiesID) VALUES ('" + FirstNameBox.Text + "','" + LastNameBox.Text + "','" + convert(dobTimePicker.Value.Date) + "','" + JMBGBox.Text + "','" + ContactBox.Text + "','" + AddressBox.Text + "','" + reader.GetInt32(0) + "')", connection);
             cmd.ExecuteNonQuery();
             
             MessageBox.Show("Insert is updated successfully!");
