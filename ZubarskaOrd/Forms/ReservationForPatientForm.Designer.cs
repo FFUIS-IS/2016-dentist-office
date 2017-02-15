@@ -43,7 +43,7 @@
             // 
             this.serviceTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serviceTypeComboBox.FormattingEnabled = true;
-            this.serviceTypeComboBox.Location = new System.Drawing.Point(60, 12);
+            this.serviceTypeComboBox.Location = new System.Drawing.Point(60, 17);
             this.serviceTypeComboBox.Name = "serviceTypeComboBox";
             this.serviceTypeComboBox.Size = new System.Drawing.Size(182, 21);
             this.serviceTypeComboBox.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             // timeOfInterventionDatePicker
             // 
-            this.timeOfInterventionDatePicker.Location = new System.Drawing.Point(60, 58);
+            this.timeOfInterventionDatePicker.Location = new System.Drawing.Point(60, 56);
             this.timeOfInterventionDatePicker.Name = "timeOfInterventionDatePicker";
             this.timeOfInterventionDatePicker.Size = new System.Drawing.Size(182, 20);
             this.timeOfInterventionDatePicker.TabIndex = 4;
@@ -159,24 +159,23 @@
             this.toothOnFocusComboBox.Name = "toothOnFocusComboBox";
             this.toothOnFocusComboBox.Size = new System.Drawing.Size(121, 21);
             this.toothOnFocusComboBox.TabIndex = 20;
-            this.toothOnFocusComboBox.SelectedIndexChanged += new System.EventHandler(this.toothOnFocusComboBox_SelectedIndexChanged);
             // 
             // reservationDetails
             // 
             this.reservationDetails.Enabled = false;
-            this.reservationDetails.Location = new System.Drawing.Point(334, 91);
+            this.reservationDetails.Location = new System.Drawing.Point(293, 110);
             this.reservationDetails.Name = "reservationDetails";
-            this.reservationDetails.Size = new System.Drawing.Size(263, 194);
+            this.reservationDetails.Size = new System.Drawing.Size(262, 184);
             this.reservationDetails.TabIndex = 19;
             this.reservationDetails.Text = "";
             // 
             // confirmReservation
             // 
-            this.confirmReservation.Location = new System.Drawing.Point(603, 266);
+            this.confirmReservation.Location = new System.Drawing.Point(462, 314);
             this.confirmReservation.Name = "confirmReservation";
-            this.confirmReservation.Size = new System.Drawing.Size(117, 82);
+            this.confirmReservation.Size = new System.Drawing.Size(93, 44);
             this.confirmReservation.TabIndex = 22;
-            this.confirmReservation.Text = "Confirm Reservations";
+            this.confirmReservation.Text = "Confirm Reservation";
             this.confirmReservation.UseVisualStyleBackColor = true;
             this.confirmReservation.Click += new System.EventHandler(this.confirmReservation_Click);
             // 
@@ -184,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 360);
+            this.ClientSize = new System.Drawing.Size(590, 373);
             this.Controls.Add(this.confirmReservation);
             this.Controls.Add(this.toothNameLabel);
             this.Controls.Add(this.toothOnFocusComboBox);
@@ -193,8 +192,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listOfAppointment);
             this.Controls.Add(this.serviceTypeComboBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "InterventionForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form for Reservation";
             this.Load += new System.EventHandler(this.InterventionForm_Load);
             this.ResumeLayout(false);

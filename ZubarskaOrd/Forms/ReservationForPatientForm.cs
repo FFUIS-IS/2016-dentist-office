@@ -34,6 +34,8 @@ namespace ZubarskaOrd.Forms
                 dataInRichText[0] = "Patient Name: " + reader.GetString(0) + " " + reader.GetString(1);
                 reservationDetails.Text = dataInRichText[0];
             }
+            else
+                MessageBox.Show("Error occured trying to choose patient!");
         }
 
         private void InterventionForm_Load(object sender, EventArgs e)
@@ -50,7 +52,7 @@ namespace ZubarskaOrd.Forms
         private void serviceTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
              refreshListOfAppointments();
-            addToRichTextBox(serviceTypeComboBox.SelectedItem.ToString(), toolUsed.serviceType);
+             addToRichTextBox(serviceTypeComboBox.SelectedItem.ToString(), toolUsed.serviceType);
         }
 
         private void addToRichTextBox(string text, toolUsed tool)
@@ -163,17 +165,17 @@ namespace ZubarskaOrd.Forms
 
         private void confirmReservation_Click(object sender, EventArgs e)
         {
-            if(listOfAppointment.SelectedIndex == -1)
+            if (listOfAppointment.SelectedIndex == -1)
             {
-
+                MessageBox.Show("Error in choosing appointment!");
             }
-            else if(serviceTypeComboBox.SelectedIndex == -1)
+            else if (serviceTypeComboBox.SelectedIndex == -1)
             {
-
+                MessageBox.Show("Error in choosing service!");
             }
-            else if(toothOnFocusComboBox.SelectedIndex == -1)
+            else if (toothOnFocusComboBox.SelectedIndex == -1)
             {
-
+                MessageBox.Show("Error in choosing tooth!");
             }
             else
             {
@@ -188,16 +190,15 @@ namespace ZubarskaOrd.Forms
                 try
                 {
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Unesen u bazu");
+                    MessageBox.Show("Reservation is succesfully added!");
                 }
-                catch(SqlCeException ee)
+                catch (SqlCeException ee)
                 {
-                    Console.Out.WriteLine(ee.ToString());
-
+                    MessageBox.Show(ee.ToString());
                 }
             }
-        }
 
+        }
         private void toothOnFocusComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             addToRichTextBox(toothOnFocusComboBox.SelectedItem.ToString(), toolUsed.toothName);

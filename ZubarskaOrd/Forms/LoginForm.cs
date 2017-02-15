@@ -11,6 +11,7 @@ namespace ZubarskaOrd
         private string password;
         public bool loginSucces;
         public static int userIdentity;
+
         public LoginForm()
         {
             InitializeComponent();

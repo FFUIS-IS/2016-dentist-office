@@ -59,10 +59,10 @@
             this.firstPart,
             this.secondPart,
             this.thirdPart});
-            this.reservationDataGrid.Location = new System.Drawing.Point(31, 56);
+            this.reservationDataGrid.Location = new System.Drawing.Point(51, 56);
             this.reservationDataGrid.Name = "reservationDataGrid";
             this.reservationDataGrid.ReadOnly = true;
-            this.reservationDataGrid.Size = new System.Drawing.Size(384, 212);
+            this.reservationDataGrid.Size = new System.Drawing.Size(370, 207);
             this.reservationDataGrid.TabIndex = 0;
             this.reservationDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationDataGrid_CellDoubleClick);
             this.reservationDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationDataGrid_CellDoubleClick);
@@ -98,7 +98,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox1.Location = new System.Drawing.Point(1, 77);
+            this.textBox1.Location = new System.Drawing.Point(21, 77);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(72, 23);
             this.textBox1.TabIndex = 1;
@@ -107,7 +107,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox2.Location = new System.Drawing.Point(1, 98);
+            this.textBox2.Location = new System.Drawing.Point(21, 98);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(72, 23);
             this.textBox2.TabIndex = 2;
@@ -116,7 +116,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox3.Location = new System.Drawing.Point(1, 121);
+            this.textBox3.Location = new System.Drawing.Point(21, 121);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(72, 23);
             this.textBox3.TabIndex = 3;
@@ -125,7 +125,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox4.Location = new System.Drawing.Point(1, 143);
+            this.textBox4.Location = new System.Drawing.Point(21, 143);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(72, 23);
             this.textBox4.TabIndex = 4;
@@ -134,7 +134,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox5.Location = new System.Drawing.Point(0, 165);
+            this.textBox5.Location = new System.Drawing.Point(20, 165);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(73, 23);
             this.textBox5.TabIndex = 5;
@@ -143,7 +143,7 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox6.Location = new System.Drawing.Point(0, 187);
+            this.textBox6.Location = new System.Drawing.Point(20, 187);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(73, 23);
             this.textBox6.TabIndex = 6;
@@ -152,7 +152,7 @@
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox7.Location = new System.Drawing.Point(1, 209);
+            this.textBox7.Location = new System.Drawing.Point(21, 209);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(72, 23);
             this.textBox7.TabIndex = 7;
@@ -161,7 +161,7 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox8.Location = new System.Drawing.Point(2, 231);
+            this.textBox8.Location = new System.Drawing.Point(22, 231);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(71, 23);
             this.textBox8.TabIndex = 8;
@@ -169,7 +169,7 @@
             // 
             // ReservationDateTime
             // 
-            this.ReservationDateTime.Location = new System.Drawing.Point(31, 12);
+            this.ReservationDateTime.Location = new System.Drawing.Point(51, 12);
             this.ReservationDateTime.Name = "ReservationDateTime";
             this.ReservationDateTime.Size = new System.Drawing.Size(200, 20);
             this.ReservationDateTime.TabIndex = 10;
@@ -178,7 +178,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(529, 256);
+            this.checkBox1.Location = new System.Drawing.Point(549, 256);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(109, 17);
             this.checkBox1.TabIndex = 11;
@@ -190,7 +190,7 @@
             // interventionDetailsRichTextBox
             // 
             this.interventionDetailsRichTextBox.Enabled = false;
-            this.interventionDetailsRichTextBox.Location = new System.Drawing.Point(520, 60);
+            this.interventionDetailsRichTextBox.Location = new System.Drawing.Point(540, 60);
             this.interventionDetailsRichTextBox.Name = "interventionDetailsRichTextBox";
             this.interventionDetailsRichTextBox.Size = new System.Drawing.Size(200, 194);
             this.interventionDetailsRichTextBox.TabIndex = 12;
@@ -201,9 +201,9 @@
             // reservationButton
             // 
             this.reservationButton.Enabled = false;
-            this.reservationButton.Location = new System.Drawing.Point(520, 279);
+            this.reservationButton.Location = new System.Drawing.Point(540, 279);
             this.reservationButton.Name = "reservationButton";
-            this.reservationButton.Size = new System.Drawing.Size(200, 95);
+            this.reservationButton.Size = new System.Drawing.Size(200, 39);
             this.reservationButton.TabIndex = 13;
             this.reservationButton.Text = "Confirm reservation";
             this.reservationButton.UseVisualStyleBackColor = true;
@@ -213,7 +213,7 @@
             // resDetailLabel
             // 
             this.resDetailLabel.AutoSize = true;
-            this.resDetailLabel.Location = new System.Drawing.Point(517, 44);
+            this.resDetailLabel.Location = new System.Drawing.Point(537, 44);
             this.resDetailLabel.Name = "resDetailLabel";
             this.resDetailLabel.Size = new System.Drawing.Size(97, 13);
             this.resDetailLabel.TabIndex = 16;
@@ -224,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 386);
+            this.ClientSize = new System.Drawing.Size(761, 344);
             this.Controls.Add(this.resDetailLabel);
             this.Controls.Add(this.reservationButton);
             this.Controls.Add(this.interventionDetailsRichTextBox);
@@ -241,6 +241,8 @@
             this.Controls.Add(this.reservationDataGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ReservationForPatientForm1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form for Intervention";

@@ -187,7 +187,7 @@ namespace ZubarskaOrd.Forms
                 command.CommandText = "UPDATE Reservations SET isDone = 1 WHERE PatientsID = '" + informations[1] + "'"
                     + " AND startTime = '" + stringToDateString(informations[3]) + "' AND servicesID = " + serviceID + ";";
                 command.ExecuteNonQuery();
-                MessageBox.Show("DONE");
+                MessageBox.Show("Intervention succesfully added to patient medical record!");
                 FillDataGrid(); 
             }
             catch(SqlCeException ee)

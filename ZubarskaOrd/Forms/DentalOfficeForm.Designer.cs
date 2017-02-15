@@ -44,6 +44,8 @@
             this.regularUserMenuStrip = new System.Windows.Forms.MenuStrip();
             this.patientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patientsFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.interventionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listOfDailyReservationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorMenuStrip.SuspendLayout();
             this.regularUserMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -150,7 +152,8 @@
             // regularUserMenuStrip
             // 
             this.regularUserMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.patientsToolStripMenuItem});
+            this.patientsToolStripMenuItem,
+            this.interventionsToolStripMenuItem});
             this.regularUserMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.regularUserMenuStrip.Name = "regularUserMenuStrip";
             this.regularUserMenuStrip.Size = new System.Drawing.Size(780, 24);
@@ -171,6 +174,21 @@
             this.patientsFormToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.patientsFormToolStripMenuItem.Text = "PatientsForm";
             this.patientsFormToolStripMenuItem.Click += new System.EventHandler(this.patientsFormToolStripMenuItem_Click);
+            // 
+            // interventionsToolStripMenuItem
+            // 
+            this.interventionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listOfDailyReservationsToolStripMenuItem});
+            this.interventionsToolStripMenuItem.Name = "interventionsToolStripMenuItem";
+            this.interventionsToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.interventionsToolStripMenuItem.Text = "Interventions";
+            // 
+            // listOfDailyReservationsToolStripMenuItem
+            // 
+            this.listOfDailyReservationsToolStripMenuItem.Name = "listOfDailyReservationsToolStripMenuItem";
+            this.listOfDailyReservationsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.listOfDailyReservationsToolStripMenuItem.Text = "List Of Daily Reservations";
+            this.listOfDailyReservationsToolStripMenuItem.Click += new System.EventHandler(this.listOfDailyReservationsToolStripMenuItem_Click);
             // 
             // DentalOfficeForm
             // 
@@ -214,6 +232,8 @@
         private System.Windows.Forms.ToolStripMenuItem listOfAllServicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dOfficeInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOfAllDOfficeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem interventionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listOfDailyReservationsToolStripMenuItem;
     }
 }
 

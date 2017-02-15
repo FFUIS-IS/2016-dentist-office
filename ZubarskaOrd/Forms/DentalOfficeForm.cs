@@ -95,5 +95,11 @@ namespace ZubarskaOrd
             InformationAboutDOfficeForm infoForm = new InformationAboutDOfficeForm();
             infoForm.ShowDialog();
         }
+
+        private void listOfDailyReservationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           ReservationForPatientForm1 interventionForm = new ReservationForPatientForm1();
+            interventionForm.ShowDialog();
+        }
     }
 }

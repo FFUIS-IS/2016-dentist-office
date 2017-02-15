@@ -29,11 +29,16 @@ namespace ZubarskaOrd.Repos
             {
                 if (reader.Read())
                 {
-                    user.Identity = reader.GetInt32(0);
                     if (!(reader.IsDBNull(4)))
+                    {
                         User.IsAdminUser = true;
+                        user.Identity = reader.GetInt32(4);
+                    }
                     else
+                    { 
                         User.IsAdminUser = false;
+                        user.Identity = reader.GetInt32(3);
+                    }
                 }
                 else
                     throw new Exception("Invalid Login please check username and password");
