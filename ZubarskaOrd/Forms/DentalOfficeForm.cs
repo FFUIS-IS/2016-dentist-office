@@ -101,5 +101,17 @@ namespace ZubarskaOrd
            ReservationForPatientForm1 interventionForm = new ReservationForPatientForm1();
             interventionForm.ShowDialog();
         }
+
+        private void addPatientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddPatientForm AddPatientForm = new AddPatientForm();
+            DialogResult addresult = AddPatientForm.ShowDialog();
+        }
+
+        private void addMedicalStaffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddMedicalStaffForm addMSForm = new AddMedicalStaffForm();
+            addMSForm.ShowDialog();
+        }
     }
 }

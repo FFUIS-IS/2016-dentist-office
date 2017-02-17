@@ -46,6 +46,8 @@
             this.patientsFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interventionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfDailyReservationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMedicalStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorMenuStrip.SuspendLayout();
             this.regularUserMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +62,7 @@
             this.dOfficeInfoToolStripMenuItem});
             this.administratorMenuStrip.Location = new System.Drawing.Point(0, 24);
             this.administratorMenuStrip.Name = "administratorMenuStrip";
-            this.administratorMenuStrip.Size = new System.Drawing.Size(780, 24);
+            this.administratorMenuStrip.Size = new System.Drawing.Size(715, 24);
             this.administratorMenuStrip.TabIndex = 1;
             this.administratorMenuStrip.Text = "menuStrip1";
             // 
@@ -82,7 +84,8 @@
             // medicalStuffToolStripMenuItem
             // 
             this.medicalStuffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listOfAllMStuffToolStripMenuItem});
+            this.listOfAllMStuffToolStripMenuItem,
+            this.addMedicalStaffToolStripMenuItem});
             this.medicalStuffToolStripMenuItem.Name = "medicalStuffToolStripMenuItem";
             this.medicalStuffToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.medicalStuffToolStripMenuItem.Text = "MedicalStuff";
@@ -141,7 +144,8 @@
             // 
             // logoutButton
             // 
-            this.logoutButton.Location = new System.Drawing.Point(779, 444);
+            this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.logoutButton.Location = new System.Drawing.Point(640, 0);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(75, 38);
             this.logoutButton.TabIndex = 2;
@@ -156,14 +160,15 @@
             this.interventionsToolStripMenuItem});
             this.regularUserMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.regularUserMenuStrip.Name = "regularUserMenuStrip";
-            this.regularUserMenuStrip.Size = new System.Drawing.Size(780, 24);
+            this.regularUserMenuStrip.Size = new System.Drawing.Size(715, 24);
             this.regularUserMenuStrip.TabIndex = 3;
             this.regularUserMenuStrip.Text = "regularUserMenuStrip";
             // 
             // patientsToolStripMenuItem
             // 
             this.patientsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.patientsFormToolStripMenuItem});
+            this.patientsFormToolStripMenuItem,
+            this.addPatientToolStripMenuItem});
             this.patientsToolStripMenuItem.Name = "patientsToolStripMenuItem";
             this.patientsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.patientsToolStripMenuItem.Text = "Patients";
@@ -171,7 +176,7 @@
             // patientsFormToolStripMenuItem
             // 
             this.patientsFormToolStripMenuItem.Name = "patientsFormToolStripMenuItem";
-            this.patientsFormToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.patientsFormToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.patientsFormToolStripMenuItem.Text = "PatientsForm";
             this.patientsFormToolStripMenuItem.Click += new System.EventHandler(this.patientsFormToolStripMenuItem_Click);
             // 
@@ -190,11 +195,27 @@
             this.listOfDailyReservationsToolStripMenuItem.Text = "List Of Daily Reservations";
             this.listOfDailyReservationsToolStripMenuItem.Click += new System.EventHandler(this.listOfDailyReservationsToolStripMenuItem_Click);
             // 
+            // addPatientToolStripMenuItem
+            // 
+            this.addPatientToolStripMenuItem.Name = "addPatientToolStripMenuItem";
+            this.addPatientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addPatientToolStripMenuItem.Text = "Add Patient";
+            this.addPatientToolStripMenuItem.Click += new System.EventHandler(this.addPatientToolStripMenuItem_Click);
+            // 
+            // addMedicalStaffToolStripMenuItem
+            // 
+            this.addMedicalStaffToolStripMenuItem.Name = "addMedicalStaffToolStripMenuItem";
+            this.addMedicalStaffToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.addMedicalStaffToolStripMenuItem.Text = "Add MedicalStaff";
+            this.addMedicalStaffToolStripMenuItem.Click += new System.EventHandler(this.addMedicalStaffToolStripMenuItem_Click);
+            // 
             // DentalOfficeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 378);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(715, 378);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.administratorMenuStrip);
             this.Controls.Add(this.regularUserMenuStrip);
@@ -234,6 +255,8 @@
         private System.Windows.Forms.ToolStripMenuItem listOfAllDOfficeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem interventionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOfDailyReservationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addPatientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addMedicalStaffToolStripMenuItem;
     }
 }
 

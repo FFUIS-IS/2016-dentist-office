@@ -200,9 +200,9 @@ namespace ZubarskaOrd.Forms
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
-                reservationButton.Enabled = true;
+                reservationButton.Visible = true;
             else
-                reservationButton.Enabled = false;
+                reservationButton.Visible = false;
         }
     }
 }

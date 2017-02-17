@@ -200,7 +200,6 @@
             // 
             // reservationButton
             // 
-            this.reservationButton.Enabled = false;
             this.reservationButton.Location = new System.Drawing.Point(540, 279);
             this.reservationButton.Name = "reservationButton";
             this.reservationButton.Size = new System.Drawing.Size(200, 39);
