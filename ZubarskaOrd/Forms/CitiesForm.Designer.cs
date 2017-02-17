@@ -88,7 +88,7 @@
             this.MinimizeBox = false;
             this.Name = "CitiesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CitiesForm";
+            this.Text = "Cities";
             this.Load += new System.EventHandler(this.CitiesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -34,6 +34,7 @@
             this.listOfAllAdministratorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicalStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfAllMStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMedicalStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.citiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,10 +45,9 @@
             this.regularUserMenuStrip = new System.Windows.Forms.MenuStrip();
             this.patientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patientsFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interventionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfDailyReservationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addMedicalStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorMenuStrip.SuspendLayout();
             this.regularUserMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +97,13 @@
             this.listOfAllMStuffToolStripMenuItem.Text = "List Of All M.Stuff";
             this.listOfAllMStuffToolStripMenuItem.Click += new System.EventHandler(this.listOfAllMStuffToolStripMenuItem_Click);
             // 
+            // addMedicalStaffToolStripMenuItem
+            // 
+            this.addMedicalStaffToolStripMenuItem.Name = "addMedicalStaffToolStripMenuItem";
+            this.addMedicalStaffToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.addMedicalStaffToolStripMenuItem.Text = "Add MedicalStaff";
+            this.addMedicalStaffToolStripMenuItem.Click += new System.EventHandler(this.addMedicalStaffToolStripMenuItem_Click);
+            // 
             // citiesToolStripMenuItem
             // 
             this.citiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -145,7 +152,7 @@
             // logoutButton
             // 
             this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.logoutButton.Location = new System.Drawing.Point(640, 0);
+            this.logoutButton.Location = new System.Drawing.Point(1271, 24);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(75, 38);
             this.logoutButton.TabIndex = 2;
@@ -176,9 +183,16 @@
             // patientsFormToolStripMenuItem
             // 
             this.patientsFormToolStripMenuItem.Name = "patientsFormToolStripMenuItem";
-            this.patientsFormToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.patientsFormToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.patientsFormToolStripMenuItem.Text = "PatientsForm";
             this.patientsFormToolStripMenuItem.Click += new System.EventHandler(this.patientsFormToolStripMenuItem_Click);
+            // 
+            // addPatientToolStripMenuItem
+            // 
+            this.addPatientToolStripMenuItem.Name = "addPatientToolStripMenuItem";
+            this.addPatientToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.addPatientToolStripMenuItem.Text = "Add Patient";
+            this.addPatientToolStripMenuItem.Click += new System.EventHandler(this.addPatientToolStripMenuItem_Click);
             // 
             // interventionsToolStripMenuItem
             // 
@@ -194,20 +208,6 @@
             this.listOfDailyReservationsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.listOfDailyReservationsToolStripMenuItem.Text = "List Of Daily Reservations";
             this.listOfDailyReservationsToolStripMenuItem.Click += new System.EventHandler(this.listOfDailyReservationsToolStripMenuItem_Click);
-            // 
-            // addPatientToolStripMenuItem
-            // 
-            this.addPatientToolStripMenuItem.Name = "addPatientToolStripMenuItem";
-            this.addPatientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addPatientToolStripMenuItem.Text = "Add Patient";
-            this.addPatientToolStripMenuItem.Click += new System.EventHandler(this.addPatientToolStripMenuItem_Click);
-            // 
-            // addMedicalStaffToolStripMenuItem
-            // 
-            this.addMedicalStaffToolStripMenuItem.Name = "addMedicalStaffToolStripMenuItem";
-            this.addMedicalStaffToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.addMedicalStaffToolStripMenuItem.Text = "Add MedicalStaff";
-            this.addMedicalStaffToolStripMenuItem.Click += new System.EventHandler(this.addMedicalStaffToolStripMenuItem_Click);
             // 
             // DentalOfficeForm
             // 

@@ -134,18 +134,18 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox5.Location = new System.Drawing.Point(20, 165);
+            this.textBox5.Location = new System.Drawing.Point(21, 165);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(73, 23);
+            this.textBox5.Size = new System.Drawing.Size(72, 23);
             this.textBox5.TabIndex = 5;
             this.textBox5.Text = "12:00-13:00";
             // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox6.Location = new System.Drawing.Point(20, 187);
+            this.textBox6.Location = new System.Drawing.Point(21, 187);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(73, 23);
+            this.textBox6.Size = new System.Drawing.Size(72, 23);
             this.textBox6.TabIndex = 6;
             this.textBox6.Text = "13:00-14:00";
             // 
@@ -161,9 +161,9 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox8.Location = new System.Drawing.Point(22, 231);
+            this.textBox8.Location = new System.Drawing.Point(21, 231);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(71, 23);
+            this.textBox8.Size = new System.Drawing.Size(72, 23);
             this.textBox8.TabIndex = 8;
             this.textBox8.Text = "15:00-16:00";
             // 
@@ -178,7 +178,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(549, 256);
+            this.checkBox1.Location = new System.Drawing.Point(465, 225);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(109, 17);
             this.checkBox1.TabIndex = 11;
@@ -190,7 +190,7 @@
             // interventionDetailsRichTextBox
             // 
             this.interventionDetailsRichTextBox.Enabled = false;
-            this.interventionDetailsRichTextBox.Location = new System.Drawing.Point(540, 60);
+            this.interventionDetailsRichTextBox.Location = new System.Drawing.Point(456, 29);
             this.interventionDetailsRichTextBox.Name = "interventionDetailsRichTextBox";
             this.interventionDetailsRichTextBox.Size = new System.Drawing.Size(200, 194);
             this.interventionDetailsRichTextBox.TabIndex = 12;
@@ -200,7 +200,7 @@
             // 
             // reservationButton
             // 
-            this.reservationButton.Location = new System.Drawing.Point(540, 279);
+            this.reservationButton.Location = new System.Drawing.Point(456, 248);
             this.reservationButton.Name = "reservationButton";
             this.reservationButton.Size = new System.Drawing.Size(200, 39);
             this.reservationButton.TabIndex = 13;
@@ -212,7 +212,7 @@
             // resDetailLabel
             // 
             this.resDetailLabel.AutoSize = true;
-            this.resDetailLabel.Location = new System.Drawing.Point(537, 44);
+            this.resDetailLabel.Location = new System.Drawing.Point(453, 13);
             this.resDetailLabel.Name = "resDetailLabel";
             this.resDetailLabel.Size = new System.Drawing.Size(97, 13);
             this.resDetailLabel.TabIndex = 16;
@@ -223,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 344);
+            this.ClientSize = new System.Drawing.Size(676, 298);
             this.Controls.Add(this.resDetailLabel);
             this.Controls.Add(this.reservationButton);
             this.Controls.Add(this.interventionDetailsRichTextBox);
