@@ -66,8 +66,8 @@ namespace ZubarskaOrd.Forms
                 dataInRichText[3] = "Time of reservation: " + calculateTimeOfReservation(text.Substring(0, 5), serviceTypeComboBox.SelectedItem.ToString());
             else if (tool == toolUsed.toothName)
                 dataInRichText[4] = "Tooth name: " + text + "\n";
-                for (int i = 0; i < 5; i++)
-                        reservationDetails.Text += dataInRichText[i] + "\n";
+            for (int i = 0; i < 5; i++)
+                reservationDetails.Text += dataInRichText[i] + "\n";
 
         }
 
@@ -102,50 +102,62 @@ namespace ZubarskaOrd.Forms
         private void refreshListOfAppointments()
         {
             listOfAppointment.Items.Clear();
-            command.CommandText = "SELECT * FROM Services WHERE ServiceName = '" 
-                + serviceTypeComboBox.SelectedItem.ToString() + "';";
-            reader = command.ExecuteReader();
-            reader.Read();
-            int duration = reader.GetInt32(2);
-            for (int i = 8; i < 16; i++)
-                for (int minute = 0; minute < 60; minute += 15) 
-                listOfAppointment.Items.Add(convertTime(i, minute));
-
-            command.CommandText = "SELECT StartTime, EndTime,  resDuration FROM Reservations WHERE StartTime >= '"
-                  + parse(timeOfInterventionDatePicker.Value.Date) + "' AND "
-                  + " EndTime <= '" + parse(timeOfInterventionDatePicker.Value.Date.AddDays(1)) + "';";
-            try
+            if (serviceTypeComboBox.SelectedIndex != -1)
             {
+                command.CommandText = "SELECT * FROM Services WHERE ServiceName = '"
+                    + serviceTypeComboBox.SelectedItem.ToString() + "';";
                 reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    int reservationDuration = reader.GetInt32(2);
-                    string startTime = reader.GetDateTime(0).ToShortTimeString();
-                    int index = -1;
+                reader.Read();
+                int duration = reader.GetInt32(2);
+                for (int i = 8; i < 16; i++)
+                    for (int minute = 0; minute < 60; minute += 15)
+                        listOfAppointment.Items.Add(convertTime(i, minute));
 
-                    for (int counter = 0; counter < listOfAppointment.Items.Count; counter++)
-                        if (listOfAppointment.Items[counter].ToString().Substring(0, 5).Equals(startTime))
-                        {
-                            index = counter;
-                            break;
-                        }
-                    if (index != -1)
-                        for (int counter = 0; counter < reservationDuration / 15; counter++)
-                        {
-                            listOfAppointment.Items.RemoveAt(index);
-                        }
+                command.CommandText = "SELECT StartTime, EndTime,  resDuration FROM Reservations WHERE StartTime >= '"
+                      + parse(timeOfInterventionDatePicker.Value.Date) + "' AND "
+                      + " EndTime <= '" + parse(timeOfInterventionDatePicker.Value.Date.AddDays(1)) + "';";
+                try
+                {
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int reservationDuration = reader.GetInt32(2);
+                        string startTime = reader.GetDateTime(0).ToShortTimeString();
+                        int index = -1;
+
+                        for (int counter = 0; counter < listOfAppointment.Items.Count; counter++)
+                            if (listOfAppointment.Items[counter].ToString().Substring(0, 5).Equals(startTime))
+                            {
+                                index = counter;
+                                break;
+                            }
+                        if (index != -1)
+                            for (int counter = 0; counter < reservationDuration / 15; counter++)
+                            {
+                                listOfAppointment.Items.RemoveAt(index);
+                            }
+                    }
+                }
+                catch (SqlCeException ee)
+                {
+                    Console.Out.WriteLine(ee.ToString());
                 }
             }
-            catch (SqlCeException ee)
-            {
-                Console.Out.WriteLine(ee.ToString());
-            }    
         }
         private string parse(DateTime time)
         {
             string month = (time.Month < 10) ? ("0" + time.Month) : ("" + time.Month);
             string day = (time.Day < 10) ? ("0" + time.Day) : ("" + time.Day);
-            return "" + time.Year + "-" + month + "-" + day;
+
+            string output = time.Year + "-" + month + "-" + day;
+            if(time.Hour < 16 && time.Hour >= 8)
+            {
+                output += " " + ((time.Hour < 10) ? ("0" + time.Hour) : ("" + time.Hour));
+                output += ":" + ((time.Minute < 10) ? ("0" + time.Minute) : ("" + time.Minute));
+                output += ":00";
+            }
+
+            return output;
         }
         private string convertTime(int hour,int  minute)
         {
@@ -184,9 +196,22 @@ namespace ZubarskaOrd.Forms
                 reader.Read();
                 string dateOfReservation = parse(timeOfInterventionDatePicker.Value.Date);
                 dateOfReservation += " " + listOfAppointment.SelectedItem.ToString().Substring(0, listOfAppointment.SelectedItem.ToString().IndexOf(' ')) + ":00";
+                int hour = int.Parse(listOfAppointment.SelectedItem.ToString().Substring(0, listOfAppointment.SelectedItem.ToString().IndexOf(':')));
+                int minute = int.Parse(listOfAppointment.SelectedItem.ToString().Substring(listOfAppointment.SelectedItem.ToString().IndexOf(':')+1, 2));
+                DateTime tempTime = timeOfInterventionDatePicker.Value.Date;
+
+                if(minute + reader.GetInt32(1) > 60)
+                {
+                    minute -= 60;
+                    hour++;
+                }
+                minute += reader.GetInt32(1);
+                DateTime endTime = new DateTime(tempTime.Year, tempTime.Month, tempTime.Day, hour, minute, 0);
+                string endOfReservation = parse(endTime);
+
                 string user = toothOnFocusComboBox.SelectedItem.ToString() + patient;
-                command.CommandText = "INSERT INTO Reservations(MedicalStaffID, PatientsID, StartTime, resDuration, ServicesID) VALUES "
-                    + "(" + LoginForm.userIdentity + ", '" + user + "', '" + dateOfReservation + "', " + reader.GetInt32(1) + ", " + reader.GetInt32(0) + ");";
+                command.CommandText = "INSERT INTO Reservations(MedicalStaffID, PatientsID, StartTime, resDuration, ServicesID, endTime) VALUES "
+                    + "(" + LoginForm.userIdentity + ", '" + user + "', '" + dateOfReservation + "', " + reader.GetInt32(1) + ", " + reader.GetInt32(0) + ", '" + endOfReservation + "');";
                 try
                 {
                     command.ExecuteNonQuery();

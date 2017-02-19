@@ -159,6 +159,7 @@
             this.toothOnFocusComboBox.Name = "toothOnFocusComboBox";
             this.toothOnFocusComboBox.Size = new System.Drawing.Size(121, 21);
             this.toothOnFocusComboBox.TabIndex = 20;
+            this.toothOnFocusComboBox.SelectedIndexChanged += new System.EventHandler(this.toothOnFocusComboBox_SelectedIndexChanged);
             // 
             // reservationDetails
             // 

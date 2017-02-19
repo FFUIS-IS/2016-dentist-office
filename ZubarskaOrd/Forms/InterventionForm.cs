@@ -96,12 +96,14 @@ namespace ZubarskaOrd.Forms
                 resDetailLabel.Visible = true;
                 interventionDetailsRichTextBox.Visible = true;
                 command.CommandText = "SELECT * FROM Reservations WHERE "
-                    + " datediff(mi, StartTime, '" + parse(ReservationDateTime.Value.Date) + " " + convertTime(e.RowIndex + 8, e.ColumnIndex * 15) + "') >= 0;";
+                   + " datediff(mi, StartTime, '" + parse(ReservationDateTime.Value.Date) + " " + convertTime(e.RowIndex + 8, e.ColumnIndex * 15) + "') >= 0 "
+                   + " AND datediff(mi, EndTime, '" + parse(ReservationDateTime.Value.Date) + " " + convertTime(e.RowIndex + 8, e.ColumnIndex * 15) + "') <= 0;";
 
                 try
                 {
                     reader = command.ExecuteReader();
                     reader.Read();
+                   
                     command.CommandText = "SELECT FirstName, LastName FROM Patients WHERE Id = " + int.Parse(reader.GetString(2).Substring(3)) + ";";
                     SqlCeDataReader reserveReader = command.ExecuteReader();
                     reserveReader.Read();
@@ -169,25 +171,27 @@ namespace ZubarskaOrd.Forms
             int toothStatus = (serviceID == 6) ? (2) : (1);
             try
             {
-                command.CommandText = "INSERT INTO Interventions(Date, MedicalStaffID) VALUES"
-                    + "('" + stringToDateString(informations[3]) + "', " + LoginForm.userIdentity + ");";
-                command.ExecuteNonQuery();
-                command.CommandText = "SELECT MAX(id) FROM Interventions;";
-                reader = command.ExecuteReader();
-                reader.Read();
-                command.CommandText = "INSERT INTO iTEMS(Quantity, InterventionsID, ServicesID) VALUES"
-                    + " (1, " + reader.GetInt32(0) + ", " + serviceID + ");";
-                command.ExecuteNonQuery();
-                command.CommandText = "INSERT INTO Interventions_teeth(interventionsID, TeethID) VALUES "
-                    + "(" + reader.GetInt32(0) + ", '" + informations[1] + "');";
-                command.ExecuteNonQuery();
-                command.CommandText = "UPDATE Patients SET " + informations[1].Substring(0, 3) + " = " + toothStatus
-                    + " WHERE id = " + informations[1].Substring(3) + ";";
-                command.ExecuteNonQuery();
-                command.CommandText = "UPDATE Reservations SET isDone = 1 WHERE PatientsID = '" + informations[1] + "'"
-                    + " AND startTime = '" + stringToDateString(informations[3]) + "' AND servicesID = " + serviceID + ";";
-                command.ExecuteNonQuery();
-                MessageBox.Show("Intervention succesfully added to patient medical record!");
+                string time = stringToDateString(informations[3]);
+                time = time.Substring(0, time.Length - 3);
+                   command.CommandText = "INSERT INTO Interventions(Date, MedicalStaffID) VALUES"
+                       + "('" + stringToDateString(informations[3]) + "', " + LoginForm.userIdentity + ");";
+                   command.ExecuteNonQuery();
+                   command.CommandText = "SELECT MAX(id) FROM Interventions;";
+                   reader = command.ExecuteReader();
+                   reader.Read();
+                   command.CommandText = "INSERT INTO iTEMS(Quantity, InterventionsID, ServicesID) VALUES"
+                       + " (1, " + reader.GetInt32(0) + ", " + serviceID + ");";
+                   command.ExecuteNonQuery();
+                   command.CommandText = "INSERT INTO Interventions_teeth(interventionsID, TeethID) VALUES "
+                       + "(" + reader.GetInt32(0) + ", '" + informations[1] + "');";
+                   command.ExecuteNonQuery();
+                   command.CommandText = "UPDATE Patients SET " + informations[1].Substring(0, 3) + " = " + toothStatus
+                       + " WHERE id = " + informations[1].Substring(3) + ";";
+                   command.ExecuteNonQuery();
+                   command.CommandText = "UPDATE Reservations SET isDone = 1 WHERE PatientsID = '" + informations[1] + "'"
+                       + " AND startTime = '" + time + "' AND servicesID = " + serviceID + ";";
+                   command.ExecuteNonQuery();
+                   MessageBox.Show("Intervention succesfully added to patient medical record!");
                 FillDataGrid(); 
             }
             catch(SqlCeException ee)
