@@ -58,7 +58,7 @@
             this.refreshAdminListViewButton.Location = new System.Drawing.Point(12, 291);
             this.refreshAdminListViewButton.Name = "refreshAdminListViewButton";
             this.refreshAdminListViewButton.Size = new System.Drawing.Size(92, 23);
-            this.refreshAdminListViewButton.TabIndex = 4;
+            this.refreshAdminListViewButton.TabIndex = 1;
             this.refreshAdminListViewButton.Text = "Refresh List";
             this.refreshAdminListViewButton.UseVisualStyleBackColor = true;
             this.refreshAdminListViewButton.Click += new System.EventHandler(this.refreshAdminListViewButton_Click);
@@ -101,7 +101,7 @@
             this.firstNameTextBox.Location = new System.Drawing.Point(305, 54);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(198, 20);
-            this.firstNameTextBox.TabIndex = 1;
+            this.firstNameTextBox.TabIndex = 3;
             this.firstNameTextBox.Visible = false;
             // 
             // lastNameTextBox
@@ -109,15 +109,15 @@
             this.lastNameTextBox.Location = new System.Drawing.Point(305, 91);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(198, 20);
-            this.lastNameTextBox.TabIndex = 2;
+            this.lastNameTextBox.TabIndex = 4;
             this.lastNameTextBox.Visible = false;
             // 
             // saveAdministratorButton
             // 
-            this.saveAdministratorButton.Location = new System.Drawing.Point(412, 232);
+            this.saveAdministratorButton.Location = new System.Drawing.Point(305, 211);
             this.saveAdministratorButton.Name = "saveAdministratorButton";
             this.saveAdministratorButton.Size = new System.Drawing.Size(91, 23);
-            this.saveAdministratorButton.TabIndex = 3;
+            this.saveAdministratorButton.TabIndex = 7;
             this.saveAdministratorButton.Text = "Save";
             this.saveAdministratorButton.UseVisualStyleBackColor = true;
             this.saveAdministratorButton.Visible = false;
@@ -128,17 +128,17 @@
             this.addNewAdministratorButton.Location = new System.Drawing.Point(111, 291);
             this.addNewAdministratorButton.Name = "addNewAdministratorButton";
             this.addNewAdministratorButton.Size = new System.Drawing.Size(90, 23);
-            this.addNewAdministratorButton.TabIndex = 5;
+            this.addNewAdministratorButton.TabIndex = 2;
             this.addNewAdministratorButton.Text = "Add";
             this.addNewAdministratorButton.UseVisualStyleBackColor = true;
             this.addNewAdministratorButton.Click += new System.EventHandler(this.addNewAdministratorButton_Click);
             // 
             // deleteAdministratorButton
             // 
-            this.deleteAdministratorButton.Location = new System.Drawing.Point(428, 297);
+            this.deleteAdministratorButton.Location = new System.Drawing.Point(415, 211);
             this.deleteAdministratorButton.Name = "deleteAdministratorButton";
-            this.deleteAdministratorButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteAdministratorButton.TabIndex = 6;
+            this.deleteAdministratorButton.Size = new System.Drawing.Size(88, 23);
+            this.deleteAdministratorButton.TabIndex = 8;
             this.deleteAdministratorButton.Text = "Delete";
             this.deleteAdministratorButton.UseVisualStyleBackColor = true;
             this.deleteAdministratorButton.Click += new System.EventHandler(this.deleteAdministratorButton_Click);
@@ -148,7 +148,7 @@
             this.newUsernameTextBox.Location = new System.Drawing.Point(305, 135);
             this.newUsernameTextBox.Name = "newUsernameTextBox";
             this.newUsernameTextBox.Size = new System.Drawing.Size(198, 20);
-            this.newUsernameTextBox.TabIndex = 3;
+            this.newUsernameTextBox.TabIndex = 5;
             this.newUsernameTextBox.Visible = false;
             // 
             // newPasswordTextBox
@@ -156,7 +156,7 @@
             this.newPasswordTextBox.Location = new System.Drawing.Point(305, 174);
             this.newPasswordTextBox.Name = "newPasswordTextBox";
             this.newPasswordTextBox.Size = new System.Drawing.Size(198, 20);
-            this.newPasswordTextBox.TabIndex = 4;
+            this.newPasswordTextBox.TabIndex = 6;
             this.newPasswordTextBox.UseSystemPasswordChar = true;
             this.newPasswordTextBox.Visible = false;
             // 

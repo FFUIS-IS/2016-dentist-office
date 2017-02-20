@@ -49,7 +49,7 @@
             this.SaveButton.Location = new System.Drawing.Point(147, 44);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(86, 31);
-            this.SaveButton.TabIndex = 1;
+            this.SaveButton.TabIndex = 2;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -60,7 +60,7 @@
             this.citytextbox.Location = new System.Drawing.Point(147, 12);
             this.citytextbox.Name = "citytextbox";
             this.citytextbox.Size = new System.Drawing.Size(176, 26);
-            this.citytextbox.TabIndex = 2;
+            this.citytextbox.TabIndex = 1;
             // 
             // DeleteButton
             // 

@@ -18,6 +18,7 @@ namespace ZubarskaOrd.Forms
         public AddMedicalStaffForm()
         {
             InitializeComponent();
+            dobTimePicker.MaxDate = DateTime.Today;
             loadcities();
         }
         

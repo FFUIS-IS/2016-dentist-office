@@ -19,6 +19,7 @@ namespace ZubarskaOrd
         public AddPatientForm()
         {
             InitializeComponent();
+            dobTimePicker.MaxDate = DateTime.Today;
         }
 
         

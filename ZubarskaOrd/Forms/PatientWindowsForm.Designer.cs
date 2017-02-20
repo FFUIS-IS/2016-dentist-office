@@ -213,7 +213,7 @@
             this.recordButton.Location = new System.Drawing.Point(145, 295);
             this.recordButton.Name = "recordButton";
             this.recordButton.Size = new System.Drawing.Size(111, 29);
-            this.recordButton.TabIndex = 29;
+            this.recordButton.TabIndex = 12;
             this.recordButton.Text = "Dental record";
             this.recordButton.UseVisualStyleBackColor = true;
             this.recordButton.Click += new System.EventHandler(this.recordButton_Click);
@@ -223,7 +223,7 @@
             this.dobTimePicker.Location = new System.Drawing.Point(92, 162);
             this.dobTimePicker.Name = "dobTimePicker";
             this.dobTimePicker.Size = new System.Drawing.Size(164, 20);
-            this.dobTimePicker.TabIndex = 40;
+            this.dobTimePicker.TabIndex = 6;
             // 
             // PatientWindowsForm
             // 

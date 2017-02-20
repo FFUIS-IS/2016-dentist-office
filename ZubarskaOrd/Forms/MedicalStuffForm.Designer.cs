@@ -58,7 +58,7 @@
             this.medicalStuffComboBox.Location = new System.Drawing.Point(12, 39);
             this.medicalStuffComboBox.Name = "medicalStuffComboBox";
             this.medicalStuffComboBox.Size = new System.Drawing.Size(268, 27);
-            this.medicalStuffComboBox.TabIndex = 0;
+            this.medicalStuffComboBox.TabIndex = 1;
             this.medicalStuffComboBox.SelectedIndexChanged += new System.EventHandler(this.medicalStuffComboBox_SelectedIndexChanged_1);
             // 
             // descriptionLabel1
@@ -160,49 +160,49 @@
             this.cityComboBox.Location = new System.Drawing.Point(93, 263);
             this.cityComboBox.Name = "cityComboBox";
             this.cityComboBox.Size = new System.Drawing.Size(164, 21);
-            this.cityComboBox.TabIndex = 36;
+            this.cityComboBox.TabIndex = 10;
             // 
             // addressTextBox
             // 
             this.addressTextBox.Location = new System.Drawing.Point(93, 236);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(164, 20);
-            this.addressTextBox.TabIndex = 35;
+            this.addressTextBox.TabIndex = 9;
             // 
             // contactTextBox
             // 
             this.contactTextBox.Location = new System.Drawing.Point(93, 209);
             this.contactTextBox.Name = "contactTextBox";
             this.contactTextBox.Size = new System.Drawing.Size(164, 20);
-            this.contactTextBox.TabIndex = 34;
+            this.contactTextBox.TabIndex = 8;
             // 
             // JMBGTextBox
             // 
             this.JMBGTextBox.Location = new System.Drawing.Point(93, 182);
             this.JMBGTextBox.Name = "JMBGTextBox";
             this.JMBGTextBox.Size = new System.Drawing.Size(164, 20);
-            this.JMBGTextBox.TabIndex = 33;
+            this.JMBGTextBox.TabIndex = 7;
             // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.Location = new System.Drawing.Point(93, 134);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(164, 20);
-            this.lastNameTextBox.TabIndex = 31;
+            this.lastNameTextBox.TabIndex = 5;
             // 
             // firstNameTextBox
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(93, 107);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(164, 20);
-            this.firstNameTextBox.TabIndex = 30;
+            this.firstNameTextBox.TabIndex = 4;
             // 
             // UpdateButton
             // 
             this.UpdateButton.Location = new System.Drawing.Point(93, 290);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(164, 32);
-            this.UpdateButton.TabIndex = 37;
+            this.UpdateButton.TabIndex = 11;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click_1);
@@ -212,7 +212,7 @@
             this.dobTimePicker.Location = new System.Drawing.Point(93, 156);
             this.dobTimePicker.Name = "dobTimePicker";
             this.dobTimePicker.Size = new System.Drawing.Size(164, 20);
-            this.dobTimePicker.TabIndex = 38;
+            this.dobTimePicker.TabIndex = 6;
             // 
             // MedicalStuffForm
             // 

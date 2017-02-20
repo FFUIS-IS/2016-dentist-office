@@ -216,7 +216,7 @@
             this.dobTimePicker.Location = new System.Drawing.Point(104, 103);
             this.dobTimePicker.Name = "dobTimePicker";
             this.dobTimePicker.Size = new System.Drawing.Size(160, 20);
-            this.dobTimePicker.TabIndex = 36;
+            this.dobTimePicker.TabIndex = 3;
             // 
             // AddMedicalStaffForm
             // 

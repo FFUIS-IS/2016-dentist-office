@@ -168,7 +168,7 @@
             this.dobTimePicker.Location = new System.Drawing.Point(96, 84);
             this.dobTimePicker.Name = "dobTimePicker";
             this.dobTimePicker.Size = new System.Drawing.Size(160, 20);
-            this.dobTimePicker.TabIndex = 9;
+            this.dobTimePicker.TabIndex = 3;
             // 
             // AddPatientForm
             // 

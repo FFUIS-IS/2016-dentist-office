@@ -55,7 +55,7 @@
             this.listOfAppointment.Location = new System.Drawing.Point(60, 110);
             this.listOfAppointment.Name = "listOfAppointment";
             this.listOfAppointment.Size = new System.Drawing.Size(182, 238);
-            this.listOfAppointment.TabIndex = 2;
+            this.listOfAppointment.TabIndex = 3;
             this.listOfAppointment.SelectedIndexChanged += new System.EventHandler(this.listOfAppointment_SelectedIndexChanged);
             // 
             // label1
@@ -72,7 +72,7 @@
             this.timeOfInterventionDatePicker.Location = new System.Drawing.Point(60, 56);
             this.timeOfInterventionDatePicker.Name = "timeOfInterventionDatePicker";
             this.timeOfInterventionDatePicker.Size = new System.Drawing.Size(182, 20);
-            this.timeOfInterventionDatePicker.TabIndex = 4;
+            this.timeOfInterventionDatePicker.TabIndex = 2;
             this.timeOfInterventionDatePicker.ValueChanged += new System.EventHandler(this.timeOfInterventionDatePicker_ValueChanged);
             // 
             // toothNameLabel
@@ -158,7 +158,7 @@
             this.toothOnFocusComboBox.Location = new System.Drawing.Point(334, 36);
             this.toothOnFocusComboBox.Name = "toothOnFocusComboBox";
             this.toothOnFocusComboBox.Size = new System.Drawing.Size(121, 21);
-            this.toothOnFocusComboBox.TabIndex = 20;
+            this.toothOnFocusComboBox.TabIndex = 4;
             this.toothOnFocusComboBox.SelectedIndexChanged += new System.EventHandler(this.toothOnFocusComboBox_SelectedIndexChanged);
             // 
             // reservationDetails
@@ -175,7 +175,7 @@
             this.confirmReservation.Location = new System.Drawing.Point(462, 314);
             this.confirmReservation.Name = "confirmReservation";
             this.confirmReservation.Size = new System.Drawing.Size(93, 44);
-            this.confirmReservation.TabIndex = 22;
+            this.confirmReservation.TabIndex = 5;
             this.confirmReservation.Text = "Confirm Reservation";
             this.confirmReservation.UseVisualStyleBackColor = true;
             this.confirmReservation.Click += new System.EventHandler(this.confirmReservation_Click);
