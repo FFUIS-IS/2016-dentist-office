@@ -1,8 +1,0 @@
-administrator:
-	uname: kebab
-	pass:  ke123
-m.s.user:
-	uname: milos
-	pass:  mi123
-	uname: luks
-	pass:  lu123

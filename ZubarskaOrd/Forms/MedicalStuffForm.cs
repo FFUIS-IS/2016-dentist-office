@@ -97,8 +97,7 @@ namespace ZubarskaOrd.Forms
             {
                 SqlCeCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "DELETE FROM MedicalStaff where Id =" + Int32.Parse(full.Substring(0, full.IndexOf(' '))) + ";";
-
+                cmd.CommandText = "DELETE FROM MedicalStaff WHERE Id =" + Int32.Parse(full.Substring(0, full.IndexOf(' '))) + ";";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Successfully deleted Medical Staff!");
                 fillinMedicalStaffComboBox();
@@ -134,8 +133,6 @@ namespace ZubarskaOrd.Forms
                 SqlCeDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                     cityComboBox.Text = reader.GetString(0);
-
-
             }
 
         }

@@ -44,22 +44,30 @@ namespace ZubarskaOrd.Forms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            SqlCeCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Id from Cities where CityName ='" + cityNameComboBox.SelectedItem.ToString() + "';";
-            SqlCeDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            cmd = new SqlCeCommand("INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JBMG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + convert(dobTimePicker.Value.Date) + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','" + reader.GetInt32(0) + "')", connection);
-            cmd.ExecuteReader();
-            cmd.CommandText = "SELECT MAX(Id) FROM MedicalStaff";
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
+            if (CheckUniqueUsername.CheckUnique(newUsernameTextBox.Text))
             {
-                cmd.CommandText = "INSERT INTO LoginFormTable(username, password,MedicalStaffID) VALUES ('" + newUsernameTextBox.Text + "','" + HashPassword.HashNewPassword(newPasswordTextBox.Text) + "'," + reader.GetInt32(0) + ");";
-                cmd.ExecuteNonQuery();
+                MessageBox.Show("This username  " + "'" + newUsernameTextBox.Text + "'" + "  is taken!");
+                this.Focus();
             }
-            MessageBox.Show("New member succesfully added to Medical Staff!");
-            this.Close();
+            else
+            { 
+                SqlCeCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select Id from Cities where CityName ='" + cityNameComboBox.SelectedItem.ToString() + "';";
+                SqlCeDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                cmd = new SqlCeCommand("INSERT INTO MedicalStaff (FirstName, LastName, DateOfBirth, JBMG, Contact, Address, CitiesID) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + convert(dobTimePicker.Value.Date) + "','" + JMBGTextBox.Text + "','" + contactTextBox.Text + "','" + addressTextBox.Text + "','" + reader.GetInt32(0) + "')", connection);
+                cmd.ExecuteReader();
+                cmd.CommandText = "SELECT MAX(Id) FROM MedicalStaff";
+                reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    cmd.CommandText = "INSERT INTO LoginFormTable(username, password,MedicalStaffID) VALUES ('" + newUsernameTextBox.Text + "','" + HashPassword.HashNewPassword(newPasswordTextBox.Text) + "'," + reader.GetInt32(0) + ");";
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("New member succesfully added to Medical Staff!");
+                this.Close();
+            }
         }
         private string convert(DateTime time)
         {

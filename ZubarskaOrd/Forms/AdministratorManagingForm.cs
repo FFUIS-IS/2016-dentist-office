@@ -81,20 +81,29 @@ namespace ZubarskaOrd.Forms
 
         private void saveAdministratorButton_Click(object sender, EventArgs e)
         {
-
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Administrator(FirstName, LastName) VALUES ('" + firstNameTextBox.Text +  "','" + lastNameTextBox.Text + "')", connection);
-            command.ExecuteReader();
-            command.CommandText = "SELECT MAX(Id) FROM Administrator;";
-            SqlCeDataReader reader = command.ExecuteReader();
-            if(reader.Read())
+            if(CheckUniqueUsername.CheckUnique(newUsernameTextBox.Text))
             {
-                command.CommandText = "INSERT INTO LoginFormTable(username, password,AdministratorID) VALUES ('" + newUsernameTextBox.Text + "','" + HashPassword.HashNewPassword(newPasswordTextBox.Text) + "'," + reader.GetInt32(0) + ");";
-                command.ExecuteNonQuery();
+                MessageBox.Show("This username  " + "'" + newUsernameTextBox.Text + "'" + "  is taken!");
+                newUsernameTextBox.Text = "";
+                newUsernameTextBox.Focus();
+                this.Focus();
             }
-            MessageBox.Show("New Admin successfully added to database!");
-            resetingTextBoxes();
-            hidingAddAdminOptions();
-            refreshingListView();
+            else
+            { 
+                SqlCeCommand command = new SqlCeCommand("INSERT INTO Administrator(FirstName, LastName) VALUES ('" + firstNameTextBox.Text +  "','" + lastNameTextBox.Text + "')", connection);
+                command.ExecuteReader();
+                command.CommandText = "SELECT MAX(Id) FROM Administrator;";
+                SqlCeDataReader reader = command.ExecuteReader();
+                if(reader.Read())
+                {
+                    command.CommandText = "INSERT INTO LoginFormTable(username, password,AdministratorID) VALUES ('" + newUsernameTextBox.Text + "','" + HashPassword.HashNewPassword(newPasswordTextBox.Text) + "'," + reader.GetInt32(0) + ");";
+                    command.ExecuteNonQuery();
+                }
+                MessageBox.Show("New Admin successfully added to database!");
+                resetingTextBoxes();
+                hidingAddAdminOptions();
+                refreshingListView();
+            }
         }
 
         private void resetingTextBoxes()

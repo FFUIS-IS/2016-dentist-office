@@ -1,0 +1,18 @@
+administrator:
+	uname: kebab
+	pass:  ke123
+
+	uname: spuzva
+	pass:  bob123
+m.s.user:
+	uname: milos
+	pass:  mi123
+
+	uname: luks
+	pass:  lu123
+
+	uname: laguna
+	pass:  luka321
+
+	uname: dare
+	pass:  da123
