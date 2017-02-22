@@ -64,7 +64,7 @@
             this.usernameTextBox.Location = new System.Drawing.Point(96, 187);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(198, 20);
-            this.usernameTextBox.TabIndex = 1;
+            this.usernameTextBox.TabIndex = 2;
             this.usernameTextBox.Tag = "1";
             // 
             // passwordTextBox
@@ -72,7 +72,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(96, 213);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(198, 20);
-            this.passwordTextBox.TabIndex = 2;
+            this.passwordTextBox.TabIndex = 3;
             this.passwordTextBox.Tag = "2";
             this.passwordTextBox.UseSystemPasswordChar = true;
             this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
@@ -82,7 +82,7 @@
             this.loginButton.Location = new System.Drawing.Point(96, 239);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(90, 33);
-            this.loginButton.TabIndex = 3;
+            this.loginButton.TabIndex = 4;
             this.loginButton.Tag = "3";
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             this.cancelButton.Location = new System.Drawing.Point(204, 239);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(90, 33);
-            this.cancelButton.TabIndex = 4;
+            this.cancelButton.TabIndex = 5;
             this.cancelButton.Tag = "4";
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -116,7 +116,7 @@
             this.officeNameComboBox.Location = new System.Drawing.Point(96, 158);
             this.officeNameComboBox.Name = "officeNameComboBox";
             this.officeNameComboBox.Size = new System.Drawing.Size(196, 21);
-            this.officeNameComboBox.TabIndex = 8;
+            this.officeNameComboBox.TabIndex = 1;
             // 
             // label1
             // 

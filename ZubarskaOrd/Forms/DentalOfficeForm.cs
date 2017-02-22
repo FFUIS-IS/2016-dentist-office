@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZubarskaOrd.Models;
 using ZubarskaOrd.Forms;
+using System.Data.SqlServerCe;
 
 namespace ZubarskaOrd
 {
     public partial class DentalOfficeForm : Form
     {
+        private string ooo;
+        private static SqlCeConnection connection = DbConnection.Instance.Connection;
+
         public DentalOfficeForm()
         {
             InitializeComponent();
@@ -22,9 +26,16 @@ namespace ZubarskaOrd
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
 
+        private void fillingFormLabels()
+        {
+            //officeNameLabel.Dock = DockStyle.Left;
+            officeNameLabel.Text = ooo;
+        }
+
         private void DentalOfficeForm_Load(object sender, EventArgs e)
         {
             funkcija();
+            fillingFormLabels();
         }
 
         private void funkcija()
@@ -32,6 +43,7 @@ namespace ZubarskaOrd
             Opacity = 0;
             LoginForm loginForm = new LoginForm();
             DialogResult result = loginForm.ShowDialog();
+            ooo = Office.Name;
             Opacity = 1;
             if (User.IsAdminUser)
             {
@@ -53,6 +65,7 @@ namespace ZubarskaOrd
         private void logoutButton_Click(object sender, EventArgs e)
         {
             funkcija();
+            fillingFormLabels();
         }
 
         private void listOfAllAdministratorsToolStripMenuItem_Click(object sender, EventArgs e)

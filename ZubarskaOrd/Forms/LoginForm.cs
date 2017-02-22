@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlServerCe;
 using System.Windows.Forms;
 using ZubarskaOrd.Models;
@@ -12,14 +13,27 @@ namespace ZubarskaOrd
 
         private string username;
         private string password;
+        private string officeName;
         public bool loginSucces;
         public static int userIdentity;
-        public static string dentistOfficeName;
 
         public LoginForm()
         {
             InitializeComponent();
             loadOffices();
+        }
+
+        private string givingNameToOffice()
+        {
+
+            if (officeNameComboBox.SelectedItem != null)
+            {
+                return officeName = officeNameComboBox.SelectedItem.ToString();
+            }
+            else 
+            {
+                throw new Exception("You must select Dentist Office!");
+            }
         }
 
         
@@ -28,15 +42,17 @@ namespace ZubarskaOrd
         {
             username = usernameTextBox.Text;
             password = passwordTextBox.Text;
-            
+
             User user = new User(username, password);
 
             try
             {
+                Office office = new Office(givingNameToOffice());
                 UserRepository.Login(user);
                 loginSucces = true;
                 DialogResult = DialogResult.OK;
                 userIdentity = user.Identity;
+                Office.Name = officeName;
                 Close();
 
             }
@@ -55,6 +71,11 @@ namespace ZubarskaOrd
                     MessageBox.Show(exception.Message);
                     passwordTextBox.Text = "";
                     passwordTextBox.Focus();
+                }
+                else if (officeNameComboBox.SelectedItem == null)
+                {
+                    MessageBox.Show(exception.Message);
+                    officeNameComboBox.Focus();
                 }
                 else if (loginSucces != true)
                 {
@@ -90,7 +111,6 @@ namespace ZubarskaOrd
                 while (dr.Read())
                 {
                     officeNameComboBox.Items.Add(dr["OfficeName"]);
-                    dentistOfficeName = dr.GetString(1);
                 }
                 dr.Close();
                 dr.Dispose();

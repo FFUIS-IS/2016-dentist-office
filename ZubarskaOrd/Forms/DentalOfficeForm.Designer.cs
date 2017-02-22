@@ -48,6 +48,8 @@
             this.addPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interventionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfDailyReservationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.officeNameLabel = new System.Windows.Forms.Label();
+            this.descriptionLabel = new System.Windows.Forms.Label();
             this.administratorMenuStrip.SuspendLayout();
             this.regularUserMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -209,6 +211,30 @@
             this.listOfDailyReservationsToolStripMenuItem.Text = "List Of Daily Reservations";
             this.listOfDailyReservationsToolStripMenuItem.Click += new System.EventHandler(this.listOfDailyReservationsToolStripMenuItem_Click);
             // 
+            // officeNameLabel
+            // 
+            this.officeNameLabel.AutoSize = true;
+            this.officeNameLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.officeNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.officeNameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.officeNameLabel.Location = new System.Drawing.Point(13, 101);
+            this.officeNameLabel.Name = "officeNameLabel";
+            this.officeNameLabel.Size = new System.Drawing.Size(46, 20);
+            this.officeNameLabel.TabIndex = 4;
+            this.officeNameLabel.Text = "label1";
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.descriptionLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(13, 70);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(197, 20);
+            this.descriptionLabel.TabIndex = 5;
+            this.descriptionLabel.Text = "Welcome to the Dentist Office:";
+            // 
             // DentalOfficeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +242,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(715, 378);
+            this.Controls.Add(this.descriptionLabel);
+            this.Controls.Add(this.officeNameLabel);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.administratorMenuStrip);
             this.Controls.Add(this.regularUserMenuStrip);
@@ -257,6 +285,8 @@
         private System.Windows.Forms.ToolStripMenuItem listOfDailyReservationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addPatientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addMedicalStaffToolStripMenuItem;
+        private System.Windows.Forms.Label officeNameLabel;
+        private System.Windows.Forms.Label descriptionLabel;
     }
 }
 
