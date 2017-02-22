@@ -175,6 +175,8 @@ namespace ZubarskaOrd
 
         private void managePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            PasswordChangigFormStaff passStaffForm = new PasswordChangigFormStaff();
+            passStaffForm.ShowDialog();
         }
     }
 }
