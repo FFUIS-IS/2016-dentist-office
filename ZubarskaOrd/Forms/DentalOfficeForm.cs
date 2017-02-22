@@ -42,11 +42,11 @@ namespace ZubarskaOrd
 
         private void DentalOfficeForm_Load(object sender, EventArgs e)
         {
-            funkcija();
+            loginLogoutFunction();
             fillingFormLabels();
         }
 
-        private void funkcija()
+        private void loginLogoutFunction()
         {
             Opacity = 0;
             LoginForm loginForm = new LoginForm();
@@ -104,7 +104,7 @@ namespace ZubarskaOrd
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            funkcija();
+            loginLogoutFunction();
             fillingFormLabels();
         }
 
@@ -131,12 +131,7 @@ namespace ZubarskaOrd
             CitiesForm cform = new CitiesForm();
             cform.ShowDialog();
         }
-
-        private void DentalOfficeForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DbConnection.Instance.Connection.Close();
-        }
-
+        
         private void listOfAllServicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddServiceForm addServiceForm = new AddServiceForm();
@@ -167,5 +162,19 @@ namespace ZubarskaOrd
             addMSForm.ShowDialog();
         }
 
+        private void DentalOfficeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DbConnection.Instance.Connection.Close();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PasswordChangingForm passForm = new PasswordChangingForm();
+            passForm.ShowDialog();
+        }
+
+        private void managePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

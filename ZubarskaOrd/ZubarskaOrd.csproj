@@ -94,6 +94,12 @@
     <Compile Include="Forms\InformationAboutDOfficeForm.Designer.cs">
       <DependentUpon>InformationAboutDOfficeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PasswordChangingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PasswordChangingForm.Designer.cs">
+      <DependentUpon>PasswordChangingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReservationForPatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InformationAboutDOfficeForm.resx">
       <DependentUpon>InformationAboutDOfficeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasswordChangingForm.resx">
+      <DependentUpon>PasswordChangingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReservationForPatientForm.resx">
       <DependentUpon>ReservationForPatientForm.cs</DependentUpon>

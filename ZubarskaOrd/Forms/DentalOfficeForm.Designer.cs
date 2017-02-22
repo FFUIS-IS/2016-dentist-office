@@ -56,6 +56,10 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.descriptionLabel2 = new System.Windows.Forms.Label();
             this.descriptionLabel3 = new System.Windows.Forms.Label();
+            this.passwordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.passwordToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.managePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorMenuStrip.SuspendLayout();
             this.regularUserMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +71,8 @@
             this.medicalStuffToolStripMenuItem,
             this.citiesToolStripMenuItem,
             this.servicesToolStripMenuItem,
-            this.dOfficeInfoToolStripMenuItem});
+            this.dOfficeInfoToolStripMenuItem,
+            this.passwordToolStripMenuItem});
             this.administratorMenuStrip.Location = new System.Drawing.Point(0, 24);
             this.administratorMenuStrip.Name = "administratorMenuStrip";
             this.administratorMenuStrip.Size = new System.Drawing.Size(715, 24);
@@ -172,7 +177,8 @@
             // 
             this.regularUserMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.patientsToolStripMenuItem,
-            this.interventionsToolStripMenuItem});
+            this.interventionsToolStripMenuItem,
+            this.passwordToolStripMenuItem1});
             this.regularUserMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.regularUserMenuStrip.Name = "regularUserMenuStrip";
             this.regularUserMenuStrip.Size = new System.Drawing.Size(715, 24);
@@ -293,6 +299,36 @@
             this.descriptionLabel3.TabIndex = 11;
             this.descriptionLabel3.Text = "Date:    Time:";
             // 
+            // passwordToolStripMenuItem
+            // 
+            this.passwordToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changePasswordToolStripMenuItem});
+            this.passwordToolStripMenuItem.Name = "passwordToolStripMenuItem";
+            this.passwordToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.passwordToolStripMenuItem.Text = "Password";
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
+            // passwordToolStripMenuItem1
+            // 
+            this.passwordToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.managePasswordToolStripMenuItem});
+            this.passwordToolStripMenuItem1.Name = "passwordToolStripMenuItem1";
+            this.passwordToolStripMenuItem1.Size = new System.Drawing.Size(69, 20);
+            this.passwordToolStripMenuItem1.Text = "Password";
+            // 
+            // managePasswordToolStripMenuItem
+            // 
+            this.managePasswordToolStripMenuItem.Name = "managePasswordToolStripMenuItem";
+            this.managePasswordToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.managePasswordToolStripMenuItem.Text = "Manage Password";
+            this.managePasswordToolStripMenuItem.Click += new System.EventHandler(this.managePasswordToolStripMenuItem_Click);
+            // 
             // DentalOfficeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +390,10 @@
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label descriptionLabel2;
         private System.Windows.Forms.Label descriptionLabel3;
+        private System.Windows.Forms.ToolStripMenuItem passwordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem passwordToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem managePasswordToolStripMenuItem;
     }
 }
 
