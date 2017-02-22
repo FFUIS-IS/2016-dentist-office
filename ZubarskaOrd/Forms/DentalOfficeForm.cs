@@ -16,19 +16,27 @@ namespace ZubarskaOrd
     public partial class DentalOfficeForm : Form
     {
         private string ooo;
+        public static int userIdentity;
         private static SqlCeConnection connection = DbConnection.Instance.Connection;
 
         public DentalOfficeForm()
         {
             InitializeComponent();
-            this.Location = new Point(0, 0);
 
+            timer1.Start();
+
+            this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime dateTime = DateTime.Now;
+            this.dateTimeLabel.Text = dateTime.ToString();
         }
 
         private void fillingFormLabels()
         {
-            //officeNameLabel.Dock = DockStyle.Left;
             officeNameLabel.Text = ooo;
         }
 
@@ -44,17 +52,48 @@ namespace ZubarskaOrd
             LoginForm loginForm = new LoginForm();
             DialogResult result = loginForm.ShowDialog();
             ooo = Office.Name;
+            userIdentity = LoginForm.userIdentity;
             Opacity = 1;
             if (User.IsAdminUser)
             {
-                 administratorMenuStrip.Visible = true;
-                 regularUserMenuStrip.Visible = false;
+                administratorMenuStrip.Visible = true;
+                regularUserMenuStrip.Visible = false;
+                SqlCeCommand cm = new SqlCeCommand("SELECT FirstName, LastName FROM Administrator WHERE Id = '" + userIdentity + "'", connection);
 
+                try
+                {
+                    SqlCeDataReader dr = cm.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        nameLabel.Text = dr["FirstName"].ToString() + " " + dr["LastName"].ToString();
+                    }
+                    dr.Close();
+                    dr.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (!User.IsAdminUser)
             {
                 administratorMenuStrip.Visible = false;
-                regularUserMenuStrip.Visible = true;
+                regularUserMenuStrip.Visible = true; SqlCeCommand cm = new SqlCeCommand("SELECT FirstName, LastName FROM MedicalStaff WHERE Id = '" + userIdentity + "'", connection);
+
+                try
+                {
+                    SqlCeDataReader dr = cm.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        nameLabel.Text = dr["FirstName"].ToString() + " " + dr["LastName"].ToString();
+                    }
+                    dr.Close();
+                    dr.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             if (result == DialogResult.Cancel)
@@ -62,6 +101,7 @@ namespace ZubarskaOrd
                 this.Close();
             }
         }
+
         private void logoutButton_Click(object sender, EventArgs e)
         {
             funkcija();
@@ -126,5 +166,6 @@ namespace ZubarskaOrd
             AddMedicalStaffForm addMSForm = new AddMedicalStaffForm();
             addMSForm.ShowDialog();
         }
+
     }
 }

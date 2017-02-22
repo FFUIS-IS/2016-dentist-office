@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DentalOfficeForm));
             this.administratorMenuStrip = new System.Windows.Forms.MenuStrip();
             this.administratorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +51,11 @@
             this.listOfDailyReservationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.officeNameLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dateTimeLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.descriptionLabel2 = new System.Windows.Forms.Label();
+            this.descriptionLabel3 = new System.Windows.Forms.Label();
             this.administratorMenuStrip.SuspendLayout();
             this.regularUserMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -235,6 +241,58 @@
             this.descriptionLabel.TabIndex = 5;
             this.descriptionLabel.Text = "Welcome to the Dentist Office:";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // dateTimeLabel
+            // 
+            this.dateTimeLabel.AutoSize = true;
+            this.dateTimeLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dateTimeLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dateTimeLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeLabel.Location = new System.Drawing.Point(276, 101);
+            this.dateTimeLabel.Name = "dateTimeLabel";
+            this.dateTimeLabel.Size = new System.Drawing.Size(39, 20);
+            this.dateTimeLabel.TabIndex = 8;
+            this.dateTimeLabel.Text = "Time";
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.nameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Location = new System.Drawing.Point(12, 161);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(46, 20);
+            this.nameLabel.TabIndex = 9;
+            this.nameLabel.Text = "label1";
+            // 
+            // descriptionLabel2
+            // 
+            this.descriptionLabel2.AutoSize = true;
+            this.descriptionLabel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.descriptionLabel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.descriptionLabel2.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel2.Location = new System.Drawing.Point(12, 135);
+            this.descriptionLabel2.Name = "descriptionLabel2";
+            this.descriptionLabel2.Size = new System.Drawing.Size(146, 20);
+            this.descriptionLabel2.TabIndex = 10;
+            this.descriptionLabel2.Text = "Currently logged user:";
+            // 
+            // descriptionLabel3
+            // 
+            this.descriptionLabel3.AutoSize = true;
+            this.descriptionLabel3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.descriptionLabel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.descriptionLabel3.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel3.Location = new System.Drawing.Point(276, 70);
+            this.descriptionLabel3.Name = "descriptionLabel3";
+            this.descriptionLabel3.Size = new System.Drawing.Size(90, 20);
+            this.descriptionLabel3.TabIndex = 11;
+            this.descriptionLabel3.Text = "Date:    Time:";
+            // 
             // DentalOfficeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,6 +300,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(715, 378);
+            this.Controls.Add(this.descriptionLabel3);
+            this.Controls.Add(this.descriptionLabel2);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.dateTimeLabel);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.officeNameLabel);
             this.Controls.Add(this.logoutButton);
@@ -287,6 +349,11 @@
         private System.Windows.Forms.ToolStripMenuItem addMedicalStaffToolStripMenuItem;
         private System.Windows.Forms.Label officeNameLabel;
         private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label dateTimeLabel;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label descriptionLabel2;
+        private System.Windows.Forms.Label descriptionLabel3;
     }
 }
 
